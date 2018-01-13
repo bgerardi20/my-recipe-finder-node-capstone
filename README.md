@@ -6,7 +6,7 @@ The purpose of this app is to create an recipe book that you can have with you w
 Intro screen.
 --> Intro, explains app.
 ----> User login or create user.
-------> Continue button, brings user to their library.
+------> rings user to their library.
 Home Screen.
 --> User's recipe library.
 ----> Searchbar, search recipe by keywords or by specific recipe.
@@ -30,18 +30,22 @@ Create Screen.
 ------------>Save button, saves new recipe to library.
 
 # User Stories
-As a user I want to
-As a user I want to
-As a user I want to
-As a user I want to
-As a user I want to
-As a user I want to
+As a user I want to have a clear understanding of the sites purpose in order to create a library for the recipes i've searched and want to try. [intro screen]
+
+As a user I want to be able to make a quick search for recipes i'm intrested in, and add the ones I like to my saved library. [home screen]
+
+As a user I want to be able to view the recipes that match my search criteria, and add the ones I like to my saved library. [results section]
+
+As a user I want to be able to customize the ingredients that are attributed to a specific recipe in my library. [recipe screen]
+
+As a user I want to be able to upload my own personal recipes to my library. [create screen]
+
 
 # Screenshots
 
 
 # Working Prototype
-Find a working prototype with Node at
+Find a working prototype with Node at https://my-recipe-finder-node-capstone.herokuapp.com/
 
 # Functionality
 When the user brings up the landing page it explains the pupose of the app.
@@ -67,7 +71,7 @@ Back End
 * MongoDB on mLab
 * Mongoose
 * Mocha and Chai
-* Edamame API
+* Edamam API
 
 # Responsive
 The app is responsive and optimized for both desktop and mobile viewing and use.
