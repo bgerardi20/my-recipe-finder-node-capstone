@@ -3,25 +3,25 @@
 The purpose of this app is to create an recipe book that you can have with you wherever you go.
 
 # MVP workflow
-Intro screen.
+### Intro screen.
 * --> Intro, explains app.
 * ----> User login or create user.
 * ------> rings user to their library.
-Home Screen.
+### Home Screen.
 * --> User's recipe library.
 * ----> Searchbar, search recipe by keywords or by specific recipe.
 * ------> User selects the recipe of their choosing.
 * -------->Recipe is added to recipe library and saved.
 * ---------->Search for another recipe.
 * ------------>Return to users library.
-Screen displays information about selected recipe in library.
+### Screen displays information about selected recipe in library.
 * --> User is given ingredients for recipe.
 * ----> User can modify ingredient list.
 * ------> Modification is added to log, with date and what ingredient was modified.
 * --------> Button redirects to orignal recipe url, with exact directions for recipe.
 * ----------> Textbox for manual input of directions(optional).
 * ------------> User can delete recipe from recipe library.
-Create Screen.
+### Create Screen.
 * --> Form, user can create own recipe to add to library.
 * ----> Title input, user creates title for recipe.
 * ------> Photo upload, user uploads photo for recipe.
@@ -59,13 +59,13 @@ Find a working prototype with Node at https://my-recipe-finder-node-capstone.her
 
 # Technical
 
-Front End
+### Front End
 * HTML5
 * CSS3
 * JavaScript
 * jQuery
 
-Back End
+### Back End
 * Node.js with Heroku implementation
 * Express.js
 * MongoDB on mLab
@@ -77,7 +77,7 @@ Back End
 The app is responsive and optimized for both desktop and mobile viewing and use.
 
 # API Documentation
-API endpoints for the back end include:
+### API endpoints for the back end include:
 
 * POST to '' for creating a new user
 * POST to '' to sign in an existing user
@@ -89,16 +89,16 @@ API endpoints for the back end include:
 * DELETE to '' to delete a single saved recipe
 
 # Development Roadmap
-Planned additional features and improvements will allow users to:
+### Planned additional features and improvements will allow users to:
 
-* Automatic direction upload:
---> Currently can't upload directions to saved recipe automatically.
+#### Automatic direction upload:
+* Currently can't upload directions to saved recipe automatically.
 
-* Social Media Presence:
---> Would like for users to be able to share to social media the changes they've made to recipes, recipes they created themself, or just a recipe they really liked from a search.
+#### Social Media Presence:
+* Would like for users to be able to share to social media the changes they've made to recipes, recipes they created themself, or just a recipe they really liked from a search.
 
-* Nutrtion Guide:
--->Would like to include all nutritional information for those who choose to view it.
+#### Nutrtion Guide:
+* Would like to include all nutritional information for those who choose to view it.
 
-* Allergy Search:
---> I would like to have a allergy option implemented, in order to reach more users, and to help those with allergies still be able to find great recipes.
+#### Allergy Search:
+* I would like to have a allergy option implemented, in order to reach more users, and to help those with allergies still be able to find great recipes.
