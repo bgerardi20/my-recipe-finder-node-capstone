@@ -30,15 +30,24 @@ The purpose of this app is to create an recipe book that you can have with you w
 * ------------>Save button, saves new recipe to library.
 
 # User Stories
-* As a user I want to have a clear understanding of the sites purpose in order to create a library for the recipes i've searched and want to try. [intro screen]
+* As a user I want to have a clear understanding of the sites purpose in order to create a library for the recipes i've searched and want to try.
+![Use Case](https://github.com/bgerardi20/pet-adoption-api-capstone/blob/master/github-images/IMG_1631.jpg)
 
-* As a user I want to be able to make a quick search for recipes i'm intrested in, and add the ones I like to my saved library. [home screen]
+* As a user I want to be able to make a quick search for recipes i'm intrested in, and add the ones I like to my saved library.
+![Use Case](https://github.com/bgerardi20/pet-adoption-api-capstone/blob/master/github-images/IMG_1631.jpg)
 
-* As a user I want to be able to view the recipes that match my search criteria, and add the ones I like to my saved library. [results section]
 
-* As a user I want to be able to customize the ingredients that are attributed to a specific recipe in my library. [recipe screen]
+* As a user I want to be able to view the recipes that match my search criteria, and add the ones I like to my saved library.
+![Use Case](https://github.com/bgerardi20/pet-adoption-api-capstone/blob/master/github-images/IMG_1631.jpg)
 
-* As a user I want to be able to upload my own personal recipes to my library. [create screen]
+
+* As a user I want to be able to customize the ingredients that are attributed to a specific recipe in my library.
+![Use Case](https://github.com/bgerardi20/pet-adoption-api-capstone/blob/master/github-images/IMG_1631.jpg)
+
+
+* As a user I want to be able to upload my own personal recipes to my library.
+![Use Case](https://github.com/bgerardi20/pet-adoption-api-capstone/blob/master/github-images/IMG_1631.jpg)
+
 
 
 # Screenshots
@@ -89,6 +98,7 @@ The app is responsive and optimized for both desktop and mobile viewing and use.
 * DELETE to '' to delete a single saved recipe
 
 # Development Roadmap
+
 ### Planned additional features and improvements will allow users to:
 
 #### Automatic direction upload:
