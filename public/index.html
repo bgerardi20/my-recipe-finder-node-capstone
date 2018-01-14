@@ -1,4 +1,3 @@
-<!--
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,11 +35,9 @@
         </section>
 
         <footer>
-
             <a href="https://www.linkedin.com/in/brendan-gerardi-45b11111b/" target="_blank" class=""><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a>
             <a href="mailto:brendan.gerardi@gmail.com" target="_blank" class=""><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</a>
             <a href="https://github.com/bgerardi20" target="_blank" class=""><i class="fa fa-github" aria-hidden="true"></i> Github</a>
-
         </footer>
 
     </main>
@@ -49,13 +46,13 @@
 
         <section class="outerWelcomeBoxLogin">
             <div class="welcomeBoxLogin">
-
+                <!--some sort of logo or fancy font -->
                 <img class="" src="">
                 <p class="">your computerized recipe library</p>
 
                 <form method="post" id="login-form" autocomplete="off">
-                    <input class="form-control loginEmail" type="text" placeholder="Email Address" name="email" autofocus>
-                    <input class="form-control loginPassword" type="password" placeholder="Password" name="password">
+                    <input class="" type="text" placeholder="Email Address" name="email" autofocus>
+                    <input class="" type="password" placeholder="Password" name="password">
                     <button class="" type="submit" id="submitLoginButton">Log In</button>
                 </form>
 
@@ -63,11 +60,9 @@
         </section>
 
         <footer>
-
             <a href="https://www.linkedin.com/in/brendan-gerardi-45b11111b/" target="_blank" class=""><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a>
             <a href="mailto:brendan.gerardi@gmail.com" target="_blank" class=""><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</a>
             <a href="https://github.com/bgerardi20" target="_blank" class=""><i class="fa fa-github" aria-hidden="true"></i> Github</a>
-
         </footer>
 
     </main>
@@ -76,7 +71,7 @@
 
         <section class="outerSignUpBox">
             <div class="innerSignUpBox">
-
+                <!-- logo or fancy font -->
                 <img class="" src="">
                 <p class="">your computerized recipe library</p>
 
@@ -104,11 +99,9 @@
         </section>
 
         <footer>
-
             <a href="https://www.linkedin.com/in/brendan-gerardi-45b11111b/" target="_blank" class=""><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a>
             <a href="mailto:brendan.gerardi@gmail.com" target="_blank" class=""><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</a>
             <a href="https://github.com/bgerardi20" target="_blank" class=""><i class="fa fa-github" aria-hidden="true"></i> Github</a>
-
         </footer>
 
     </main>
@@ -127,13 +120,20 @@
             <h1 class=""><img src="" alt="" class="">My Library</h1>
         </header>
 
-        <section class="main_content">
-           <a href="">
-               <div>
-                   <img src="" alt="">
-               </div>
-               <h2>Recipe Title</h2>
-           </a>
+        <div class="search_bar_container">
+            <input class="search" type="text" name="search" id="search" placeholder="Chicken Casserole...">
+            <button class="search-submit" type="submit" form="get-form">
+                <!-- add search icon -->
+            </button>
+        </div><br>
+
+        <section class="dummy_recipe_snippet_container">
+            <a href="">
+                <div>
+                    <img src="" alt="">
+                </div>
+                <h2>Recipe Title</h2>
+            </a>
             <a href="">
                 <div>
                     <img src="" alt="">
@@ -168,11 +168,9 @@
         </section>
 
         <footer>
-
             <a href="https://www.linkedin.com/in/brendan-gerardi-45b11111b/" target="_blank" class=""><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a>
             <a href="mailto:brendan.gerardi@gmail.com" target="_blank" class=""><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</a>
             <a href="https://github.com/bgerardi20" target="_blank" class=""><i class="fa fa-github" aria-hidden="true"></i> Github</a>
-
         </footer>
 
     </main>
@@ -190,77 +188,299 @@
             <h1 class=""><img src="" alt="" class="">My Library</h1>
         </header>
 
-        <a href="">
-            <div>
-                <img src="" alt="">
-            </div>
-            <h2>Recipe Title</h2>
-        </a>
-        <a href="">
-            <div>
-                <img src="" alt="">
-            </div>
-            <h2>Recipe Title</h2>
-        </a>
+        <div class="search_bar_container">
+            <input class="search" type="text" name="search" id="search" placeholder="Search Recipes...">
+            <button class="search-submit" type="submit" form="get-form">
+                <!-- add search icon -->
+            </button>
+        </div><br>
+
+        <!-- empty for new users -->
+        <div class="recipe_snippet_container">
+            <a href="">
+                <div>
+                    <img src="" alt="">
+                </div>
+                <h2>Recipe Title</h2>
+            </a>
+            <a href="">
+                <div>
+                    <img src="" alt="">
+                </div>
+                <h2>Recipe Title</h2>
+            </a>
+        </div>
 
         <footer>
-
             <a href="https://www.linkedin.com/in/brendan-gerardi-45b11111b/" target="_blank" class=""><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a>
             <a href="mailto:brendan.gerardi@gmail.com" target="_blank" class=""><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</a>
             <a href="https://github.com/bgerardi20" target="_blank" class=""><i class="fa fa-github" aria-hidden="true"></i> Github</a>
-
         </footer>
 
     </main>
--->
 
-<main class="search_screen">
 
-    <header class="">
-        <nav>
-            <ul class="">
-                <li class=""><a href="" class="">My Library</a></li>
-                <li class=""><a href="" class="">Create Recipe</a></li>
-                <li class=""><a href="" class="">Logout</a></li>
+    <main class="search_screen">
+
+        <header class="">
+            <nav>
+                <ul class="">
+                    <li class=""><a href="" class="">My Library</a></li>
+                    <li class=""><a href="" class="">Create Recipe</a></li>
+                    <li class=""><a href="" class="">Logout</a></li>
+                </ul>
+            </nav>
+            <h1 class=""><img src="" alt="" class="">Search</h1>
+        </header>
+
+
+        <!--success scneario-->
+        <div class="search_bar_container">
+            <input class="search" type="text" name="search" id="search" placeholder="Search Recipes...">
+            <button class="search-submit" type="submit" form="get-form">
+                <!-- add search icon -->
+            </button>
+        </div><br>
+
+        <section class="success_scenario">
+            <!--------where do i add the anchor tag to take it to the next screen?--------->
+            <ul>
+                <li class="recipe_options">
+                    <div class="object">
+                        <a href="">
+                            <span class="image">
+                                <span class="holder">
+                                    <img src="" alt="Teriyaki Chicken">
+                                </span>
+                            </span>
+                            <span class="title">Teriyaki Chicken</span>
+                        </a>
+                    </div>
+                    <div class="data">
+                        <a class="cal" href="">
+                            <span class="num">375</span>
+                            <span class="lbl">calories</span>
+                        </a>
+                        <a class="ing" href="">
+                            <span class="num">4</span>
+                            <span class="lbl">ingredients</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="recipe_options">
+                    <div class="object">
+                        <a href="">
+                            <span class="image">
+                                <span class="holder">
+                                    <img src="" alt="Teriyaki Chicken">
+                                </span>
+                            </span>
+                            <span class="title">Teriyaki Chicken</span>
+                        </a>
+                    </div>
+                    <div class="data">
+                        <a class="cal" href="">
+                            <span class="num">375</span>
+                            <span class="lbl">calories</span>
+                        </a>
+                        <a class="ing" href="">
+                            <span class="num">4</span>
+                            <span class="lbl">ingredients</span>
+                        </a>
+                    </div>
+                </li>
             </ul>
-        </nav>
-        <h1 class=""><img src="" alt="" class="">Search</h1>
-    </header>
 
-    <footer>
+        </section>
 
-        <a href="https://www.linkedin.com/in/brendan-gerardi-45b11111b/" target="_blank" class=""><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a>
-        <a href="mailto:brendan.gerardi@gmail.com" target="_blank" class=""><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</a>
-        <a href="https://github.com/bgerardi20" target="_blank" class=""><i class="fa fa-github" aria-hidden="true"></i> Github</a>
 
-    </footer>
+        <!-------------------->
 
-</main>
+        <!---once recipe is choosen----->
+        <section class="choosen_recipe_container">
 
-<main class="recipe_screen">
+            <header class="">
+                <nav>
+                    <ul class="">
+                        <li class=""><a href="" class="">My Library</a></li>
+                        <li class=""><a href="" class="">Create Recipe</a></li>
+                        <li class=""><a href="" class="">Logout</a></li>
+                    </ul>
+                </nav>
+                <h1 class=""><img src="" alt="" class="">My Recipe</h1>
+            </header>
 
-    <header class="">
-        <nav>
-            <ul class="">
-                <li class=""><a href="" class="">My Library</a></li>
-                <li class=""><a href="" class="">Create Recipe</a></li>
-                <li class=""><a href="" class="">Logout</a></li>
+            <section class="recipe_outside_container">
+
+                <ul class="recipe_inside_container" id="">
+                    <li>
+                        <!--recipe image -->
+                        <img src="" alt="">
+                        <!-- -->
+                    </li><br>
+                    <li>
+                        <h2>Recipe Title</h2><br>
+                    </li><br>
+                    <li>
+                        <h3>Ingredients:</h3>
+                        <ul>
+                            <li>ingredient1</li><br>
+                            <li>ingredient2</li><br>
+                            <li>ingredient3</li><br>
+                            <li>ingredient4</li><br>
+                            <li>ingredient5</li><br>
+                        </ul>
+                    </li><br>
+                </ul>
+
+                <div class="success_button">
+                    <button type="submit" class=""><a href="">Add</a></button>
+                    <button type="submit" class=""><a href="">Back</a></button>
+                </div>
+
+            </section>
+
+            <footer>
+                <a href="https://www.linkedin.com/in/brendan-gerardi-45b11111b/" target="_blank" class=""><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a>
+                <a href="mailto:brendan.gerardi@gmail.com" target="_blank" class=""><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</a>
+                <a href="https://github.com/bgerardi20" target="_blank" class=""><i class="fa fa-github" aria-hidden="true"></i> Github</a>
+            </footer>
+
+        </section>
+        <!------------------------------>
+
+        <!----fail scneario---->
+        <header class="">
+            <nav>
+                <ul class="">
+                    <li class=""><a href="" class="">My Library</a></li>
+                    <li class=""><a href="" class="">Create Recipe</a></li>
+                    <li class=""><a href="" class="">Logout</a></li>
+                </ul>
+            </nav>
+            <h1 class=""><img src="" alt="" class="">My Recipe</h1>
+        </header>
+
+        <div class="search_bar_container">
+            <input class="search" type="text" name="search" id="search" placeholder="Search Recipes...">
+            <button class="search-submit" type="submit" form="get-form">
+                <!-- add search icon -->
+            </button>
+        </div><br>
+
+        <section class="fail_scenario">
+
+            <div class="fail_message_container">
+                <p class="fail_message">Sorry we couldn't find anything matching your search..</p>
+                <p class="fail_message">BUT</p>
+                <p class="fail_message">Here's a random recipe you might enjoy!</p>
+            </div>
+
+            <div class="fail_recipe_snippet">
+                <div class="object">
+                    <a href="">
+                        <span class="image">
+                            <span class="holder">
+                                <img src="" alt="Teriyaki Chicken">
+                            </span>
+                        </span>
+                        <span class="title">Teriyaki Chicken</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="fail_button">
+                <button type="submit" class=""><a>View</a></button>
+            </div>
+
+        </section>
+
+        <footer>
+            <a href="https://www.linkedin.com/in/brendan-gerardi-45b11111b/" target="_blank" class=""><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a>
+            <a href="mailto:brendan.gerardi@gmail.com" target="_blank" class=""><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</a>
+            <a href="https://github.com/bgerardi20" target="_blank" class=""><i class="fa fa-github" aria-hidden="true"></i> Github</a>
+        </footer>
+        <!--------------------->
+    </main>
+
+    <main class="recipe_screen">
+
+        <header class="">
+            <nav>
+                <ul class="">
+                    <li class=""><a href="" class="">My Library</a></li>
+                    <li class=""><a href="" class="">Create Recipe</a></li>
+                    <li class=""><a href="" class="">Logout</a></li>
+                </ul>
+            </nav>
+            <h1 class=""><img src="" alt="" class="">My Recipe</h1>
+        </header>
+
+        <section class="recipe_outside_container">
+
+            <ul class="recipe_inside_container" id="">
+                <li>
+                    <!--recipe image -->
+                    <img src="" alt="">
+                    <!-- -->
+                </li><br>
+                <li>
+                    <h2>Recipe Title</h2><br>
+                </li><br>
+                <li>
+                    <h3>Ingredients:</h3>
+                    <ul>
+                        <li>ingredient1</li><br>
+                        <li>ingredient2</li><br>
+                        <li>ingredient3</li><br>
+                        <li>ingredient4</li><br>
+                        <li>ingredient5</li><br>
+                    </ul>
+                </li><br>
+                <li>
+                    <div class="recipe_button_container">
+                        <button type="button">Modify</button>
+                        <!--link to original recipe URL --->
+                        <button type="button"><a href="">Directions</a></button>
+                    </div>
+                </li><br>
+                <!-- hidden until modify button is clicked -->
+                <li>
+                    <div class="ingredients_container">
+                        <label for="ingredients">Ingredients:</label>
+                        <input type="text" name="ingredients" id="">
+                        <div class="add-remove">
+                            <span>
+                               <!-- add plus/minus sign -->
+                           </span>
+                        </div>
+                    </div>
+                </li><br>
+                <!-- do i need a table or textbox here? -->
+                <li>
+                    <p>
+                        These are the modifications
+                    </p>
+                </li><br>
+                <li>
+                    <div class="recipe_button_container">
+                        <button type="button">Save</button>
+                        <button type="button">Delete</button>
+                    </div>
+                </li><br>
             </ul>
-        </nav>
-        <h1 class=""><img src="" alt="" class="">My Recipe</h1>
-    </header>
 
-    <footer>
+        </section>
 
-        <a href="https://www.linkedin.com/in/brendan-gerardi-45b11111b/" target="_blank" class=""><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a>
-        <a href="mailto:brendan.gerardi@gmail.com" target="_blank" class=""><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</a>
-        <a href="https://github.com/bgerardi20" target="_blank" class=""><i class="fa fa-github" aria-hidden="true"></i> Github</a>
 
-    </footer>
+        <footer>
+            <a href="https://www.linkedin.com/in/brendan-gerardi-45b11111b/" target="_blank" class=""><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a>
+            <a href="mailto:brendan.gerardi@gmail.com" target="_blank" class=""><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</a>
+            <a href="https://github.com/bgerardi20" target="_blank" class=""><i class="fa fa-github" aria-hidden="true"></i> Github</a>
+        </footer>
 
-</main>
+    </main>
 
-<!--
     <main class="create_recipe_screen">
 
         <header class="">
@@ -277,7 +497,7 @@
         <section>
 
             <h3 class="">Create A Recipe</h3>
-            <div class="instructions">
+            <div class="create_instructions">
                 <h4>This section is for uploading your own personal recipe to your library</h4>
                 <p>1. Just upload an image of your recipe(optional)</p>
                 <p>2. Give a title to your new recipe.</p>
@@ -319,19 +539,16 @@
         </section>
 
         <footer>
-
             <a href="https://www.linkedin.com/in/brendan-gerardi-45b11111b/" target="_blank" class=""><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a>
             <a href="mailto:brendan.gerardi@gmail.com" target="_blank" class=""><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</a>
             <a href="https://github.com/bgerardi20" target="_blank" class=""><i class="fa fa-github" aria-hidden="true"></i> Github</a>
-
         </footer>
 
     </main>
--->
 
-<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 
-<script src="client.js"></script>
+    <script src="client.js"></script>
 </body>
 
 </html>
