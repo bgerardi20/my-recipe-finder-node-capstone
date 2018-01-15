@@ -6,15 +6,19 @@
     box-sizing: border-box;
 }
 
+/*whats the difference between "./" and "../"? */
+
 body {
-    background: url("../website-images/cooking-class-background-image.jpg") no-repeat fixed center;
+    background: url("./website-images/cooking-class-background-image.JPG") no-repeat fixed center;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url("./website-images/cooking-class-background-image.JPG");
     background-size: cover;
     text-align: center;
+
 }
 
 main {
     background-attachment: fixed;
-    width: 50%;
+    width: 40%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -23,20 +27,21 @@ section {
     background-color: white;
     border: 2px solid black;
     margin: 1rem;
-    padding: 2rem;
+    padding: 1rem;
     opacity: 0.85;
 
 }
 
 form {
-    background-color: lightgray;
+    border: 3px solid black;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
 }
 
 p,
-li {
+li,
+a {
     font-family: 'Josefin Slab', serif;
 }
 
@@ -47,10 +52,107 @@ h4 {
     font-family: 'Oswald', sans-serif;
 }
 
+h1 {
+    color: white;
+    font-size: 30px;
+}
+
+nav {
+    margin: 20px;
+}
+
+input {
+    border: 1px solid black;
+    text-align: center;
+}
+
+p {
+    margin: 5px;
+    padding 5px;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+#welcome {
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+
+.loginInnerContainer {
+    border: 1px solid #291709;
+    padding: 40px;
+}
+
+.loginLogo {
+    width: 40%;
+}
+
+.loginOptions {
+    display: block;
+    width: 335px;
+    border-radius: 3px;
+    font-size: 1.1em;
+    text-decoration: none;
+    background-color: #d9d9d9;
+    text-shadow: .5px .5px white;
+    color: #595959;
+    border: 1px solid #291709;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 40px;
+    transition: background-color .3s;
+}
+
+.navListItems {
+    display: inline-block;
+}
+
+.navContent {
+    color: white;
+    font-size: 20px;
+    margin: 30px;
+}
+
 .introInnerContainer {
     border: 4px solid black;
     width: 50%;
-    height: 15rem;
+    height: 18.5rem;
     margin-left: auto;
     margin-right: auto;
 }
+
+.introContent {
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+/*psuedo*/
+
+.navContent:hover {
+    text-decoration-line: underline;
+    text-decoration-color: white;
+}
+
+.loginOptions:hover {
+    border: 3px dotted black;
+}
+
+
+
+
+
+
+/*media queries*/
