@@ -10,57 +10,57 @@
 
 <body>
 
-    <header class="">
+    <header class="headerContainer">
         <nav>
-            <ul class="">
-                <li class=""><a href="" class="">My Library</a></li>
-                <li class=""><a href="" class="">Create Recipe</a></li>
-                <li class=""><a href="" class="">Logout</a></li>
+            <ul class="navList">
+                <li class="navListItems"><a href="" class="navContent">My Library</a></li>
+                <li class="navListItems"><a href="" class="navContent">Create Recipe</a></li>
+                <li class="navListItems"><a href="" class="navContent">Logout</a></li>
             </ul>
         </nav>
-        <h1 class=""><img src="" alt="" class="">My Library</h1>
+        <h1 class="pageTitle"><img src="" alt="" class="titleLogo">My Library</h1>
     </header>
 
-    <main class="intro_screen">
-<!--
+    <main class="introScreen">
+        <!--
 
         <header>
             <h1>Welcome to your recipe library</h1>
         </header>
 -->
 
-        <section>
-            <p>With thousands of recipes to search through, finding that new dish you've been wanting to try has never been easier.</p>
-            <p>If you would like your recipes to be saved for future use, go ahead and create an account, or login if you already have one</p>
-            <p>If your're just browsing and don't want awesome recipes saved to a library, just use the dummy account option</p>
+        <section class="introContainer">
+            <p class="introContent">With thousands of recipes to search through, finding that new dish you've been wanting to try has never been easier.</p>
+            <p class="introContent">If you would like your recipes to be saved for future use, go ahead and create an account, or login if you already have one</p>
+            <p class="introContent">If your're just browsing and don't want awesome recipes saved to a library, just use the dummy account option</p>
         </section>
 
-        <section class="">
-            <div class="">
-                <img class="" src="">
-                <p class="">Choose an option below to start searching recipes!</p>
-                <a class="" href="">Sign In</a>
+        <section class="loginOuterContainer">
+            <div class="loginInnerContainer">
+                <img class="loginLogo" src="">
+                <p class="loginIntro">Choose an option below to start searching recipes!</p>
+                <a class="loginOptions" href="">Sign In</a>
                 <br>
-                <a class="" href="">Create Account</a>
+                <a class="loginOptions" href="">Create Account</a>
                 <br>
-                <a class="" id="">Dummy Account</a>
+                <a class="loginOptions" href="">Dummy Account</a>
             </div>
         </section>
 
     </main>
 
-    <main class="sign_in_screen">
+    <main class="signInScreen">
 
-        <section class="outerWelcomeBoxLogin">
-            <div class="welcomeBoxLogin">
+        <section class="signInOutterContainer">
+            <div class="signInInnerContainer">
                 <!--some sort of logo or fancy font -->
-                <img class="" src="">
-                <p class="">your computerized recipe library</p>
+                <img class="signInLogo" src="">
+                <p class="signInMessage">your computerized recipe library</p>
 
-                <form method="post" id="login-form" autocomplete="off">
-                    <input class="" type="text" placeholder="Email Address" name="email" autofocus>
-                    <input class="" type="password" placeholder="Password" name="password">
-                    <button class="" type="submit" id="submitLoginButton">Log In</button>
+                <form class="signInform" method="POST" autocomplete="off">
+                    <input class="signInInput" type="text" placeholder="Email Address" name="email" autofocus>
+                    <input class="signInInput" type="password" placeholder="Password" name="password">
+                    <button class="signInButton" type="submit">Log In</button>
                 </form>
 
             </div>
@@ -68,15 +68,15 @@
 
     </main>
 
-    <main class="create_username_screen">
+    <main class="createUsernameScreen">
 
         <section class="outerSignUpBox">
             <div class="innerSignUpBox">
                 <!-- logo or fancy font -->
-                <img class="" src="">
-                <p class="">your computerized recipe library</p>
+                <img class="signInLogo" src="">
+                <p class="signInMessage">your computerized recipe library</p>
 
-                <form class="signUpForm" method="POST" id="register-form">
+                <form class="signUpForm" method="POST">
                     <div class="formGroup">
                         <label for="fullName">Name:</label>
                         <input class="form-control" id="name" type="text" placeholder="Name" name="fullName" autofocus>
@@ -93,7 +93,7 @@
                         <label for="confirmPassword">Confirm Password:</label>
                         <input class="form-control" id="confirmPassword" type="password" placeholder="Confirm Password" name="confirmPassword">
                     </div>
-                    <button class="" type="submit">Sign Up</button>
+                    <button class="signInButton" type="submit">Sign Up</button>
                 </form>
 
             </div>
@@ -102,49 +102,49 @@
     </main>
 
 
-    <main class="dummy_account_screen">
+    <main class="dummyAccountScreen">
 
-        <div class="search_bar_container">
-            <input class="search" type="text" name="search" id="search" placeholder="Chicken Casserole...">
-            <button class="search-submit" type="submit" form="get-form">
+        <div class="searchBarContainer">
+            <input class="search" type="text" name="search" placeholder="Chicken Casserole...">
+            <button class="searchSubmit" type="submit" form="get-form">
                 <!-- add search icon -->
             </button>
         </div><br>
 
-        <section class="dummy_recipe_snippet_container">
-            <a href="">
-                <div>
-                    <img src="" alt="">
+        <section class="dummyRecipeSnippetContainer">
+            <a class="recipeLink" href="">
+                <div class="recipeImgContainer">
+                    <img class="recipeImg" src="" alt="">
                 </div>
                 <h2>Recipe Title</h2>
             </a>
-            <a href="">
-                <div>
-                    <img src="" alt="">
+            <a class="recipeLink" href="">
+                <div class="recipeImgContainer">
+                    <img class="recipeImg" src="" alt="">
                 </div>
                 <h2>Recipe Title</h2>
             </a>
-            <a href="">
-                <div>
-                    <img src="" alt="">
+            <a class="recipeLink" href="">
+                <div class="recipeImgContainer">
+                    <img class="recipeImg" src="" alt="">
                 </div>
                 <h2>Recipe Title</h2>
             </a>
-            <a href="">
-                <div>
-                    <img src="" alt="">
+            <a class="recipeLink" href="">
+                <div class="recipeImgContainer">
+                    <img class="recipeImg" src="" alt="">
                 </div>
                 <h2>Recipe Title</h2>
             </a>
-            <a href="">
-                <div>
-                    <img src="" alt="">
+            <a class="recipeLink" href="">
+                <div class="recipeImgContainer">
+                    <img class="recipeImg" src="" alt="">
                 </div>
                 <h2>Recipe Title</h2>
             </a>
-            <a href="">
-                <div>
-                    <img src="" alt="">
+            <a class="recipeLink" href="">
+                <div class="recipeImgContainer">
+                    <img class="recipeImg" src="" alt="">
                 </div>
                 <h2>Recipe Title</h2>
             </a>
@@ -153,26 +153,26 @@
 
     </main>
 
-    <main class="home_screen">
+    <main class="homeScreen">
 
-        <div class="search_bar_container">
-            <input class="search" type="text" name="search" id="search" placeholder="Search Recipes...">
-            <button class="search-submit" type="submit" form="get-form">
+        <div class="searchBarContainer">
+            <input class="search" type="text" name="search" placeholder="Search Recipes...">
+            <button class="searchSubmit" type="submit">
                 <!-- add search icon -->
             </button>
         </div><br>
 
         <!-- empty for new users -->
-        <div class="recipe_snippet_container">
-            <a href="">
-                <div>
-                    <img src="" alt="">
+        <div class="recipeSnippetContainer">
+            <a class="recipeLink" href="">
+                <div class="recipeImgContainer">
+                    <img class="recipeImg" src="" alt="">
                 </div>
                 <h2>Recipe Title</h2>
             </a>
-            <a href="">
-                <div>
-                    <img src="" alt="">
+            <a class="recipeLink" href="">
+                <div class="recipeImgContainer">
+                    <img class="recipeImg" src="" alt="">
                 </div>
                 <h2>Recipe Title</h2>
             </a>
@@ -181,60 +181,56 @@
     </main>
 
 
-    <main class="search_screen">
+    <main class="searchScreen">
 
         <!--success scneario-->
-        <div class="search_bar_container">
-            <input class="search" type="text" name="search" id="search" placeholder="Search Recipes...">
-            <button class="search-submit" type="submit" form="get-form">
+        <div class="searchBarContainer">
+            <input class="search" type="text" name="search" placeholder="Search Recipes...">
+            <button class="searchSubmit" type="submit">
                 <!-- add search icon -->
             </button>
         </div><br>
 
-        <section class="success_scenario">
+        <section class="successScenario">
             <!--------where do i add the anchor tag to take it to the next screen?--------->
-            <ul>
-                <li class="recipe_options">
+            <ul class="resultsList">
+                <li class="recipeResultOption">
                     <div class="object">
-                        <a href="">
-                            <span class="image">
-                                <span class="holder">
-                                    <img src="" alt="Teriyaki Chicken">
-                                </span>
+                        <a class="recipeResultsLink" href="">
+                            <span class="resultsImgContainer">
+                                <img class="resultsImg" src="" alt="Teriyaki Chicken">
                             </span>
-                            <span class="title">Teriyaki Chicken</span>
+                            <span class="resultsTitle">Teriyaki Chicken</span>
                         </a>
                     </div>
                     <div class="data">
                         <a class="cal" href="">
                             <span class="num">375</span>
-                            <span class="lbl">calories</span>
+                            <span class="info">calories</span>
                         </a>
                         <a class="ing" href="">
                             <span class="num">4</span>
-                            <span class="lbl">ingredients</span>
+                            <span class="info">ingredients</span>
                         </a>
                     </div>
                 </li>
-                <li class="recipe_options">
+                <li class="recipeResultOption">
                     <div class="object">
-                        <a href="">
-                            <span class="image">
-                                <span class="holder">
-                                    <img src="" alt="Teriyaki Chicken">
-                                </span>
+                        <a class="recipeResultsLink" href="">
+                            <span class="resultsImgContainer">
+                                <img class="resultsImg" src="" alt="Teriyaki Chicken">
                             </span>
-                            <span class="title">Teriyaki Chicken</span>
+                            <span class="resultsTitle">Teriyaki Chicken</span>
                         </a>
                     </div>
                     <div class="data">
                         <a class="cal" href="">
                             <span class="num">375</span>
-                            <span class="lbl">calories</span>
+                            <span class="info">calories</span>
                         </a>
                         <a class="ing" href="">
                             <span class="num">4</span>
-                            <span class="lbl">ingredients</span>
+                            <span class="info">ingredients</span>
                         </a>
                     </div>
                 </li>
@@ -246,34 +242,34 @@
         <!-------------------->
 
         <!---once recipe is choosen----->
-        <section class="choosen_recipe_container">
+        <section class="chosenRecipeContainer">
 
-            <section class="recipe_outside_container">
+            <section class="recipeOutsideContainer">
 
-                <ul class="recipe_inside_container" id="">
+                <ul class="recipeInsideContainer">
                     <li>
                         <!--recipe image -->
-                        <img src="" alt="">
+                        <img class="chosenImg" src="" alt="">
                         <!-- -->
                     </li><br>
                     <li>
-                        <h2>Recipe Title</h2><br>
+                        <h2 class="chosenTitle">Recipe Title</h2><br>
                     </li><br>
                     <li>
                         <h3>Ingredients:</h3>
                         <ul>
-                            <li>ingredient1</li><br>
-                            <li>ingredient2</li><br>
-                            <li>ingredient3</li><br>
-                            <li>ingredient4</li><br>
-                            <li>ingredient5</li><br>
+                            <li class="chosenIngr">ingredient1</li><br>
+                            <li class="chosenIngr">ingredient2</li><br>
+                            <li class="chosenIngr">ingredient3</li><br>
+                            <li class="chosenIngr">ingredient4</li><br>
+                            <li class="chosenIngr">ingredient5</li><br>
                         </ul>
                     </li><br>
                 </ul>
 
-                <div class="success_button">
-                    <button type="submit" class=""><a href="">Add</a></button>
-                    <button type="submit" class=""><a href="">Back</a></button>
+                <div class="successButtonContainer">
+                    <button type="submit" class="successButton"><a id="add" href="">Add</a></button>
+                    <button type="submit" class="successButton"><a id="back" href="">Back</a></button>
                 </div>
 
             </section>
@@ -283,36 +279,34 @@
 
         <!----fail scneario---->
 
-         <div class="search_bar_container">
-            <input class="search" type="text" name="search" id="search" placeholder="Search Recipes...">
-            <button class="search-submit" type="submit" form="get-form">
+        <div class="searchBarContainer">
+            <input class="search" type="text" name="search" placeholder="Search Recipes...">
+            <button class="searchSubmit" type="submit">
                 <!-- add search icon -->
             </button>
         </div><br>
 
-        <section class="fail_scenario">
+        <section class="failScenario">
 
-            <div class="fail_message_container">
-                <p class="fail_message">Sorry we couldn't find anything matching your search..</p>
-                <p class="fail_message">BUT</p>
-                <p class="fail_message">Here's a random recipe you might enjoy!</p>
+            <div class="failMessageContainer">
+                <p class="failMessage">Sorry we couldn't find anything matching your search..</p>
+                <p class="failMessage">BUT</p>
+                <p class="failMessage">Here's a random recipe you might enjoy!</p>
             </div>
 
-            <div class="fail_recipe_snippet">
+            <div class="failRecipeSnippet">
                 <div class="object">
-                    <a href="">
-                        <span class="image">
-                            <span class="holder">
-                                <img src="" alt="Teriyaki Chicken">
-                            </span>
+                    <a class="recipeResultsLink" href="">
+                        <span class="resultsImgContainer">
+                                <img clas="resultsImg" src="" alt="Teriyaki Chicken">
                         </span>
-                        <span class="title">Teriyaki Chicken</span>
+                        <span class="resultsTitle">Teriyaki Chicken</span>
                     </a>
                 </div>
             </div>
 
-            <div class="fail_button">
-                <button type="submit" class=""><a>View</a></button>
+            <div class="failButtonContainer">
+                <button type="submit" id="failButton"><a id="view" href="">View</a></button>
             </div>
 
         </section>
@@ -320,42 +314,42 @@
         <!--------------------->
     </main>
 
-    <main class="recipe_screen">
+    <main class="recipeScreen">
 
-        <section class="recipe_outside_container">
+        <section class="recipeOutsideContainer" id="">
 
-            <ul class="recipe_inside_container" id="">
+            <ul class="recipeInsideContainer" id="">
                 <li>
                     <!--recipe image -->
-                    <img src="" alt="">
+                    <img class="chosenImg" src="" alt="">
                     <!-- -->
                 </li><br>
                 <li>
-                    <h2>Recipe Title</h2><br>
+                    <h2 class="chosenTitle">Recipe Title</h2><br>
                 </li><br>
                 <li>
                     <h3>Ingredients:</h3>
                     <ul>
-                        <li>ingredient1</li><br>
-                        <li>ingredient2</li><br>
-                        <li>ingredient3</li><br>
-                        <li>ingredient4</li><br>
-                        <li>ingredient5</li><br>
+                        <li class="chosenIngr">ingredient1</li><br>
+                        <li class="chosenIngr">ingredient2</li><br>
+                        <li class="chosenIngr">ingredient3</li><br>
+                        <li class="chosenIngr">ingredient4</li><br>
+                        <li class="chosenIngr">ingredient5</li><br>
                     </ul>
                 </li><br>
                 <li>
-                    <div class="recipe_button_container">
-                        <button type="button">Modify</button>
+                    <div class="recipeButtonContainer">
+                        <button id="modify" type="button"><a id="modifyAnchor">Modify</a></button>
                         <!--link to original recipe URL --->
-                        <button type="button"><a href="">Directions</a></button>
+                        <button id="directions" type="button"><a id="directionsAnchor" href="">Directions</a></button>
                     </div>
                 </li><br>
                 <!-- hidden until modify button is clicked -->
                 <li>
-                    <div class="ingredients_container">
+                    <div class="ingredientsContainer">
                         <label for="ingredients">Ingredients:</label>
-                        <input type="text" name="ingredients" id="">
-                        <div class="add-remove">
+                        <input type="text" name="ingredients" id="ingredients">
+                        <div class="addRemove">
                             <span>
                                <!-- add plus/minus sign -->
                            </span>
@@ -364,14 +358,14 @@
                 </li><br>
                 <!-- do i need a table or textbox here? -->
                 <li>
-                    <p>
+                    <p class="mods">
                         These are the modifications
                     </p>
                 </li><br>
                 <li>
-                    <div class="recipe_button_container">
-                        <button type="button">Save</button>
-                        <button type="button">Delete</button>
+                    <div class="recipeButtonContainer">
+                        <button type="button" id="save"><a id="saveAnchor">Save</a></button>
+                        <button type="button" id="delete"><a id="deleteAnchor">Delete</a></button>
                     </div>
                 </li><br>
             </ul>
@@ -380,47 +374,47 @@
 
     </main>
 
-    <main class="create_recipe_screen">
+    <main class="createRecipeScreen">
 
-        <section>
+        <section class="createContainer">
 
-            <h3 class="">Create A Recipe</h3>
-            <div class="create_instructions">
+            <h2>Create A Recipe</h2>
+            <div class="createInstructions">
                 <h4>This section is for uploading your own personal recipe to your library</h4>
-                <p>1. Just upload an image of your recipe(optional)</p>
-                <p>2. Give a title to your new recipe.</p>
-                <p>3. Add all the ingredients your recipe calls for</p>
-                <p>4. Add your directions needed for your recipe</p>
-                <p>5. Add any notes that you would like to be attributed with your recipe</p>
+                <p class="createInfo">1. Just upload an image of your recipe(optional)</p>
+                <p class="createInfo">2. Give a title to your new recipe.</p>
+                <p class="createInfo">3. Add all the ingredients your recipe calls for</p>
+                <p class="createInfo">4. Add your directions needed for your recipe</p>
+                <p class="createInfo">5. Add any notes that you would like to be attributed with your recipe</p>
             </div>
 
-            <form class="" action="" method="" id="">
-                <ul class="" id="">
+            <form class="createForm" action="" method="POST">
+                <ul class="createFormList" id="">
                     <li>
                         <label for="image">Recipe Image:</label>
-                        <input class="" type="image" name="image" id=""><br>
+                        <input class="createInput" type="image" name="image" id="image"><br>
                     </li>
                     <li>
                         <label for="title">Recipe Title:</label>
-                        <input class="" type="text" name="title" id="" placeholder="Spaghetti" required><br>
+                        <input class="createInput" type="text" name="title" id="title" placeholder="Spaghetti" required><br>
                     </li>
                     <li>
                         <label for="ingredients">Ingredients:</label>
-                        <textarea class="" type="text" name="ingredients" id="" placeholder="1. 16 oz spaghetti" required></textarea><br>
+                        <textarea class="createInput" type="text" name="ingredients" id="ingredients" placeholder="1. 16 oz spaghetti" required></textarea><br>
                     </li>
                     <li>
                         <label for="directions">Directions:</label>
-                        <textarea class="" type="text" name="directions" id="" placeholder="1. Boil water" required></textarea><br>
+                        <textarea class="createInput" type="text" name="directions" id="createDirections" placeholder="1. Boil water"></textarea><br>
                     </li>
                     <li>
                         <label for="notes">Notes:</label>
-                        <textarea class="" type="text" name="notes" id="" placeholder="My mothers recipe"></textarea>
+                        <textarea class="createInput" type="text" name="notes" id="notes" placeholder="My mothers recipe"></textarea>
                     </li>
                 </ul>
 
-                <div class="create_recipe_button">
-                    <button type="submit" class="">Save</button>
-                    <button type="submit" class="">Cancel</button>
+                <div class="createRecipeButton">
+                    <button type="submit" id="createSaveButton">Save</button>
+                    <button type="submit" id="createCancelButton">Cancel</button>
                 </div>
 
             </form>
@@ -429,9 +423,9 @@
     </main>
 
     <footer>
-        <a href="https://www.linkedin.com/in/brendan-gerardi-45b11111b/" target="_blank" class=""><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a>
-        <a href="mailto:brendan.gerardi@gmail.com" target="_blank" class=""><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</a>
-        <a href="https://github.com/bgerardi20" target="_blank" class=""><i class="fa fa-github" aria-hidden="true"></i> Github</a>
+        <a href="https://www.linkedin.com/in/brendan-gerardi-45b11111b/" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a>
+        <a href="mailto:brendan.gerardi@gmail.com" target="_blank"><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</a>
+        <a href="https://github.com/bgerardi20" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Github</a>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
