@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>My Recipe Finder</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Oswald:300" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -22,17 +23,14 @@
     </header>
 
     <main class="introScreen">
-        <!--
-
-        <header>
-            <h1>Welcome to your recipe library</h1>
-        </header>
--->
 
         <section class="introContainer">
-            <p class="introContent">With thousands of recipes to search through, finding that new dish you've been wanting to try has never been easier.</p>
-            <p class="introContent">If you would like your recipes to be saved for future use, go ahead and create an account, or login if you already have one</p>
-            <p class="introContent">If your're just browsing and don't want awesome recipes saved to a library, just use the dummy account option</p>
+            <h1>Welcome to your recipe library</h1>
+            <div class="introInnerContainer">
+                <p class="introContent">With thousands of recipes to search through, finding that new dish you've been wanting to try has never been easier.</p>
+                <p class="introContent">If you would like your recipes to be saved for future use, go ahead and create an account, or login if you already have one</p>
+                <p class="introContent">If your're just browsing and don't want awesome recipes saved to a library, just use the dummy account option</p>
+            </div>
         </section>
 
         <section class="loginOuterContainer">
@@ -107,7 +105,9 @@
         <div class="searchBarContainer">
             <input class="search" type="text" name="search" placeholder="Chicken Casserole...">
             <button class="searchSubmit" type="submit" form="get-form">
-                <!-- add search icon -->
+                <span>
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </span>
             </button>
         </div><br>
 
@@ -158,7 +158,9 @@
         <div class="searchBarContainer">
             <input class="search" type="text" name="search" placeholder="Search Recipes...">
             <button class="searchSubmit" type="submit">
-                <!-- add search icon -->
+                <span>
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </span>
             </button>
         </div><br>
 
@@ -187,7 +189,9 @@
         <div class="searchBarContainer">
             <input class="search" type="text" name="search" placeholder="Search Recipes...">
             <button class="searchSubmit" type="submit">
-                <!-- add search icon -->
+                <span>
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </span>
             </button>
         </div><br>
 
@@ -282,7 +286,9 @@
         <div class="searchBarContainer">
             <input class="search" type="text" name="search" placeholder="Search Recipes...">
             <button class="searchSubmit" type="submit">
-                <!-- add search icon -->
+                <span>
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </span>
             </button>
         </div><br>
 
@@ -351,8 +357,13 @@
                         <input type="text" name="ingredients" id="ingredients">
                         <div class="addRemove">
                             <span>
-                               <!-- add plus/minus sign -->
-                           </span>
+                                <span>
+                                    <i class="fa fa-plus-circle fa-lg ingredients-adder" aria-hidden="true"></i>
+                                </span>
+                            <span>
+                                    <i class="fa fa-minus-circle fa-lg js-input-delete" aria-hidden="true"></i>
+                                </span>
+                            </span>
                         </div>
                     </div>
                 </li><br>
