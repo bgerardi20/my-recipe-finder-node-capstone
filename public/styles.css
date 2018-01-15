@@ -13,7 +13,6 @@ body {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url("./website-images/cooking-class-background-image.JPG");
     background-size: cover;
     text-align: center;
-
 }
 
 main {
@@ -24,12 +23,11 @@ main {
 }
 
 section {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);
     border: 2px solid black;
     margin: 1rem;
     padding: 1rem;
-    opacity: 0.85;
-
+    opacity: 0.95;
 }
 
 form {
@@ -53,7 +51,7 @@ h4 {
 }
 
 h1 {
-    color: white;
+    color: rgba(255, 255, 255, 0.9);
     font-size: 30px;
 }
 
@@ -64,6 +62,9 @@ nav {
 input {
     border: 1px solid black;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
 }
 
 p {
@@ -76,19 +77,32 @@ a {
     text-decoration: none;
 }
 
+button {
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+}
 
-#welcome {
+#welcome,
+.signInMessage {
     font-size: 40px;
     margin-bottom: 25px;
 }
 
-.loginInnerContainer {
-    border: 1px solid #291709;
+.loginInnerContainer,
+.signInInnerContainer,
+.innerSignUpBox {
+    border: 3px solid #291709;
     padding: 40px;
+    margin: 30px;
 }
 
 .loginLogo {
     width: 40%;
+}
+
+.signInLogo {
+    width: 30%;
 }
 
 .loginOptions {
@@ -105,7 +119,6 @@ a {
     margin-left: auto;
     margin-right: auto;
     line-height: 40px;
-    transition: background-color .3s;
 }
 
 .navListItems {
@@ -113,7 +126,7 @@ a {
 }
 
 .navContent {
-    color: white;
+    color: rgba(255, 255, 255, 0.9);
     font-size: 20px;
     margin: 30px;
 }
@@ -130,6 +143,40 @@ a {
     margin-top: 10px;
 }
 
+.signInform {
+    height: 160px;
+    width: 400px;
+}
+
+.signInInput,
+.formControl {
+    display: block;
+    height: 30px;
+    width: 325px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    background-color: #d9d9d9;
+    border-radius: 4px
+}
+
+.signInButton {
+    border-radius: 4px;
+    height: 30px;
+    width: 325px;
+    background-color: #787878;
+    color: white;
+}
+
+.signUpForm {
+    width: 400px;
+    height: 375px;
+}
+
+.formGroup {
+    display: block;
+    margin: 7px;
+}
+
 
 
 
@@ -143,7 +190,7 @@ a {
 
 .navContent:hover {
     text-decoration-line: underline;
-    text-decoration-color: white;
+    text-decoration-color: rgba(255, 255, 255, 0.9);
 }
 
 .loginOptions:hover {
