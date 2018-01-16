@@ -55,6 +55,10 @@ h1 {
     font-size: 30px;
 }
 
+h2 {
+    color:
+}
+
 nav {
     margin: 20px;
 }
@@ -177,8 +181,91 @@ button {
     margin: 7px;
 }
 
+.dummyAccountScreen,
+.homeScreen,
+.searchScreen {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 80%;
+    height: auto;
+    opacity: 0.95;
+}
+
+.dummyRecipeSnippetContainer,
+.recipeSnippetContainer,
+.successScenario {
+    background-color: #787878;
+    width: 90%;
+    opacity: 0.95;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.recipeLink,
+.recipeResultsLink {
+    width: 45%;
+    display: inline-block;
+    padding: 10px;
+    margin: 0 15px 15px 0;
+    background-clip: padding-box;
+    /*    border: 1px solid rgba(255, 255, 255, 0.9);*/
+}
 
 
+
+.recipeResultOption {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+}
+
+.recipeImgContainer {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.successResultsImgContainer {
+    width: 100%;
+}
+
+.recipeTitle {
+    font-size: 25px;
+    color: black;
+}
+
+.recipeImg {
+    width: 100%;
+    border: 1px solid black;
+}
+
+.searchBarContainer {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px;
+    display: inline-block
+}
+
+.search {
+    width: 90%;
+    height: 50px;
+    text-align: left;
+    padding: 10px;
+    background-color: #787878;
+    color: white;
+}
+
+.searchSubmit {
+    width: 6%;
+    height: 50px;
+    background-color: #787878;
+}
+
+.fa-search {
+    color: white;
+
+}
 
 
 
@@ -197,6 +284,9 @@ button {
     border: 3px dotted black;
 }
 
+.search::placeholder {
+    color: rgba(255, 255, 255, 0.9);
+}
 
 
 
