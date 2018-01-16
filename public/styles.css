@@ -9,8 +9,8 @@
 /*whats the difference between "./" and "../"? */
 
 body {
-    background: url("./website-images/cooking-class-background-image.JPG") no-repeat fixed center;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url("./website-images/cooking-class-background-image.JPG");
+    background: url("website-images/cooking-class-background-image.JPG") no-repeat fixed center;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url("website-images/cooking-class-background-image.JPG");
     background-size: cover;
     text-align: center;
 }
@@ -23,7 +23,8 @@ main {
 }
 
 section {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: #DFCCAE;
+    /* rgba(255, 255, 255, 0.9);*/
     border: 2px solid black;
     margin: 1rem;
     padding: 1rem;
@@ -31,7 +32,6 @@ section {
 }
 
 form {
-    border: 3px solid black;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
@@ -55,9 +55,11 @@ h1 {
     font-size: 30px;
 }
 
+/*
 h2 {
     color:
 }
+*/
 
 nav {
     margin: 20px;
@@ -138,7 +140,6 @@ button {
 .introInnerContainer {
     border: 4px solid black;
     width: 50%;
-    height: 18.5rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -148,14 +149,13 @@ button {
 }
 
 .signInform {
-    height: 160px;
     width: 400px;
 }
 
 .signInInput,
 .formControl {
     display: block;
-    height: 30px;
+
     width: 325px;
     margin-top: 15px;
     margin-bottom: 10px;
@@ -165,7 +165,7 @@ button {
 
 .signInButton {
     border-radius: 4px;
-    height: 30px;
+    line-height: 30px;
     width: 325px;
     background-color: #787878;
     color: white;
@@ -173,7 +173,6 @@ button {
 
 .signUpForm {
     width: 400px;
-    height: 375px;
 }
 
 .formGroup {
@@ -186,7 +185,6 @@ button {
 .searchScreen {
     background-color: rgba(255, 255, 255, 0.9);
     width: 80%;
-    height: auto;
     opacity: 0.95;
 }
 
@@ -249,7 +247,6 @@ button {
 
 .search {
     width: 90%;
-    height: 50px;
     text-align: left;
     padding: 10px;
     background-color: #787878;
@@ -258,7 +255,7 @@ button {
 
 .searchSubmit {
     width: 6%;
-    height: 50px;
+    line-height: 50px;
     background-color: #787878;
 }
 
