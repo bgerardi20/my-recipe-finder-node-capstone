@@ -5,13 +5,19 @@
     <meta charset="UTF-8">
     <title>My Recipe Finder</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Oswald:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Oswald:300|Lato:600" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
     <header class="headerContainer">
+
+        <div class="logoHolder">
+            <img class="navLogo" src="./website-images/my-recipies-logo.png">
+        </div>
+
         <nav>
             <ul class="navList">
                 <li class="navListItems"><a href="" class="navContent">My Library</a></li>
@@ -19,10 +25,11 @@
                 <li class="navListItems"><a href="" class="navContent">Logout</a></li>
             </ul>
         </nav>
-        <h1 class="pageTitle"><img src="" alt="" class="titleLogo">My Library</h1>
     </header>
 
     <main class="introScreen">
+
+        <h1 class="pageTitle"><img src="" alt="" class="titleLogo">My Library</h1>
 
         <section class="introContainer">
             <h2 id="welcome">Welcome to your recipe library</h2>
@@ -32,11 +39,9 @@
                 <p class="introContent">If you're just browsing and don't want awesome recipes saved to your library, use the dummy account option to browse.</p>
                 <p class="introContent">Enjoy!</p>
             </div>
-        </section>
 
-        <section class="loginOuterContainer">
             <div class="loginInnerContainer">
-                <img class="loginLogo" src="./website-images/my-recipes-logo.JPG">
+                <img class="loginLogo" src="./website-images/my-recipies-logo.png">
                 <p class="loginIntro">Choose an option below to start searching recipes!</p>
                 <a class="loginOptions" href="">Sign In</a>
                 <br>
@@ -53,8 +58,8 @@
         <section class="signInOutterContainer">
             <div class="signInInnerContainer">
                 <!--some sort of logo or fancy font -->
-                <img class="signInLogo" src="./website-images/my-recipes-logo.JPG">
-                <p class="signInMessage">Sign In</p>
+                <img class="signInLogo" src="./website-images/my-recipies-logo.png">
+                <h2 class="signInMessage">Sign In</h2>
 
                 <form class="signInform" method="POST" autocomplete="off">
                     <input class="signInInput" type="text" placeholder="Email Address" name="email" autofocus>
@@ -72,8 +77,8 @@
         <section class="outerSignUpBox">
             <div class="innerSignUpBox">
                 <!-- logo or fancy font -->
-                <img class="signInLogo" src="./website-images/my-recipes-logo.JPG">
-                <p class="signInMessage">Create Account</p>
+                <img class="signInLogo" src="./website-images/my-recipies-logo.png">
+                <h2 class="signInMessage">Create Account</h2>
 
                 <form class="signUpForm" method="POST">
                     <div class="formGroup">
@@ -100,8 +105,12 @@
 
     </main>
 
+    <!------------------ADD BOX SHASDOW ---------------------->
+    <h1 class="pageTitle"><img src="" alt="" class="titleLogo">My Library</h1>
 
     <main class="dummyAccountScreen">
+
+
 
         <div class="searchBarContainer">
             <input class="search" type="text" name="search" placeholder="Chicken Casserole...">
@@ -144,30 +153,33 @@
 
     <main class="homeScreen">
 
+
         <div class="searchBarContainer">
             <input class="search" type="text" name="search" placeholder="Search Recipes...">
             <button class="searchSubmit" type="submit">
-                <span>
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </span>
-            </button>
+                    <span>
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </span>
+                </button>
         </div><br>
 
-        <!-- empty for new users -->
-        <div class="recipeSnippetContainer">
-            <a class="recipeLink" href="">
-                <div class="recipeImgContainer">
-                    <img class="recipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
-                </div>
-                <h2 class="recipeTitle">Recipe Title</h2>
-            </a>
-            <a class="recipeLink" href="">
-                <div class="recipeImgContainer">
-                    <img class="recipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
-                </div>
-                <h2 class="recipeTitle">Recipe Title</h2>
-            </a>
-        </div>
+        <section class="homeContainer">
+            <!-- empty for new users -->
+            <div class="recipeSnippetContainer">
+                <a class="recipeLink" href="">
+                    <div class="recipeImgContainer">
+                        <img class="recipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
+                    </div>
+                    <h2 class="recipeTitle">Recipe Title</h2>
+                </a>
+                <a class="recipeLink" href="">
+                    <div class="recipeImgContainer">
+                        <img class="recipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
+                    </div>
+                    <h2 class="recipeTitle">Recipe Title</h2>
+                </a>
+            </div>
+        </section>
 
     </main>
 
@@ -176,7 +188,7 @@
 
         <!--success scneario-->
         <div class="searchBarContainer">
-            <input class="search" type="text" name="search" placeholder="Search Recipes...">
+            <input class="search" type="text" name="search" placeholder="What user searched for...">
             <button class="searchSubmit" type="submit">
                 <span>
                     <i class="fa fa-search" aria-hidden="true"></i>
@@ -187,15 +199,17 @@
         <section class="successScenario">
             <!--------where do i add the anchor tag to take it to the next screen?--------->
             <ul class="resultsList">
-                <li class="recipeResultOption">
+                <li class="searchRecipeResultOption">
                     <div class="object">
-                        <a class="recipeResultsLink" href="">
-                            <span class="recipeImgContainer">
-                                <img class="recipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
+                        <a class="searchRecipeResultsLink" href="">
+                            <span class="searchRecipeImgContainer">
+                                <img class="searchRecipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
                             </span>
-                            <span class="resultsTitle">Teriyaki Chicken</span>
                         </a>
                     </div>
+
+                    <span class="resultsTitle">Teriyaki Chicken</span><br>
+
                     <div class="data">
                         <a class="cal" href="">
                             <span class="num">375</span>
@@ -207,15 +221,40 @@
                         </a>
                     </div>
                 </li>
-                <li class="recipeResultOption">
+                <li class="searchRecipeResultOption">
                     <div class="object">
-                        <a class="recipeResultsLink" href="">
-                            <span class="resultsImgContainer">
-                                <img class="recipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
+                        <a class="searchRecipeResultsLink" href="">
+                            <span class="searchRecipeImgContainer">
+                                <img class="searchRecipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
                             </span>
-                            <span class="resultsTitle">Teriyaki Chicken</span>
                         </a>
                     </div>
+
+                    <span class="resultsTitle">Teriyaki Chicken</span><br>
+
+                    <div class="data">
+
+                        <a class="cal" href="">
+                            <span class="num">375</span>
+                            <span class="info">calories</span>
+                        </a>
+                        <a class="ing" href="">
+                            <span class="num">4</span>
+                            <span class="info">ingredients</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="searchRecipeResultOption">
+                    <div class="object">
+                        <a class="searchRecipeResultsLink" href="">
+                            <span class="searchRecipeImgContainer">
+                                <img class="searchRecipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
+                            </span>
+                        </a>
+                    </div>
+
+                    <span class="resultsTitle">Teriyaki Chicken</span><br>
+
                     <div class="data">
                         <a class="cal" href="">
                             <span class="num">375</span>
@@ -235,39 +274,36 @@
         <!-------------------->
 
         <!---once recipe is choosen----->
-        <section class="chosenRecipeContainer">
 
-            <section class="recipeOutsideContainer">
+        <section class="recipeOutsideContainer">
 
-                <ul class="recipeInsideContainer">
-                    <li>
-                        <!--recipe image -->
-                        <img class="chosenImg" src="" alt="">
-                        <!-- -->
-                    </li><br>
-                    <li>
-                        <h2 class="chosenTitle">Recipe Title</h2><br>
-                    </li><br>
-                    <li>
-                        <h3>Ingredients:</h3>
-                        <ul>
-                            <li class="chosenIngr">ingredient1</li><br>
-                            <li class="chosenIngr">ingredient2</li><br>
-                            <li class="chosenIngr">ingredient3</li><br>
-                            <li class="chosenIngr">ingredient4</li><br>
-                            <li class="chosenIngr">ingredient5</li><br>
-                        </ul>
-                    </li><br>
-                </ul>
+            <ul class="recipeInsideContainer">
+                <li>
+                    <!--recipe image -->
+                    <img class="searchRecipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta" <!-- -->
+                </li><br>
+                <li>
+                    <h2 class="chosenTitle">Recipe Title</h2><br>
+                </li><br>
+                <li>
+                    <h3>Ingredients:</h3>
+                    <ul>
+                        <li class="chosenIngr">ingredient1</li><br>
+                        <li class="chosenIngr">ingredient2</li><br>
+                        <li class="chosenIngr">ingredient3</li><br>
+                        <li class="chosenIngr">ingredient4</li><br>
+                        <li class="chosenIngr">ingredient5</li><br>
+                    </ul>
+                </li><br>
+            </ul>
 
-                <div class="successButtonContainer">
-                    <button type="submit" class="successButton"><a id="add" href="">Add</a></button>
-                    <button type="submit" class="successButton"><a id="back" href="">Back</a></button>
-                </div>
-
-            </section>
+            <div class="successButtonContainer">
+                <button type="submit" class="successButton"><a id="add" href="">Add</a></button>
+                <button type="submit" class="successButton"><a id="back" href="">Back</a></button>
+            </div>
 
         </section>
+
         <!------------------------------>
 
         <!----fail scneario---->
@@ -309,7 +345,7 @@
         <!--------------------->
     </main>
 
-    <main class="recipeScreen">
+    <main class="recipeInfoScreen">
 
         <section class="recipeOutsideContainer" id="">
 

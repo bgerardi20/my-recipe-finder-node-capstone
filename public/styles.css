@@ -6,13 +6,12 @@
     box-sizing: border-box;
 }
 
-/*whats the difference between "./" and "../"? */
-
 body {
     background: url("website-images/cooking-class-background-image.JPG") no-repeat fixed center;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url("website-images/cooking-class-background-image.JPG");
     background-size: cover;
     text-align: center;
+    font-family: 'Josefin Slab', serif;
 }
 
 main {
@@ -24,7 +23,6 @@ main {
 
 section {
     background-color: #DFCCAE;
-    /* rgba(255, 255, 255, 0.9);*/
     border: 2px solid black;
     margin: 1rem;
     padding: 1rem;
@@ -37,12 +35,6 @@ form {
     margin-right: auto;
 }
 
-p,
-li,
-a {
-    font-family: 'Josefin Slab', serif;
-}
-
 h1,
 h2,
 h3,
@@ -51,26 +43,29 @@ h4 {
 }
 
 h1 {
-    color: rgba(255, 255, 255, 0.9);
+    color: #d9d9d9;
     font-size: 30px;
 }
 
-/*
-h2 {
-    color:
-}
-*/
-
 nav {
-    margin: 20px;
+    align-items: center;
+    text-align: right;
+    width: 100%;
+}
+
+label {
+    font-family: 'Oswald', sans-serif;
 }
 
 input {
     border: 1px solid black;
     text-align: center;
+    /*    margin-top: 5px;*/
     margin-left: auto;
     margin-right: auto;
+    /*    margin-bottom: 10px;*/
     cursor: pointer;
+    font-family: 'Josefin Slab', serif;
 }
 
 p {
@@ -83,16 +78,41 @@ a {
     text-decoration: none;
 }
 
+li {
+    list-style-type: none;
+}
+
 button {
     border: 1px solid black;
-    padding: 5px;
-    margin: 5px;
+    font-family: 'Lato', sans-serif;
+}
+
+.headerContainer {
+    background-color: #DFCCAE;
+    display: inline;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 2px solid #d9d9d9;
+    padding-bottom: 30px;
+}
+
+.logoHolder {
+    position: relative;
+    z-index: -1;
+    text-align: left;
+    width: 49%
 }
 
 #welcome,
 .signInMessage {
     font-size: 40px;
     margin-bottom: 25px;
+}
+
+.introScreen {
+    margin-top: 150px;
 }
 
 .loginInnerContainer,
@@ -103,17 +123,31 @@ button {
     margin: 30px;
 }
 
+.navLogo {
+    width: 10%;
+
+}
+
 .loginLogo {
     width: 40%;
+    margin-top: -20px;
+}
+
+.loginIntro {
+    margin: 1rem;
+    padding: 0.5rem;
 }
 
 .signInLogo {
     width: 30%;
+    margin-top: -20px;
 }
 
-.loginOptions {
+.loginOptions,
+.signInInput,
+.formControl {
     display: block;
-    width: 335px;
+    width: 75%;
     border-radius: 3px;
     font-size: 1.1em;
     text-decoration: none;
@@ -122,19 +156,28 @@ button {
     color: #595959;
     border: 1px solid #291709;
     cursor: pointer;
+    margin-top: 5px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10px;
     line-height: 40px;
 }
 
+.navList {
+    margin: 0 auto;
+    padding-right: 80px;
+    width: 49%
+}
+
 .navListItems {
-    display: inline-block;
+    display: inline;
+    margin: 30px;
 }
 
 .navContent {
     color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0.5px 0.5px black;
     font-size: 20px;
-    margin: 30px;
 }
 
 .introInnerContainer {
@@ -148,50 +191,48 @@ button {
     margin-top: 10px;
 }
 
-.signInform {
-    width: 400px;
-}
-
-.signInInput,
-.formControl {
-    display: block;
-
-    width: 325px;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    background-color: #d9d9d9;
-    border-radius: 4px
+.signInform,
+.signUpForm {
+    width: 75%;
 }
 
 .signInButton {
     border-radius: 4px;
-    line-height: 30px;
-    width: 325px;
+    line-height: 40px;
+    width: 75%;
     background-color: #787878;
     color: white;
 }
 
-.signUpForm {
-    width: 400px;
-}
-
 .formGroup {
     display: block;
-    margin: 7px;
+    /*    margin: 7px;*/
 }
 
 .dummyAccountScreen,
 .homeScreen,
-.searchScreen {
-    background-color: rgba(255, 255, 255, 0.9);
+.searchScreen,
+.recipeScreen {
+    background-color: #DFCCAE;
     width: 80%;
+    opacity: 0.95;
+}
+
+.recipeInfoScreen,
+.createRecipeScreen {
+    background-color: #DFCCAE;
+    width: 50%;
     opacity: 0.95;
 }
 
 .dummyRecipeSnippetContainer,
 .recipeSnippetContainer,
-.successScenario {
-    background-color: #787878;
+.successScenario,
+.homeContainer,
+.recipeOutsideContainer,
+.failScenario,
+.recipeOutsideContainer,
+.createContainer {
     width: 90%;
     opacity: 0.95;
     margin-left: auto;
@@ -203,18 +244,16 @@ button {
     width: 45%;
     display: inline-block;
     padding: 10px;
-    margin: 0 15px 15px 0;
+    margin: 15px;
     background-clip: padding-box;
-    /*    border: 1px solid rgba(255, 255, 255, 0.9);*/
 }
 
-
-
 .recipeResultOption {
-    width: 40%;
+    width: 30%;
     margin-left: auto;
     margin-right: auto;
     display: inline-block;
+    margin: 20px;
 }
 
 .recipeImgContainer {
@@ -230,11 +269,61 @@ button {
 .recipeTitle {
     font-size: 25px;
     color: black;
+    margin-top: 1rem;
 }
 
 .recipeImg {
+    width: 90%;
+    padding: 7px;
+    margin: 10px;
+    object-fit: cover;
+    background-color: white;
+}
+
+.resultsList {
     width: 100%;
-    border: 1px solid black;
+}
+
+.searchRecipeResultOption {
+    display: inline-block;
+    width: 30%;
+    margin: 10px;
+    padding: 10px;
+}
+
+.resultsTitle {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.data {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 17px;
+}
+
+.cal {
+    border-right: 1px solid black;
+    padding-right: 10px;
+
+}
+
+.ing {
+    border-left: 1px solid black;
+    padding-left: 10px;
+}
+
+.num,
+.info {
+    color: black;
+}
+
+.searchRecipeImg {
+    background-color: white;
+    padding: 7px;
+    margin-bottom: 10px;
 }
 
 .searchBarContainer {
@@ -242,26 +331,33 @@ button {
     margin-left: auto;
     margin-right: auto;
     padding: 50px;
-    display: inline-block
+    display: inline-block;
 }
 
 .search {
     width: 90%;
     text-align: left;
-    padding: 10px;
-    background-color: #787878;
-    color: white;
+    padding: 7px;
+    background-color: #d9d9d9;
+    color: black;
+    font-size: 30px;
+    line-height: 50px;
+    vertical-align: top;
+    border-right: none;
 }
 
 .searchSubmit {
-    width: 6%;
+    width: 7%;
     line-height: 50px;
     background-color: #787878;
+    padding: 7px;
+    vertical-align: top;
+    margin-left: -5px;
 }
 
 .fa-search {
-    color: white;
-
+    color: #d9d9d9;
+    font-size: 30px;
 }
 
 
@@ -278,11 +374,13 @@ button {
 }
 
 .loginOptions:hover {
-    border: 3px dotted black;
+    background-color: #c15d4e;
+    color: black;
+    text-shadow: none;
 }
 
 .search::placeholder {
-    color: rgba(255, 255, 255, 0.9);
+    color: black;
 }
 
 
