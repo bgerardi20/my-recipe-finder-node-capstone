@@ -43,14 +43,8 @@ h4 {
 }
 
 h1 {
-    color: #d9d9d9;
+    color: rgba(255, 255, 255, 0.9);
     font-size: 30px;
-}
-
-nav {
-    align-items: center;
-    text-align: right;
-    width: 100%;
 }
 
 label {
@@ -87,22 +81,8 @@ button {
     font-family: 'Lato', sans-serif;
 }
 
-.headerContainer {
-    background-color: #DFCCAE;
-    display: inline;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    border-bottom: 2px solid #d9d9d9;
-    padding-bottom: 30px;
-}
-
-.logoHolder {
-    position: relative;
-    z-index: -1;
-    text-align: left;
-    width: 49%
+nav {
+    height: 75px;
 }
 
 #welcome,
@@ -123,9 +103,50 @@ button {
     margin: 30px;
 }
 
-.navLogo {
-    width: 10%;
+.navContainer {
+    width: 100%;
+    display: inline-block;
 
+}
+
+.logoHolder {
+    text-align: left;
+    width: 40%;
+    margin-left: 25rem;
+    margin-top: 2rem;
+
+}
+
+.headerContainer {
+    background-color: #DFCCAE;
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 2px solid #d9d9d9;
+    /*    padding-bottom: 30px;*/
+}
+
+.navLogo {
+    width: 25%;
+
+}
+
+.navList {
+    float: right;
+    width: 40%
+}
+
+.navListItems {
+    display: inline;
+    margin: 30px;
+}
+
+.navContent {
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px black;
+    font-size: 20px;
 }
 
 .loginLogo {
@@ -163,23 +184,6 @@ button {
     line-height: 40px;
 }
 
-.navList {
-    margin: 0 auto;
-    padding-right: 80px;
-    width: 49%
-}
-
-.navListItems {
-    display: inline;
-    margin: 30px;
-}
-
-.navContent {
-    color: rgba(255, 255, 255, 0.9);
-    text-shadow: 0.5px 0.5px black;
-    font-size: 20px;
-}
-
 .introInnerContainer {
     border: 4px solid black;
     width: 50%;
@@ -212,7 +216,8 @@ button {
 .dummyAccountScreen,
 .homeScreen,
 .searchScreen,
-.recipeScreen {
+.recipeScreen,
+.chosenFail {
     background-color: #DFCCAE;
     width: 80%;
     opacity: 0.95;
@@ -221,8 +226,7 @@ button {
 .recipeInfoScreen,
 .createRecipeScreen,
 .recipeOutsideContainer,
-.chosenSucess,
-.chosenFail {
+.chosenSucess {
     background-color: #DFCCAE;
     width: 50%;
     opacity: 0.95;
@@ -234,8 +238,8 @@ button {
 .recipeSnippetContainer,
 .successScenario,
 .homeContainer,
-.failScenario,
-.createContainer {
+.createContainer,
+.failScenario {
     width: 90%;
     opacity: 0.95;
     margin-left: auto;
@@ -361,7 +365,7 @@ button {
 }
 
 .fa-search {
-    color: #d9d9d9;
+    color: rgba(255, 255, 255, 0.9);
     font-size: 30px;
 }
 
@@ -487,13 +491,15 @@ button {
     margin-top: 15px;
     padding: 10px;
     font-family: 'Josefin Slab', serif;
+    width: 85%;
 }
 
 .createInstructions {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    width: 100%;
+    width: 80%;
     margin: 15px auto 15px auto;
+    padding: 10px;
 }
 
 .createTitle {
@@ -536,6 +542,13 @@ button {
 #image,
 #title {
     line-height: 40px
+}
+
+.footer {
+    color: white;
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 18px;
 }
 
 /*psuedo*/
