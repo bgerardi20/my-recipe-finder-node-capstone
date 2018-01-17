@@ -219,19 +219,22 @@ button {
 }
 
 .recipeInfoScreen,
-.createRecipeScreen {
+.createRecipeScreen,
+.recipeOutsideContainer,
+.chosenSucess,
+.chosenFail {
     background-color: #DFCCAE;
     width: 50%;
     opacity: 0.95;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .dummyRecipeSnippetContainer,
 .recipeSnippetContainer,
 .successScenario,
 .homeContainer,
-.recipeOutsideContainer,
 .failScenario,
-.recipeOutsideContainer,
 .createContainer {
     width: 90%;
     opacity: 0.95;
@@ -246,6 +249,7 @@ button {
     padding: 10px;
     margin: 15px;
     background-clip: padding-box;
+
 }
 
 .recipeResultOption {
@@ -294,6 +298,7 @@ button {
 .resultsTitle {
     margin-bottom: 15px;
     font-size: 20px;
+    color: black;
 }
 
 .data {
@@ -360,11 +365,178 @@ button {
     font-size: 30px;
 }
 
+.chosenTitle {
+    font-size: 40px;
+    margin-top: -20px;
+}
 
+.chosenList {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
 
+.ingredTitle {
+    font-size: 23px;
+    margin-bottom: 10px;
+}
 
+.chosenIngr {
+    list-style-type: decimal;
+    list-style-position: inside;
+}
 
+.successButton,
+#modify,
+#directions,
+.recipeButton,
+.createButton {
+    width: 20%;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 15px;
+    border: 0;
+}
 
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+#add,
+#back,
+#view,
+#saveAnchor,
+#deleteAnchor,
+.create {
+    color: white;
+}
+
+.failMessageContainer {
+    /*    border: 3px solid black;*/
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.frownyFace {
+    width: 20%;
+}
+
+.searchRecipeImg {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+#failButton {
+    width: 10%;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 15px;
+    background-color: green;
+    border: 0;
+}
+
+#modify,
+#directions {
+    background-color: #787878;
+}
+
+#modifyAnchor,
+#directionsAnchor {
+    color: white;
+}
+
+.addRemove {
+    display: inline-block;
+}
+
+.fa-plus-circle,
+.fa-minus-circle {
+    font-size: 30px;
+    color: #787878;
+    padding: 5px;
+    vertical-align: text-bottom;
+}
+
+#ingredients {
+    font-size: 20px;
+    line-height: 25px;
+    width: 60%;
+    padding: 5px;
+    vertical-align: text-bottom;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.ingredientsLabel {
+    font-size: 30px;
+    margin-right: 5px;
+}
+
+.mods {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid black;
+    margin-top: 15px;
+    padding: 10px;
+    font-family: 'Josefin Slab', serif;
+}
+
+.createInstructions {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 100%;
+    margin: 15px auto 15px auto;
+}
+
+.createTitle {
+    font-size: 35px;
+}
+
+.createForm {
+    width: 100%;
+    padding: 10px;
+    margin: 20px auto 20px auto;
+}
+
+.createLabel {
+    font-size: 25px;
+    padding: 10px 0 10px 0;
+}
+
+#createSubTitle {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.createSections {
+    margin: 30px auto 30px auto;
+}
+
+.createInput {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid gray;
+    width: 70%;
+    text-align: center;
+}
+
+#ingredientsCreate,
+#createDirections,
+#notes {
+    line-height: 40px;
+}
+
+#image,
+#title {
+    line-height: 40px
+}
 
 /*psuedo*/
 

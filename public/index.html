@@ -269,25 +269,26 @@
             </ul>
 
         </section>
+    </main>
 
+    <!-------------------->
 
-        <!-------------------->
-
-        <!---once recipe is choosen----->
+    <!---once recipe is choosen----->
+    <main class="chosenSucess">
 
         <section class="recipeOutsideContainer">
 
             <ul class="recipeInsideContainer">
                 <li>
                     <!--recipe image -->
-                    <img class="searchRecipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta" <!-- -->
+                    <img class="searchRecipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
                 </li><br>
                 <li>
                     <h2 class="chosenTitle">Recipe Title</h2><br>
                 </li><br>
                 <li>
-                    <h3>Ingredients:</h3>
-                    <ul>
+                    <h3 class="ingredTitle">Ingredients:</h3>
+                    <ul class="chosenList">
                         <li class="chosenIngr">ingredient1</li><br>
                         <li class="chosenIngr">ingredient2</li><br>
                         <li class="chosenIngr">ingredient3</li><br>
@@ -298,15 +299,17 @@
             </ul>
 
             <div class="successButtonContainer">
-                <button type="submit" class="successButton"><a id="add" href="">Add</a></button>
-                <button type="submit" class="successButton"><a id="back" href="">Back</a></button>
+                <button type="submit" class="successButton green"><a id="add" href="">Add</a></button>
+                <button type="submit" class="successButton red"><a id="back" href="">Back</a></button>
             </div>
 
         </section>
+    </main>
 
-        <!------------------------------>
+    <!------------------------------>
 
-        <!----fail scneario---->
+    <!----fail scneario---->
+    <main class="chosenFail">
 
         <div class="searchBarContainer">
             <input class="search" type="text" name="search" placeholder="Search Recipes...">
@@ -320,6 +323,7 @@
         <section class="failScenario">
 
             <div class="failMessageContainer">
+                <img class="frownyFace" src="https://www.pngarts.com/files/1/Sad-Face-PNG-Image-with-Transparent-Background.png" alt="frowny-face">
                 <p class="failMessage">Sorry we couldn't find anything matching your search..</p>
                 <p class="failMessage">BUT</p>
                 <p class="failMessage">Here's a random recipe you might enjoy!</p>
@@ -329,7 +333,7 @@
                 <div class="object">
                     <a class="recipeResultsLink" href="">
                         <span class="resultsImgContainer">
-                                <img clas="resultsImg" src="" alt="Teriyaki Chicken">
+                            <img class="searchRecipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
                         </span>
                         <span class="resultsTitle">Teriyaki Chicken</span>
                     </a>
@@ -352,15 +356,15 @@
             <ul class="recipeInsideContainer" id="">
                 <li>
                     <!--recipe image -->
-                    <img class="chosenImg" src="" alt="">
+                    <img class="searchRecipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
                     <!-- -->
                 </li><br>
                 <li>
                     <h2 class="chosenTitle">Recipe Title</h2><br>
                 </li><br>
                 <li>
-                    <h3>Ingredients:</h3>
-                    <ul>
+                    <h3 class="ingredTitle">Ingredients:</h3>
+                    <ul class="chosenList">
                         <li class="chosenIngr">ingredient1</li><br>
                         <li class="chosenIngr">ingredient2</li><br>
                         <li class="chosenIngr">ingredient3</li><br>
@@ -378,8 +382,8 @@
                 <!-- hidden until modify button is clicked -->
                 <li>
                     <div class="ingredientsContainer">
-                        <label for="ingredients">Ingredients:</label>
-                        <input type="text" name="ingredients" id="ingredients">
+                        <label class="ingredientsLabel" for="ingredients">Add:</label>
+                        <input type="text" name="ingredients" id="ingredients" placeholder="ingredient">
                         <div class="addRemove">
                             <span>
                                 <span>
@@ -394,14 +398,18 @@
                 </li><br>
                 <!-- do i need a table or textbox here? -->
                 <li>
-                    <p class="mods">
-                        These are the modifications
-                    </p>
+                    <textarea class="mods" placeholder="These are the modifications" rows="4" cols="50">
+                        <ul>
+                            <li class="chosenIng">Mods</li>
+                            <li class="chosenIng">Mods</li>
+                            <li class="chosenIng">Mods</li>
+                        </ul>
+                    </textarea>
                 </li><br>
                 <li>
                     <div class="recipeButtonContainer">
-                        <button type="button" id="save"><a id="saveAnchor">Save</a></button>
-                        <button type="button" id="delete"><a id="deleteAnchor">Delete</a></button>
+                        <button type="button" class="recipeButton green"><a id="saveAnchor">Save</a></button>
+                        <button type="button" class="recipeButton red"><a id="deleteAnchor">Delete</a></button>
                     </div>
                 </li><br>
             </ul>
@@ -414,9 +422,9 @@
 
         <section class="createContainer">
 
-            <h2>Create A Recipe</h2>
+            <h2 class="createTitle">Create A Recipe</h2>
             <div class="createInstructions">
-                <h4>This section is for uploading your own personal recipe to your library</h4>
+                <h4 id="createSubTitle">This section is for uploading your own personal recipe to your library</h4>
                 <p class="createInfo">1. Just upload an image of your recipe(optional)</p>
                 <p class="createInfo">2. Give a title to your new recipe.</p>
                 <p class="createInfo">3. Add all the ingredients your recipe calls for</p>
@@ -425,32 +433,31 @@
             </div>
 
             <form class="createForm" action="" method="POST">
-                <ul class="createFormList" id="">
-                    <li>
-                        <label for="image">Recipe Image:</label>
-                        <input class="createInput" type="image" name="image" id="image"><br>
-                    </li>
-                    <li>
-                        <label for="title">Recipe Title:</label>
-                        <input class="createInput" type="text" name="title" id="title" placeholder="Spaghetti" required><br>
-                    </li>
-                    <li>
-                        <label for="ingredients">Ingredients:</label>
-                        <textarea class="createInput" type="text" name="ingredients" id="ingredients" placeholder="1. 16 oz spaghetti" required></textarea><br>
-                    </li>
-                    <li>
-                        <label for="directions">Directions:</label>
-                        <textarea class="createInput" type="text" name="directions" id="createDirections" placeholder="1. Boil water"></textarea><br>
-                    </li>
-                    <li>
-                        <label for="notes">Notes:</label>
-                        <textarea class="createInput" type="text" name="notes" id="notes" placeholder="My mothers recipe"></textarea>
-                    </li>
-                </ul>
+                <div class="createSections">
+                    <label class="createLabel" for="image">Recipe Image:</label><br>
+                    <input class="createInput" type="image" name="image" id="image"><br>
+                </div>
+                <div class="createSections">
+                    <label class="createLabel" for="title">Recipe Title:</label><br>
+                    <input class="createInput" type="text" name="title" id="title" placeholder="Spaghetti" required><br>
+                </div>
+                <div class="createSections">
+                    <label class="createLabel" for="ingredients">Ingredients:</label><br>
+                    <textarea class="createInput" type="text" name="ingredients" id="ingredientsCreate" placeholder="1. 16 oz spaghetti" required></textarea><br>
+                </div>
+                <div class="createSections">
+                    <label class="createLabel" for="directions">Directions:</label><br>
+                    <textarea class="createInput" type="text" name="directions" id="createDirections" placeholder="1. Boil water"></textarea><br>
+                </div>
+                <div class="createSections">
+                    <label class="createLabel" for="notes">Notes:</label><br>
+                    <textarea class="createInput" type="text" name="notes" id="notes" placeholder="My mothers recipe"></textarea>
+                </div>
+
 
                 <div class="createRecipeButton">
-                    <button type="submit" id="createSaveButton">Save</button>
-                    <button type="submit" id="createCancelButton">Cancel</button>
+                    <button type="submit" class="createButton green"><a class="create" href="">Save</a></button>
+                    <button type="submit" class="createButton red"><a class="create" href="">Cancel</a></button>
                 </div>
 
             </form>
