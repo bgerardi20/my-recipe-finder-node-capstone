@@ -16,9 +16,11 @@ body {
 
 main {
     background-attachment: fixed;
+    padding: 2rem;
     width: 40%;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 2rem;
 }
 
 section {
@@ -81,10 +83,6 @@ button {
     font-family: 'Lato', sans-serif;
 }
 
-nav {
-    height: 75px;
-}
-
 #welcome,
 .signInMessage {
     font-size: 40px;
@@ -111,21 +109,23 @@ nav {
 
 .logoHolder {
     text-align: left;
-    width: 40%;
-    margin-left: 25rem;
-    margin-top: 2rem;
-
+    width: auto;
+    margin-top: 1rem;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .headerContainer {
     background-color: #DFCCAE;
-    display: inline-block;
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    border-bottom: 2px solid #d9d9d9;
-    /*    padding-bottom: 30px;*/
+    /* right: 0; */
+    /* padding-bottom: 30px; */
+    width: 100%;
+    z-index: 10000;
+    border-bottom: 4px solid #333;
 }
 
 .navLogo {
@@ -134,8 +134,9 @@ nav {
 }
 
 .navList {
-    float: right;
-    width: 40%
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .navListItems {
@@ -144,8 +145,8 @@ nav {
 }
 
 .navContent {
-    color: rgba(255, 255, 255, 0.9);
-    text-shadow: 1px 1px black;
+    color: black;
+    /* text-shadow: 1px 1px black; */
     font-size: 20px;
 }
 
@@ -344,20 +345,21 @@ nav {
 }
 
 .search {
-    width: 90%;
+    width: 75%;
     text-align: left;
     padding: 7px;
     background-color: #d9d9d9;
     color: black;
-    font-size: 30px;
-    line-height: 50px;
+    font-size: 1.1em;
+    line-height: 40px;
     vertical-align: top;
     border-right: none;
+    text-shadow: 0.5px 0.5px white;
 }
 
 .searchSubmit {
     width: 7%;
-    line-height: 50px;
+    line-height: 40px;
     background-color: #787878;
     padding: 7px;
     vertical-align: top;
@@ -366,7 +368,7 @@ nav {
 
 .fa-search {
     color: rgba(255, 255, 255, 0.9);
-    font-size: 30px;
+    font-size: 1.1.em;
 }
 
 .chosenTitle {
