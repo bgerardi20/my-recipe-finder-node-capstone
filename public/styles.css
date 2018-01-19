@@ -692,7 +692,105 @@ button {
     }
 }
 
-@media only screen and (max-width: 768px) {}
+@media only screen and (max-width: 768px) {
+    .introInnerContainer {
+        width: 75%;
+    }
+
+    .signInform,
+    .signUpForm,
+    .loginButtons {
+        width: 100%;
+    }
+
+    .signInLogo {
+        width: 50%;
+        margin-top: -50px;
+    }
+
+    #welcome,
+    .signInMessage {
+        font-size: 35px;
+    }
+
+    .loginLogo {
+        width: 50%;
+    }
+
+    .searchBarContainer {
+        width: 80%;
+    }
+
+    .recipeLink,
+    .recipeResultsLink {
+        width: 43%;
+    }
+
+    .recipeTitle {
+        font-size: 20px;
+        margin-top: 0rem;
+    }
+
+    .data {
+        font-size: 15px;
+    }
+
+    .cal {
+        padding-right: 5px;
+    }
+
+    .ing {
+        padding-left: 5px;
+    }
+
+    .searchRecipeResultOption {
+        width: 41%;
+    }
+
+    .failMessageContainer {
+        width: 70%;
+    }
+
+    #failButton {
+        width: 15%;
+    }
+
+    .successButton,
+    #modify,
+    #directions,
+    .recipeButton,
+    .createButton {
+        font-size: 16px;
+        width: 21%;
+    }
+
+    .createInstructions {
+        width: 95%;
+    }
+
+    .footer {
+        font-size: 17px
+    }
+
+    .logoHolder {
+        width: 49%;
+        text-align: inherit;
+    }
+
+    .navList {
+        width: 49%;
+    }
+
+    .navContent {
+        font-size: 17px;
+    }
+
+    .navListItems {
+        margin: 20px;
+    }
+
+
+}
 
 @media only screen and (max-width: 480px) {}
 
