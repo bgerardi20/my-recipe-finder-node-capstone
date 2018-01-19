@@ -17,7 +17,6 @@ body {
 main {
     background-attachment: fixed;
     padding: 2rem;
-    width: 40%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2rem;
@@ -32,7 +31,7 @@ section {
 }
 
 form {
-    width: 50%;
+    /*    width: 50%;*/
     margin-left: auto;
     margin-right: auto;
 }
@@ -41,7 +40,7 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', sans-seri
 }
 
 h1 {
@@ -51,9 +50,11 @@ h1 {
 
 label {
     font-family: 'Oswald', sans-serif;
+    font-size: 20px;
 }
 
-input {
+input,
+textarea {
     border: 1px solid black;
     text-align: center;
     /*    margin-top: 5px;*/
@@ -62,6 +63,9 @@ input {
     /*    margin-bottom: 10px;*/
     cursor: pointer;
     font-family: 'Josefin Slab', serif;
+    font-size: 20px;
+    text-shadow: rgba(255, 255, 255, 0.9) 0.5px 0.5px;
+    color: #59595C;
 }
 
 p {
@@ -81,6 +85,7 @@ li {
 button {
     border: 1px solid black;
     font-family: 'Lato', sans-serif;
+    font-size: 20px;
 }
 
 #welcome,
@@ -89,14 +94,16 @@ button {
     margin-bottom: 25px;
 }
 
-.introScreen {
+.introScreen,
+.signInScreen,
+.createUsernameScreen {
     margin-top: 150px;
 }
 
 .loginInnerContainer,
 .signInInnerContainer,
 .innerSignUpBox {
-    border: 3px solid #291709;
+    /*    border: 3px solid #291709;*/
     padding: 40px;
     margin: 30px;
 }
@@ -171,10 +178,9 @@ button {
     display: block;
     width: 75%;
     border-radius: 3px;
-    font-size: 1.1em;
     text-decoration: none;
     background-color: #d9d9d9;
-    text-shadow: .5px .5px white;
+    text-shadow: .5px .5px rgba(255, 255, 255, 0.9);
     color: #595959;
     border: 1px solid #291709;
     cursor: pointer;
@@ -183,6 +189,7 @@ button {
     margin-right: auto;
     margin-bottom: 10px;
     line-height: 40px;
+    font-size: 20px;
 }
 
 .introInnerContainer {
@@ -190,6 +197,7 @@ button {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
+    padding: 1rem;
 }
 
 .introContent {
@@ -206,7 +214,7 @@ button {
     line-height: 40px;
     width: 75%;
     background-color: #787878;
-    color: white;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .formGroup {
@@ -214,22 +222,23 @@ button {
     /*    margin: 7px;*/
 }
 
+
 .dummyAccountScreen,
 .homeScreen,
 .searchScreen,
 .recipeScreen,
-.chosenFail {
-    background-color: #DFCCAE;
-    width: 80%;
-    opacity: 0.95;
-}
-
+.chosenFail,
 .recipeInfoScreen,
 .createRecipeScreen,
 .recipeOutsideContainer,
-.chosenSucess {
+.chosenSucess,
+.introScreen,
+.signInScreen,
+.createUsernameScreen,
+.outerSignUpBox,
+.signInOutterContainer {
     background-color: #DFCCAE;
-    width: 50%;
+    width: 80%;
     opacity: 0.95;
     margin-left: auto;
     margin-right: auto;
@@ -240,8 +249,9 @@ button {
 .successScenario,
 .homeContainer,
 .createContainer,
-.failScenario {
-    width: 90%;
+.failScenario,
+.introContainer {
+    width: 80%;
     opacity: 0.95;
     margin-left: auto;
     margin-right: auto;
@@ -333,7 +343,10 @@ button {
 .searchRecipeImg {
     background-color: white;
     padding: 7px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 10px;
+    width: 75%;
 }
 
 .searchBarContainer {
@@ -349,12 +362,11 @@ button {
     text-align: left;
     padding: 7px;
     background-color: #d9d9d9;
-    color: black;
-    font-size: 1.1em;
+    /*    color: #59595C;*/
+    font-size: 20px;
     line-height: 40px;
     vertical-align: top;
     border-right: none;
-    text-shadow: 0.5px 0.5px white;
 }
 
 .searchSubmit {
@@ -368,7 +380,7 @@ button {
 
 .fa-search {
     color: rgba(255, 255, 255, 0.9);
-    font-size: 1.1.em;
+    font-size: 30px;
 }
 
 .chosenTitle {
@@ -377,23 +389,27 @@ button {
 }
 
 .chosenList {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: #d9d9d9;
     width: 60%;
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
     border: 1px solid black;
     border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 .ingredTitle {
-    font-size: 23px;
+    font-size: 25px;
     margin-bottom: 10px;
 }
 
 .chosenIngr {
     list-style-type: decimal;
     list-style-position: inside;
+    text-shadow: rgba(255, 255, 255, 0.9) 0.5px 0.5px;
+    color: #59595C;
 }
 
 .successButton,
@@ -422,7 +438,7 @@ button {
 #saveAnchor,
 #deleteAnchor,
 .create {
-    color: white;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .failMessageContainer {
@@ -436,9 +452,12 @@ button {
     width: 20%;
 }
 
-.searchRecipeImg {
+.searchRecipeImgFail {
+    background-color: white;
+    padding: 7px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10px;
     width: 100%;
 }
 
@@ -458,7 +477,7 @@ button {
 
 #modifyAnchor,
 #directionsAnchor {
-    color: white;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .addRemove {
@@ -479,16 +498,16 @@ button {
     width: 60%;
     padding: 5px;
     vertical-align: text-bottom;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: #d9d9d9;
 }
 
 .ingredientsLabel {
-    font-size: 30px;
+    font-size: 25px;
     margin-right: 5px;
 }
 
 .mods {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: #d9d9d9;
     border: 1px solid black;
     margin-top: 15px;
     padding: 10px;
@@ -505,7 +524,7 @@ button {
 }
 
 .createTitle {
-    font-size: 35px;
+    font-size: 40px;
 }
 
 .createForm {
@@ -529,7 +548,7 @@ button {
 }
 
 .createInput {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: #d9d9d9;
     border: 1px solid gray;
     width: 70%;
     text-align: center;
@@ -547,10 +566,10 @@ button {
 }
 
 .footer {
-    color: white;
+    color: rgba(255, 255, 255, 0.9);
     margin: 1rem;
     padding: 1rem;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 /*psuedo*/
@@ -558,16 +577,13 @@ button {
 .navContent:hover {
     text-decoration-line: underline;
     text-decoration-color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .loginOptions:hover {
-    background-color: #c15d4e;
+    background-color: #787878;
     color: black;
     text-shadow: none;
-}
-
-.search::placeholder {
-    color: black;
 }
 
 
