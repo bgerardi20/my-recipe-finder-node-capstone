@@ -48,11 +48,11 @@
             <div class="loginInnerContainer">
                 <img class="loginLogo" src="./website-images/my-recipies-logo.png">
                 <p class="loginIntro">Choose an option below to start searching recipes!</p>
-                <a class="loginOptions" href="">Sign In</a>
+                <a class="loginOptions loginButtons" href="">Sign In</a>
                 <br>
-                <a class="loginOptions" href="">Create Account</a>
+                <a class="loginOptions loginButtons" href="">Create Account</a>
                 <br>
-                <a class="loginOptions" href="">Dummy Account</a>
+                <a class="loginOptions loginButtons" href="">Dummy Account</a>
             </div>
         </section>
 
@@ -213,7 +213,7 @@
                         </a>
                     </div>
 
-                    <span class="resultsTitle">Teriyaki Chicken</span><br>
+                    <div class="resultsTitle">Teriyaki Chicken</div><br>
 
                     <div class="data">
                         <a class="cal" href="">
@@ -224,6 +224,10 @@
                             <span class="num">4</span>
                             <span class="info">ingredients</span>
                         </a>
+                    </div>
+
+                    <div class="addButton">
+                        <button type="submit" class="addSuccessButton green"><a id="add" href="">Add</a></button>
                     </div>
                 </li>
                 <li class="searchRecipeResultOption">
@@ -235,7 +239,7 @@
                         </a>
                     </div>
 
-                    <span class="resultsTitle">Teriyaki Chicken</span><br>
+                    <div class="resultsTitle">Teriyaki Chicken</div><br>
 
                     <div class="data">
 
@@ -247,6 +251,10 @@
                             <span class="num">4</span>
                             <span class="info">ingredients</span>
                         </a>
+                    </div>
+
+                    <div class="addButton">
+                        <button type="submit" class="addSuccessButton green"><a id="add" href="">Add</a></button>
                     </div>
                 </li>
                 <li class="searchRecipeResultOption">
@@ -258,7 +266,7 @@
                         </a>
                     </div>
 
-                    <span class="resultsTitle">Teriyaki Chicken</span><br>
+                    <div class="resultsTitle">Teriyaki Chicken</div><br>
 
                     <div class="data">
                         <a class="cal" href="">
@@ -269,6 +277,10 @@
                             <span class="num">4</span>
                             <span class="info">ingredients</span>
                         </a>
+                    </div>
+
+                    <div class="addButton">
+                        <button type="submit" class="addSuccessButton green"><a id="add" href="">Add</a></button>
                     </div>
                 </li>
             </ul>
@@ -279,13 +291,14 @@
     <!-------------------->
 
     <!---once recipe is choosen----->
+    <!--
     <main class="chosenSucess">
 
         <section class="recipeOutsideContainer">
 
             <ul class="recipeInsideContainer">
                 <li>
-                    <!--recipe image -->
+                    recipe image
                     <img class="searchRecipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
                 </li><br>
                 <li>
@@ -310,6 +323,7 @@
 
         </section>
     </main>
+-->
 
     <!------------------------------>
 
@@ -346,7 +360,7 @@
             </div>
 
             <div class="failButtonContainer">
-                <button type="submit" id="failButton"><a id="view" href="">View</a></button>
+                <button type="submit" id="failButton"><a id="view" href="">Add</a></button>
             </div>
 
         </section>
@@ -388,7 +402,7 @@
                 <li>
                     <div class="ingredientsContainer">
                         <label class="ingredientsLabel" for="ingredients">Add:</label>
-                        <input type="text" name="ingredients" id="ingredients" placeholder="ingredient">
+                        <input type="text" name="ingredients" id="ingredients" placeholder="Ingredient">
                         <div class="addRemove">
                             <span>
                                 <span>
@@ -403,13 +417,11 @@
                 </li><br>
                 <!-- do i need a table or textbox here? -->
                 <li>
-                    <textarea class="mods" placeholder="These are the modifications" rows="4" cols="50">
-                        <ul>
-                            <li class="chosenIng">Mods</li>
-                            <li class="chosenIng">Mods</li>
-                            <li class="chosenIng">Mods</li>
-                        </ul>
-                    </textarea>
+                    <ul class="modsList">
+                        <li class="chosenIng">Mods</li>
+                        <li class="chosenIng">Mods</li>
+                        <li class="chosenIng">Mods</li>
+                    </ul>
                 </li><br>
                 <li>
                     <div class="recipeButtonContainer">

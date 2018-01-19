@@ -65,13 +65,13 @@ textarea {
     font-family: 'Josefin Slab', serif;
     font-size: 20px;
     text-shadow: rgba(255, 255, 255, 0.9) 0.5px 0.5px;
-    color: #59595C;
+    color: rgb(89, 89, 92);
 }
 
 p {
     margin: 5px;
-    padding 5px;
     font-size: 20px;
+    padding: 5px;
 }
 
 a {
@@ -181,7 +181,7 @@ button {
     text-decoration: none;
     background-color: #d9d9d9;
     text-shadow: .5px .5px rgba(255, 255, 255, 0.9);
-    color: #595959;
+    color: rgb(89, 89, 92);
     border: 1px solid #291709;
     cursor: pointer;
     margin-top: 5px;
@@ -311,7 +311,7 @@ button {
 }
 
 .resultsTitle {
-    margin-bottom: 15px;
+    /*    margin-bottom: 15px;*/
     font-size: 20px;
     color: black;
 }
@@ -362,7 +362,6 @@ button {
     text-align: left;
     padding: 7px;
     background-color: #d9d9d9;
-    /*    color: #59595C;*/
     font-size: 20px;
     line-height: 40px;
     vertical-align: top;
@@ -388,7 +387,17 @@ button {
     margin-top: -20px;
 }
 
-.chosenList {
+.modsList {
+    cursor: pointer;
+    font-family: 'Josefin Slab', serif;
+    font-size: 20px;
+    text-shadow: rgba(255, 255, 255, 0.9) 0.5px 0.5px;
+    color: rgb(89, 89, 92);
+}
+
+
+.chosenList,
+.modsList {
     background-color: #d9d9d9;
     width: 60%;
     margin-left: auto;
@@ -409,7 +418,7 @@ button {
     list-style-type: decimal;
     list-style-position: inside;
     text-shadow: rgba(255, 255, 255, 0.9) 0.5px 0.5px;
-    color: #59595C;
+    color: rgb(89, 89, 92)
 }
 
 .successButton,
@@ -495,7 +504,7 @@ button {
 #ingredients {
     font-size: 20px;
     line-height: 25px;
-    width: 60%;
+    width: 47%;
     padding: 5px;
     vertical-align: text-bottom;
     background-color: #d9d9d9;
@@ -572,6 +581,18 @@ button {
     font-size: 20px;
 }
 
+.addButton {
+    margin-top: 15px;
+}
+
+.addSuccessButton {
+    border-radius: 10px;
+    padding: 5px;
+    border: 0;
+    width: 30%;
+}
+
+
 /*psuedo*/
 
 .navContent:hover {
@@ -591,3 +612,88 @@ button {
 
 
 /*media queries*/
+
+@media only screen and (max-width: 1024px) {
+    .loginOptions,
+    .signInInput,
+    .formControl {
+        width: 100%;
+        padding: 7px;
+    }
+
+    .signInButton {
+        width: 100%;
+        padding: 7px;
+    }
+
+    .searchSubmit {
+        width: 17%;
+    }
+
+    .search {
+        width: 83%;
+    }
+
+    .dummyAccountScreen,
+    .homeScreen,
+    .searchScreen,
+    .recipeScreen,
+    .chosenFail,
+    .recipeInfoScreen,
+    .createRecipeScreen,
+    .recipeOutsideContainer,
+    .chosenSucess,
+    .introScreen,
+    .signInScreen,
+    .createUsernameScreen,
+    .outerSignUpBox,
+    .signInOutterContainer,
+    .dummyRecipeSnippetContainer,
+    .successScenario,
+    .homeContainer,
+    .createContainer,
+    .failScenario,
+    .introContainer {
+        width: 85%;
+    }
+
+    .recipeSnippetContainer {
+        width: 100%;
+    }
+
+    .searchBarContainer {
+        width: 70%;
+    }
+
+    .loginButtons {
+        width: 75%;
+    }
+
+    .searchRecipeResultOption {
+        width: 29%;
+    }
+
+    .data {
+        font-size: 15.2px;
+    }
+
+    .cal {
+        padding-right: 3px;
+
+    }
+
+    .ing {
+        padding-left: 3px;
+    }
+
+    .addSuccessButton {
+        width: 25%;
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 768px) {}
+
+@media only screen and (max-width: 480px) {}
+
+@media only screen and (max-width: 320px) {}
