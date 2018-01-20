@@ -792,6 +792,197 @@ button {
 
 }
 
-@media only screen and (max-width: 480px) {}
+@media only screen and (max-width: 480px) {
+    main {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 17px;
+    }
+
+    input {
+        font-size: 17px;
+        line-height: 35px;
+    }
+
+    .navListItems {
+        margin: 5px;
+    }
+
+    .navContent {
+        font-size: 14px;
+    }
+
+    .navLogo {
+        width: 28%;
+    }
+
+    .dummyAccountScreen,
+    .homeScreen,
+    .searchScreen,
+    .recipeScreen,
+    .chosenFail,
+    .recipeInfoScreen,
+    .createRecipeScreen,
+    .recipeOutsideContainer,
+    .chosenSucess,
+    .introScreen,
+    .signInScreen,
+    .createUsernameScreen,
+    .outerSignUpBox,
+    .signInOutterContainer,
+    .dummyRecipeSnippetContainer,
+    .successScenario,
+    .homeContainer,
+    .createContainer,
+    .failScenario,
+    .introContainer {
+        width: 95%;
+    }
+
+    .loginIntro {
+        padding: 5px 0 10px 0;
+    }
+
+    .signInLogo,
+    .loginLogo {
+        width: 60%;
+    }
+
+    .loginOptions,
+    .signInInput,
+    .formControl {
+        font-size: 17px;
+        line-height: 35px;
+    }
+
+    .signInButton {
+        line-height: 35px;
+    }
+
+    .introInnerContainer {
+        width: 80%;
+    }
+
+    .searchBarContainer {
+        width: 100%;
+    }
+
+    .search {
+        line-height: 35px;
+        font-size: 17px;
+    }
+
+    .fa-search {
+        font-size: 25px;
+    }
+
+    .searchSubmit {
+        line-height: 35px;
+    }
+
+    .recipeLink,
+    .recipeResultsLink {
+        width: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+    }
+
+    .recipeImgContainer {
+        width: 90%;
+    }
+
+    .recipeImg {
+        width: 80%;
+        margin: 10px 0 10px 0;
+    }
+
+    .searchRecipeResultOption {
+        width: 43%;
+    }
+
+    .searchRecipeImg {
+        width: 100%;
+    }
+
+    .ing {
+        display: block;
+        border-top: 1px solid black;
+        border-left: none;
+        padding-top: 5px;
+    }
+
+    .cal {
+        display: block;
+        border-bottom: 1px solid black;
+        border-right: none;
+        padding-bottom: 5px;
+    }
+
+    .data {
+        border: none;
+        padding-top: 0;
+        font-size: 17px;
+    }
+
+    .addSuccessButton {
+        width: 40%;
+        font-size: 14px;
+    }
+
+    .addButton {
+        margin-top: 5px;
+    }
+
+    .successButton,
+    #modify,
+    #directions,
+    .recipeButton,
+    .createButton {
+        font-size: 16px;
+        width: 28%;
+    }
+
+    #ingredients {
+        width: 54%;
+    }
+
+    .chosenList,
+    .modsList {
+        font-size: 17px;
+        width: 75%;
+    }
+
+    .createInstructions {
+        margin: 25px auto 20px auto;
+    }
+
+    .createInput {
+        width: 75%;
+    }
+
+    #image,
+    #title {
+        line-height: 35px;
+    }
+
+    .fa-plus-circle, .fa-minus-circle {
+        font-size: 33px;
+    }
+
+
+
+
+
+
+}
 
 @media only screen and (max-width: 320px) {}
