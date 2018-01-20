@@ -974,15 +974,116 @@ button {
         line-height: 35px;
     }
 
-    .fa-plus-circle, .fa-minus-circle {
+    .fa-plus-circle,
+    .fa-minus-circle {
         font-size: 33px;
+    }
+
+    .failMessage {
+        font-size: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 320px) {
+    .navLogo {
+        width: 60%;
+    }
+
+    .logoHolder {
+        width: 28%;
+    }
+
+    .navList {
+        width: 70%;
+    }
+
+    .navListItems {
+        margin: 3px;
+    }
+
+    .signInLogo,
+    .loginLogo {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    .introInnerContainer {
+        width: 95%;
+    }
+
+    .loginInnerContainer,
+    .signInInnerContainer,
+    .innerSignUpBox {
+        padding: 10px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .searchBarContainer {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        display: inline;
+    }
+
+    .search {
+        width: 78%;
+        margin-left: -43px;
+    }
+
+    .searchRecipeResultOption {
+        width: 80%;
+    }
+
+    .frownyFace {
+        width: 50%;
+    }
+
+    #failButton {
+        width: 30%;
+    }
+
+    .chosenList,
+    .modsList {
+        font-size: 17px;
+        width: 90%;
+    }
+
+    .successButton,
+    #modify,
+    #directions,
+    .recipeButton,
+    .createButton {
+        width: 40%;
+    }
+
+    #ingredients {
+        width: 70%;
+    }
+
+    p {
+        font-size: 17px;
+    }
+
+    .createInput {
+        width: 90%;
+    }
+
+    input,
+    textarea,
+    button {
+        font-size: 17px;
+    }
+
+    .footer {
+        font-size: 14px;
+        margin: 0;
     }
 
 
 
 
 
-
 }
-
-@media only screen and (max-width: 320px) {}
