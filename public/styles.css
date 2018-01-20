@@ -209,7 +209,8 @@ button {
     width: 75%;
 }
 
-.signInButton {
+.signInButton,
+.registerButton {
     border-radius: 4px;
     line-height: 40px;
     width: 75%;
@@ -621,7 +622,8 @@ button {
         padding: 7px;
     }
 
-    .signInButton {
+    .signInButton,
+    .registerButton {
         width: 100%;
         padding: 7px;
     }
@@ -862,7 +864,8 @@ button {
         line-height: 35px;
     }
 
-    .signInButton {
+    .signInButton,
+    .registerButton {
         line-height: 35px;
     }
 
