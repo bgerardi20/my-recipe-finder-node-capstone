@@ -22,9 +22,9 @@
 
             <div class="navList">
                 <ul>
-                    <li class="navListItems"><a href="" class="navContent">My Library</a></li>
-                    <li class="navListItems"><a href="" class="navContent">Create Recipe</a></li>
-                    <li class="navListItems"><a href="" class="navContent">Logout</a></li>
+                    <li class="navListItems"><a href="" class="navContent jsMyLibrary">My Library</a></li>
+                    <li class="navListItems"><a href="" class="navContent jsCreateRecipe">Create Recipe</a></li>
+                    <li class="navListItems"><a href="" class="navContent jsLogout">Logout</a></li>
                 </ul>
             </div>
 
@@ -406,16 +406,16 @@
                 </li><br>
                 <!-- hidden until modify button is clicked -->
                 <li>
-                    <div class="ingredientsContainer">
+                    <div class="ingredientsContainer" style="display:none">
                         <label class="ingredientsLabel" for="ingredients">Add:</label>
                         <input type="text" name="ingredients" id="ingredients" placeholder="Ingredient">
                         <div class="addRemove">
                             <span>
                                 <span>
-                                    <i class="fa fa-plus-circle fa-lg ingredients-adder" aria-hidden="true"></i>
+                                    <a class="jsAddButton" href=""><i class="fa fa-plus-circle fa-lg ingredients-adder" aria-hidden="true"></i></a>
                                 </span>
                             <span>
-                                    <i class="fa fa-minus-circle fa-lg js-input-delete" aria-hidden="true"></i>
+                                    <a class="jsDeleteButton" href=""><i class="fa fa-minus-circle fa-lg js-input-delete" aria-hidden="true"></i></a>
                                 </span>
                             </span>
                         </div>
@@ -423,7 +423,7 @@
                 </li><br>
                 <!-- do i need a table or textbox here? -->
                 <li>
-                    <ul class="modsList">
+                    <ul class="modsList" style="display:none">
                         <li class="chosenIng">Mods</li>
                         <li class="chosenIng">Mods</li>
                         <li class="chosenIng">Mods</li>
