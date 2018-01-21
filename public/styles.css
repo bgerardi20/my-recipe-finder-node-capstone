@@ -223,7 +223,6 @@ button {
     /*    margin: 7px;*/
 }
 
-
 .dummyAccountScreen,
 .homeScreen,
 .searchScreen,
@@ -239,7 +238,7 @@ button {
 .outerSignUpBox,
 .signInOutterContainer {
     background-color: #DFCCAE;
-    width: 80%;
+    width: 65%;
     opacity: 0.95;
     margin-left: auto;
     margin-right: auto;
@@ -252,7 +251,7 @@ button {
 .createContainer,
 .failScenario,
 .introContainer {
-    width: 80%;
+    width: 90%;
     opacity: 0.95;
     margin-left: auto;
     margin-right: auto;
@@ -260,12 +259,13 @@ button {
 
 .recipeLink,
 .recipeResultsLink {
-    width: 45%;
+    width: 44%;
     display: inline-block;
     padding: 10px;
-    margin: 15px;
+    /* margin: 10px 15px 10px 15px; */
+    margin-left: 26px;
+    margin-right: 26px;
     background-clip: padding-box;
-
 }
 
 .recipeResultOption {
@@ -277,7 +277,7 @@ button {
 }
 
 .recipeImgContainer {
-    width: 70%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -293,7 +293,7 @@ button {
 }
 
 .recipeImg {
-    width: 90%;
+    width: 100%;
     padding: 7px;
     margin: 10px;
     object-fit: cover;
@@ -369,8 +369,9 @@ button {
     border-right: none;
 }
 
-.searchSubmit {
-    width: 7%;
+.searchSubmit,
+.dummySearchSubmit {
+    width: 12%;
     line-height: 40px;
     background-color: #787878;
     padding: 7px;
@@ -593,7 +594,6 @@ button {
     width: 30%;
 }
 
-
 /*psuedo*/
 
 .navContent:hover {
@@ -628,7 +628,8 @@ button {
         padding: 7px;
     }
 
-    .searchSubmit {
+    .searchSubmit,
+    .dummySearchSubmit {
         width: 15%;
     }
 
@@ -886,7 +887,8 @@ button {
         font-size: 25px;
     }
 
-    .searchSubmit {
+    .searchSubmit,
+    .dummySearchSubmit {
         line-height: 35px;
     }
 

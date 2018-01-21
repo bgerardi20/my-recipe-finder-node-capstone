@@ -112,6 +112,7 @@ $('.jsCreateRecipe').click(function (event) {
     $(".createRecipeScreen").show();
 });
 
+//---------------------------------------------return to login page or intro screen? ----------------------------------------
 $('.jsLogout').click(function (event) {
     event.preventDefault();
     $(".introScreen").hide();
@@ -231,81 +232,82 @@ $('.jsDeleteButton').click(function (event) {
     $(".modsList").show();
 });
 
-//save recipe button//
-$('.').click(function (event) {
+//save recipe button//  ----------------------------------------------should i send this one to the library home page or the recipe info screen? ------------------------------
+$('#saveAnchor').click(function (event) {
     event.preventDefault();
     $(".introScreen").hide();
-    $(".signInScreen").show();
+    $(".signInScreen").hide();
     $(".createUsernameScreen").hide();
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".chosenFail").hide();
-    $(".recipeInfoScreen").hide();
+    $(".chosenFail").fail();
+    $(".recipeInfoScreen").show();
     $(".createRecipeScreen").hide();
 });
 
 //delete recipe button//
-$('.').click(function (event) {
+$('#deleteAnchor').click(function (event) {
     event.preventDefault();
     $(".introScreen").hide();
-    $(".signInScreen").show();
+    $(".signInScreen").hide();
     $(".createUsernameScreen").hide();
     $(".dummyAccountScreen").hide();
-    $(".homeScreen").hide();
+    $(".homeScreen").show();
     $(".searchScreen").hide();
     $(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
 });
 
-//save created recipe button//
-$('.').click(function (event) {
+//save created recipe button---> recipe info screen about newly created recipe//
+$('#jsCreateSaveButton').click(function (event) {
     event.preventDefault();
     $(".introScreen").hide();
-    $(".signInScreen").show();
+    $(".signInScreen").hide();
     $(".createUsernameScreen").hide();
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
     $(".chosenFail").hide();
-    $(".recipeInfoScreen").hide();
+    $(".recipeInfoScreen").show();
     $(".createRecipeScreen").hide();
 });
 
 //cancel created recipe button//
-$('.').click(function (event) {
+$('#jsCancelSaveButton').click(function (event) {
     event.preventDefault();
     $(".introScreen").hide();
-    $(".signInScreen").show();
+    $(".signInScreen").hide();
     $(".createUsernameScreen").hide();
     $(".dummyAccountScreen").hide();
-    $(".homeScreen").hide();
+    $(".homeScreen").show();
     $(".searchScreen").hide();
     $(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
 });
 
-//footer button????????//
-$('.').click(function (event) {
+//dummy acount search bar button//
+$('.dummySearchSubmit').click(function (event) {
     event.preventDefault();
     $(".introScreen").hide();
-    $(".signInScreen").show();
-    $(".createUsernameScreen").hide();
+    $(".signInScreen").hide();
+    $(".createUsernameScreen").show();
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
     $(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
+    alert('Please create an account to search and save thousands of recipes!');
 });
 
 //add ingredient button//
-$('.').click(function (event) {
+$('.logoHolder').click(function (event) {
     event.preventDefault();
-    $(".introScreen").hide();
-    $(".signInScreen").show();
+    $(".introScreen").show();
+    $(".signInScreen").hide();
     $(".createUsernameScreen").hide();
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
