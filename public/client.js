@@ -5,7 +5,7 @@
 
 
 
-//use objects variables and functions(triggers)
+//use objects variables and functions(triggers)//
 $(document).ready(function () {
     $(".introScreen").show();
     $(".signInScreen").hide();
@@ -20,7 +20,7 @@ $(document).ready(function () {
 
 
 //create triggers that work with the buttons
-$('.jsSignInButton').click(function (event) {
+$(document).on("click", ".jsSignInButton", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
     $(".signInScreen").show();
@@ -33,7 +33,7 @@ $('.jsSignInButton').click(function (event) {
     $(".createRecipeScreen").hide();
 });
 
-$('.jsRegisterButton').click(function (event) {
+$(document).on("click", ".jsRegisterButton", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
     $(".signInScreen").hide();
@@ -46,7 +46,7 @@ $('.jsRegisterButton').click(function (event) {
     $(".createRecipeScreen").hide();
 });
 
-$('.jsDummyButton').click(function (event) {
+$(document).on("click", ".jsDummyButton", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
     $(".signInScreen").hide();
@@ -59,7 +59,7 @@ $('.jsDummyButton').click(function (event) {
     $(".createRecipeScreen").hide();
 });
 
-$('.signInButton').click(function (event) {
+$(document).on("click", ".signInButton", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
     $(".signInScreen").hide();
@@ -72,7 +72,7 @@ $('.signInButton').click(function (event) {
     $(".createRecipeScreen").hide();
 });
 
-$('.registerButton').click(function (event) {
+$(document).on("click", ".registerButton", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
     $(".signInScreen").show();
@@ -86,7 +86,7 @@ $('.registerButton').click(function (event) {
 });
 
 //nav bar options//
-$('.jsMyLibrary').click(function (event) {
+$(document).on("click", ".jsMyLibrary", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
     $(".signInScreen").hide();
@@ -99,7 +99,7 @@ $('.jsMyLibrary').click(function (event) {
     $(".createRecipeScreen").hide();
 });
 
-$('.jsCreateRecipe').click(function (event) {
+$(document).on("click", ".jsCreateRecipe", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
     $(".signInScreen").hide();
@@ -113,7 +113,7 @@ $('.jsCreateRecipe').click(function (event) {
 });
 
 //---------------------------------------------return to login page or intro screen? ----------------------------------------
-$('.jsLogout').click(function (event) {
+$(document).on("click", ".jsLogout", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
     $(".signInScreen").show();
@@ -128,7 +128,7 @@ $('.jsLogout').click(function (event) {
 //end of nav bar options
 
 //recipe img --> recipe info//
-$('.recipeLink').click(function (event) {
+$(document).on("click", ".recipeLink", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
     $(".signInScreen").hide();
@@ -142,7 +142,7 @@ $('.recipeLink').click(function (event) {
 });
 
 //search bar button --> success scenario//
-$('.searchSubmit').click(function (event) {
+$(document).on("click", ".searchSubmit", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
     $(".signInScreen").hide();
@@ -155,22 +155,22 @@ $('.searchSubmit').click(function (event) {
     $(".createRecipeScreen").hide();
 });
 
-////search bar button --> fail scenario//
-//$('.searchSubmit').click(function (event) {
-//    event.preventDefault();
-//    $(".introScreen").hide();
-//    $(".signInScreen").hide();
-//    $(".createUsernameScreen").hide();
-//    $(".dummyAccountScreen").hide();
-//    $(".homeScreen").hide();
-//    $(".searchScreen").hide();
-//    $(".chosenFail").show();
-//    $(".recipeInfoScreen").hide();
-//    $(".createRecipeScreen").hide();
-//});
+//search bar button --> fail scenario//
+$(document).on("click", ".searchSubmit", function (event) {
+    event.preventDefault();
+    $(".introScreen").hide();
+    $(".signInScreen").hide();
+    $(".createUsernameScreen").hide();
+    $(".dummyAccountScreen").hide();
+    $(".homeScreen").hide();
+    $(".searchScreen").hide();
+    $(".chosenFail").show();
+    $(".recipeInfoScreen").hide();
+    $(".createRecipeScreen").hide();
+});
 
 //recipe info screen(modify button)//
-$('#modifyAnchor').click(function (event) {
+$(document).on("click", "#modifyAnchor", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
     $(".signInScreen").hide();
@@ -187,7 +187,7 @@ $('#modifyAnchor').click(function (event) {
 });
 
 //recipe info screen(directions button-going to a different url)// ////////////////////////////////////need help///////////////////////////////////
-$('#directionsAnchor').click(function (event) {
+$(document).on("click", "#directionsAnchor", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
     $(".signInScreen").hide();
@@ -201,7 +201,7 @@ $('#directionsAnchor').click(function (event) {
 });
 
 //add ingredient button//
-$('.jsAddButton').click(function (event) {
+$(document).on("click", ".jsAddButton", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
     $(".signInScreen").hide();
@@ -217,7 +217,7 @@ $('.jsAddButton').click(function (event) {
 });
 
 //delete ingredient button//
-$('.jsDeleteButton').click(function (event) {
+$(document).on("click", ".jsDeleteButton", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
     $(".signInScreen").hide();
@@ -233,7 +233,7 @@ $('.jsDeleteButton').click(function (event) {
 });
 
 //save recipe button//  ----------------------------------------------should i send this one to the library home page or the recipe info screen? ------------------------------
-$('#saveAnchor').click(function (event) {
+$(document).on("click", "#saveAnchor", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
     $(".signInScreen").hide();
@@ -249,7 +249,7 @@ $('#saveAnchor').click(function (event) {
 });
 
 //delete recipe button//
-$('#deleteAnchor').click(function (event) {
+$(document).on("click", "#deleteAnchor", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
     $(".signInScreen").hide();
@@ -263,7 +263,7 @@ $('#deleteAnchor').click(function (event) {
 });
 
 //save created recipe button---> recipe info screen about newly created recipe//
-$('#jsCreateSaveButton').click(function (event) {
+$(document).on("click", "#jsCreateSaveButton", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
     $(".signInScreen").hide();
@@ -277,7 +277,7 @@ $('#jsCreateSaveButton').click(function (event) {
 });
 
 //cancel created recipe button//
-$('#jsCancelSaveButton').click(function (event) {
+$(document).on("click", "#jsCancelSaveButton", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
     $(".signInScreen").hide();
@@ -291,7 +291,7 @@ $('#jsCancelSaveButton').click(function (event) {
 });
 
 //dummy acount search bar button//
-$('.dummySearchSubmit').click(function (event) {
+$(document).on("click", ".dummySearchSubmit", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
     $(".signInScreen").hide();
@@ -306,7 +306,7 @@ $('.dummySearchSubmit').click(function (event) {
 });
 
 //logo---->intro screen//
-$('.logoHolder').click(function (event) {
+$(document).on("click", ".logoHolder", function (event) {
     event.preventDefault();
     $(".introScreen").show();
     $(".signInScreen").hide();
@@ -320,7 +320,7 @@ $('.logoHolder').click(function (event) {
 });
 
 //fail scenario-add to recipe button//
-$('#failButton').click(function (event) {
+$(document).on("click", "#failButton", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
     $(".signInScreen").hide();
@@ -334,7 +334,7 @@ $('#failButton').click(function (event) {
 });
 
 //success scenario-add to recipe button//
-$('.searchRecipeResultOption').click(function (event) {
+$(document).on("click", ".searchRecipeResultOption", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
     $(".signInScreen").hide();

@@ -22,9 +22,9 @@
 
             <div class="navList">
                 <ul>
-                    <li class="navListItems"><a href="" class="navContent jsMyLibrary">My Library</a></li>
-                    <li class="navListItems"><a href="" class="navContent jsCreateRecipe">Create Recipe</a></li>
-                    <li class="navListItems"><a href="" class="navContent jsLogout">Logout</a></li>
+                    <li class="navListItems"><a href="#" class="navContent jsMyLibrary">My Library</a></li>
+                    <li class="navListItems"><a href="#" class="navContent jsCreateRecipe">Create Recipe</a></li>
+                    <li class="navListItems"><a href="#" class="navContent jsLogout">Logout</a></li>
                 </ul>
             </div>
 
@@ -48,34 +48,35 @@
             <div class="loginInnerContainer">
                 <img class="loginLogo" src="./website-images/my-recipies-logo.png">
                 <p class="loginIntro">Choose an option below to start searching recipes!</p>
-                <a class="loginOptions loginButtons jsSignInButton" href="">Sign In</a>
+                <a class="loginOptions loginButtons jsSignInButton" href="#">Sign In</a>
                 <br>
-                <a class="loginOptions loginButtons jsRegisterButton" href="">Create Account</a>
+                <a class="loginOptions loginButtons jsRegisterButton" href="#">Create Account</a>
                 <br>
-                <a class="loginOptions loginButtons jsDummyButton" href="">Dummy Account</a>
+                <a class="loginOptions loginButtons jsDummyButton" href="#">Dummy Account</a>
             </div>
         </section>
 
     </main>
 
+
     <main class="signInScreen">
 
         <section class="signInOutterContainer">
             <div class="signInInnerContainer">
-                <!--some sort of logo or fancy font -->
                 <img class="signInLogo" src="./website-images/my-recipies-logo.png">
                 <h2 class="signInMessage">Sign In</h2>
 
                 <form class="signInform" method="POST" autocomplete="off">
-                    <input class="signInInput" type="text" placeholder="Email Address" name="email" autofocus>
+                    <input class="signInInput" type="text" placeholder="Email Address" name="email">
                     <input class="signInInput" type="password" placeholder="Password" name="password">
-                    <button class="signInButton" type="submit">Next</button>
+                    <button class="signInButton " type="submit">Next</button>
                 </form>
 
             </div>
         </section>
 
     </main>
+
 
     <main class="createUsernameScreen">
 
@@ -88,7 +89,7 @@
                 <form class="signUpForm" method="POST">
                     <div class="formGroup">
                         <label class="label" for="fullName">Name:</label>
-                        <input class="formControl" id="name" type="text" placeholder="Name" name="fullName" autofocus>
+                        <input class="formControl" id="name" type="text" placeholder="Name" name="fullName">
                     </div>
                     <div class="formGroup">
                         <label for="email">Email:</label>
@@ -119,32 +120,30 @@
         <div class="searchBarContainer">
             <input class="search" type="text" name="search" placeholder="Chicken Casserole...">
             <button class="dummySearchSubmit" type="submit" form="get-form">
-                <span>
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </span>
+                <i class="fa fa-search" aria-hidden="true"></i>
             </button>
         </div><br>
 
         <section class="dummyRecipeSnippetContainer">
-            <a class="recipeLink" href="">
+            <a class="recipeLink" href="#">
                 <div class="recipeImgContainer">
                     <img class="recipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
                 </div>
                 <h2 class="recipeTitle">Recipe Title</h2>
             </a>
-            <a class="recipeLink" href="">
+            <a class="recipeLink" href="#">
                 <div class="recipeImgContainer">
                     <img class="recipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
                 </div>
                 <h2 class="recipeTitle">Recipe Title</h2>
             </a>
-            <a class="recipeLink" href="">
+            <a class="recipeLink" href="#">
                 <div class="recipeImgContainer">
                     <img class="recipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
                 </div>
                 <h2 class="recipeTitle">Recipe Title</h2>
             </a>
-            <a class="recipeLink" href="">
+            <a class="recipeLink" href="#">
                 <div class="recipeImgContainer">
                     <img class="recipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
                 </div>
@@ -162,22 +161,20 @@
         <div class="searchBarContainer">
             <input class="search" type="text" name="search" placeholder="Search Recipes...">
             <button class="searchSubmit" type="submit">
-                    <span>
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </span>
-                </button>
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
         </div><br>
 
         <section class="homeContainer">
             <!-- empty for new users -->
             <div class="recipeSnippetContainer">
-                <a class="recipeLink" href="">
+                <a class="recipeLink" href="#">
                     <div class="recipeImgContainer">
                         <img class="recipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
                     </div>
                     <h2 class="recipeTitle">Recipe Title</h2>
                 </a>
-                <a class="recipeLink" href="">
+                <a class="recipeLink" href="#">
                     <div class="recipeImgContainer">
                         <img class="recipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
                     </div>
@@ -197,9 +194,7 @@
         <div class="searchBarContainer">
             <input class="search" type="text" name="search" placeholder="What user searched for...">
             <button class="searchSubmit" type="submit">
-                <span>
                     <i class="fa fa-search" aria-hidden="true"></i>
-                </span>
             </button>
         </div><br>
 
@@ -208,7 +203,7 @@
             <ul class="resultsList">
                 <li class="searchRecipeResultOption">
                     <div class="object">
-                        <a class="searchRecipeResultsLink" href="">
+                        <a class="searchRecipeResultsLink" href="#">
                             <span class="searchRecipeImgContainer">
                                 <img class="searchRecipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
                             </span>
@@ -218,23 +213,23 @@
                     <h3 class="resultsTitle">Teriyaki Chicken</h3><br>
 
                     <div class="data">
-                        <a class="cal" href="">
+                        <a class="cal" href="#">
                             <span class="num">375</span>
                             <span class="info">calories</span>
                         </a>
-                        <a class="ing" href="">
+                        <a class="ing" href="#">
                             <span class="num">4</span>
                             <span class="info">ingredients</span>
                         </a>
                     </div>
 
                     <div class="addButton">
-                        <button type="submit" class="addSuccessButton green jsSuccessButton"><a id="add" href="">Add</a></button>
+                        <button type="submit" class="addSuccessButton green jsSuccessButton" id="add">Add</button>
                     </div>
                 </li>
                 <li class="searchRecipeResultOption">
                     <div class="object">
-                        <a class="searchRecipeResultsLink" href="">
+                        <a class="searchRecipeResultsLink" href="#">
                             <span class="searchRecipeImgContainer">
                                 <img class="searchRecipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
                             </span>
@@ -245,23 +240,23 @@
 
                     <div class="data">
 
-                        <a class="cal" href="">
+                        <a class="cal" href="#">
                             <span class="num">375</span>
                             <span class="info">calories</span>
                         </a>
-                        <a class="ing" href="">
+                        <a class="ing" href="#">
                             <span class="num">4</span>
                             <span class="info">ingredients</span>
                         </a>
                     </div>
 
                     <div class="addButton">
-                        <button type="submit" class="addSuccessButton green"><a id="add" href="">Add</a></button>
+                        <button type="submit" class="addSuccessButton green" id="add">Add</button>
                     </div>
                 </li>
                 <li class="searchRecipeResultOption">
                     <div class="object">
-                        <a class="searchRecipeResultsLink" href="">
+                        <a class="searchRecipeResultsLink" href="#">
                             <span class="searchRecipeImgContainer">
                                 <img class="searchRecipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
                             </span>
@@ -271,18 +266,18 @@
                     <h3 class="resultsTitle">Teriyaki Chicken</h3><br>
 
                     <div class="data">
-                        <a class="cal" href="">
+                        <a class="cal" href="#">
                             <span class="num">375</span>
                             <span class="info">calories</span>
                         </a>
-                        <a class="ing" href="">
+                        <a class="ing" href="#">
                             <span class="num">4</span>
                             <span class="info">ingredients</span>
                         </a>
                     </div>
 
                     <div class="addButton">
-                        <button type="submit" class="addSuccessButton green"><a id="add" href="">Add</a></button>
+                        <button type="submit" class="addSuccessButton green" id="add">Add</button>
                     </div>
                 </li>
             </ul>
@@ -337,9 +332,7 @@
         <div class="searchBarContainer">
             <input class="search" type="text" name="search" placeholder="Search Recipes...">
             <button class="searchSubmit" type="submit">
-                <span>
                     <i class="fa fa-search" aria-hidden="true"></i>
-                </span>
             </button>
         </div><br>
 
@@ -354,7 +347,7 @@
 
             <div class="failRecipeSnippet">
                 <div class="object">
-                    <a class="recipeResultsLink" href="">
+                    <a class="recipeResultsLink" href="#">
                         <span class="resultsImgContainer">
                             <img class="searchRecipeImgFail" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
                         </span>
@@ -364,7 +357,7 @@
             </div>
 
             <div class="failButtonContainer">
-                <button type="submit" id="failButton"><a id="view" href="">Add</a></button>
+                <button id="failButton">Add</button>
             </div>
 
         </section>
@@ -399,23 +392,23 @@
                 </li><br>
                 <li>
                     <div class="recipeButtonContainer">
-                        <button id="modify" type="button"><a id="modifyAnchor">Modify</a></button>
+                        <button id="modifyAnchor" type="button">Modify</button>
                         <!--link to original recipe URL --->
-                        <button id="directions" type="button"><a id="directionsAnchor" href="">Directions</a></button>
+                        <button id="directionsAnchor" type="button">Directions</button>
                     </div>
                 </li><br>
                 <!-- hidden until modify button is clicked -->
                 <li>
-                    <div class="ingredientsContainer" style="display:none">
+                    <div class="ingredientsContainer">
                         <label class="ingredientsLabel" for="ingredients">Add:</label>
                         <input type="text" name="ingredients" id="ingredients" placeholder="Ingredient">
                         <div class="addRemove">
                             <span>
                                 <span>
-                                    <a class="jsAddButton" href=""><i class="fa fa-plus-circle fa-lg ingredients-adder" aria-hidden="true"></i></a>
+                                    <a class="jsAddButton" href="#"><i class="fa fa-plus-circle fa-lg ingredients-adder" aria-hidden="true"></i></a>
                                 </span>
                             <span>
-                                    <a class="jsDeleteButton" href=""><i class="fa fa-minus-circle fa-lg js-input-delete" aria-hidden="true"></i></a>
+                                    <a class="jsDeleteButton" href="#"><i class="fa fa-minus-circle fa-lg js-input-delete" aria-hidden="true"></i></a>
                                 </span>
                             </span>
                         </div>
@@ -423,7 +416,7 @@
                 </li><br>
                 <!-- do i need a table or textbox here? -->
                 <li>
-                    <ul class="modsList" style="display:none">
+                    <ul class="modsList">
                         <li class="chosenIng">Mods</li>
                         <li class="chosenIng">Mods</li>
                         <li class="chosenIng">Mods</li>
@@ -431,8 +424,8 @@
                 </li><br>
                 <li>
                     <div class="recipeButtonContainer">
-                        <button type="button" class="recipeButton green"><a id="saveAnchor">Save</a></button>
-                        <button type="button" class="recipeButton red"><a id="deleteAnchor">Delete</a></button>
+                        <button type="button" class="recipeButton green" id="saveAnchor">Save</button>
+                        <button type="button" class="recipeButton red" id="deleteAnchor">Delete</button>
                     </div>
                 </li><br>
             </ul>
@@ -483,8 +476,8 @@
 
 
                 <div class="createRecipeButton">
-                    <button type="submit" class="createButton green"><a class="create" id="jsCreateSaveButton" href="">Save</a></button>
-                    <button type="submit" class="createButton red"><a class="create" id="jsCancelSaveButton" href="">Cancel</a></button>
+                    <button type="submit" class="createButton green create" id="jsCreateSaveButton">Save</button>
+                    <button type="submit" class="createButton red create" id="jsCancelSaveButton">Cancel</button>
                 </div>
 
             </form>

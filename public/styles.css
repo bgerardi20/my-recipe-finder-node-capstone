@@ -242,6 +242,7 @@ button {
     opacity: 0.95;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 10rem;
 }
 
 .dummyRecipeSnippetContainer,
@@ -424,8 +425,8 @@ button {
 }
 
 .successButton,
-#modify,
-#directions,
+#modifyAnchor,
+#directionsAnchor,
 .recipeButton,
 .createButton {
     width: 20%;
@@ -481,8 +482,8 @@ button {
     border: 0;
 }
 
-#modify,
-#directions {
+#modifyAnchor,
+#directionsAnchor {
     background-color: #787878;
 }
 
