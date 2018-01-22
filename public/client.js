@@ -155,19 +155,19 @@ $('.searchSubmit').click(function (event) {
     $(".createRecipeScreen").hide();
 });
 
-//search bar button --> fail scenario//
-$('.searchSubmit').click(function (event) {
-    event.preventDefault();
-    $(".introScreen").hide();
-    $(".signInScreen").hide();
-    $(".createUsernameScreen").hide();
-    $(".dummyAccountScreen").hide();
-    $(".homeScreen").hide();
-    $(".searchScreen").hide();
-    $(".chosenFail").show();
-    $(".recipeInfoScreen").hide();
-    $(".createRecipeScreen").hide();
-});
+////search bar button --> fail scenario//
+//$('.searchSubmit').click(function (event) {
+//    event.preventDefault();
+//    $(".introScreen").hide();
+//    $(".signInScreen").hide();
+//    $(".createUsernameScreen").hide();
+//    $(".dummyAccountScreen").hide();
+//    $(".homeScreen").hide();
+//    $(".searchScreen").hide();
+//    $(".chosenFail").show();
+//    $(".recipeInfoScreen").hide();
+//    $(".createRecipeScreen").hide();
+//});
 
 //recipe info screen(modify button)//
 $('#modifyAnchor').click(function (event) {
@@ -241,9 +241,11 @@ $('#saveAnchor').click(function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".chosenFail").fail();
+    $(".chosenFail").hide();
     $(".recipeInfoScreen").show();
     $(".createRecipeScreen").hide();
+    $(".ingredientsContainer").hide();
+    $(".modsList").hide();
 });
 
 //delete recipe button//
@@ -303,7 +305,7 @@ $('.dummySearchSubmit').click(function (event) {
     alert('Please create an account to search and save thousands of recipes!');
 });
 
-//add ingredient button//
+//logo---->intro screen//
 $('.logoHolder').click(function (event) {
     event.preventDefault();
     $(".introScreen").show();
@@ -311,6 +313,34 @@ $('.logoHolder').click(function (event) {
     $(".createUsernameScreen").hide();
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
+    $(".searchScreen").hide();
+    $(".chosenFail").hide();
+    $(".recipeInfoScreen").hide();
+    $(".createRecipeScreen").hide();
+});
+
+//fail scenario-add to recipe button//
+$('#failButton').click(function (event) {
+    event.preventDefault();
+    $(".introScreen").hide();
+    $(".signInScreen").hide();
+    $(".createUsernameScreen").hide();
+    $(".dummyAccountScreen").hide();
+    $(".homeScreen").show();
+    $(".searchScreen").hide();
+    $(".chosenFail").hide();
+    $(".recipeInfoScreen").hide();
+    $(".createRecipeScreen").hide();
+});
+
+//success scenario-add to recipe button//
+$('.searchRecipeResultOption').click(function (event) {
+    event.preventDefault();
+    $(".introScreen").hide();
+    $(".signInScreen").hide();
+    $(".createUsernameScreen").hide();
+    $(".dummyAccountScreen").hide();
+    $(".homeScreen").show();
     $(".searchScreen").hide();
     $(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
