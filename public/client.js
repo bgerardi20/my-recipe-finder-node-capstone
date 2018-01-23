@@ -35,6 +35,7 @@ $(document).on("click", ".jsSignInButton", function (event) {
 
 $(document).on("click", ".jsRegisterButton", function (event) {
     event.preventDefault();
+
     $(".introScreen").hide();
     $(".signInScreen").hide();
     $(".createUsernameScreen").show();
@@ -61,29 +62,108 @@ $(document).on("click", ".jsDummyButton", function (event) {
 
 $(document).on("click", ".signInButton", function (event) {
     event.preventDefault();
-    $(".introScreen").hide();
-    $(".signInScreen").hide();
-    $(".createUsernameScreen").hide();
-    $(".dummyAccountScreen").hide();
-    $(".homeScreen").show();
-    $(".searchScreen").hide();
-    $(".chosenFail").hide();
-    $(".recipeInfoScreen").hide();
-    $(".createRecipeScreen").hide();
+    //get input from the user//
+    let email = $('#signInEmail').val();
+    let password = $('#signInPassword').val();
+    console.log(email, password);
+    //validate the input//
+    if (email.length == 0) {
+        alert('Please add email!');
+    } else if (password.length == 0) {
+        alert('Please add password!');
+    } else {
+        //if input is valid; register the user//
+        const signInUserObject = {
+            email: email,
+            password: password
+        };
+        // create ajax call to register the user//
+        $.ajax({
+            type: 'POST',
+            url: '/users/signin',
+            dataType: 'json',
+            data: JSON.stringify(signInUserObject),
+            contentType: 'application/json'
+        })
+        //if registation is successful
+            .done(function (result) {
+            console.log(result);
+            alert('Thanks for signing up! You may now sign in with your username and password.');
+            $(".introScreen").hide();
+            $(".signInScreen").hide();
+            $(".createUsernameScreen").hide();
+            $(".dummyAccountScreen").hide();
+            $(".homeScreen").show();
+            $(".searchScreen").hide();
+            $(".chosenFail").hide();
+            $(".recipeInfoScreen").hide();
+            $(".createRecipeScreen").hide();
+        })
+        //if registration fails
+            .fail(function (jqXHR, error, errorThrown) {
+            console.log(jqXHR);
+            console.log(error);
+            console.log(errorThrown);
+        });
+    };
+
 });
 
 $(document).on("click", ".registerButton", function (event) {
     event.preventDefault();
-    $(".introScreen").hide();
-    $(".signInScreen").show();
-    $(".createUsernameScreen").hide();
-    $(".dummyAccountScreen").hide();
-    $(".homeScreen").hide();
-    $(".searchScreen").hide();
-    $(".chosenFail").hide();
-    $(".recipeInfoScreen").hide();
-    $(".createRecipeScreen").hide();
+    //get input from the user//
+    let name = $('#registerName').val();
+    let email = $('#registerEmail').val();
+    let password = $('#registerPassword').val();
+    let confirmPassword = $('#registerConfirmPassword').val();
+    console.log(name, email, password, confirmPassword);
+    //validate the input//
+    if (name.length == 0) {
+        alert('Please add name!');
+    } else if (email.length == 0) {
+        alert('Please add email!');
+    } else if (password.length == 0) {
+        alert('Please add password!');
+    } else if (password !== confirmPassword) {
+        alert('Passwords must match!');
+    } else {
+        //if input is valid; register the user//
+        const newUserObject = {
+            name: name,
+            email: email,
+            password: password
+        };
+        // create ajax call to register the user//
+        $.ajax({
+                type: 'POST',
+                url: '/users/create',
+                dataType: 'json',
+                data: JSON.stringify(newUserObject),
+                contentType: 'application/json'
+            })
+            //if registation is successful
+            .done(function (result) {
+                console.log(result);
+                alert('Thanks for signing up! You may now sign in with your username and password.');
+                $(".introScreen").hide();
+                $(".signInScreen").show();
+                $(".createUsernameScreen").hide();
+                $(".dummyAccountScreen").hide();
+                $(".homeScreen").hide();
+                $(".searchScreen").hide();
+                $(".chosenFail").hide();
+                $(".recipeInfoScreen").hide();
+                $(".createRecipeScreen").hide();
+            })
+            //if registration fails
+            .fail(function (jqXHR, error, errorThrown) {
+                console.log(jqXHR);
+                console.log(error);
+                console.log(errorThrown);
+            });
+    };
 });
+
 
 //nav bar options//
 $(document).on("click", ".jsMyLibrary", function (event) {
@@ -97,6 +177,8 @@ $(document).on("click", ".jsMyLibrary", function (event) {
     $(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
+    $(".ingredientsContainer").hide();
+    $(".modsList").hide();
 });
 
 $(document).on("click", ".jsCreateRecipe", function (event) {

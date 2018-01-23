@@ -67,8 +67,8 @@
                 <h2 class="signInMessage">Sign In</h2>
 
                 <form class="signInform" method="POST" autocomplete="off">
-                    <input class="signInInput" type="text" placeholder="Email Address" name="email">
-                    <input class="signInInput" type="password" placeholder="Password" name="password">
+                    <input class="signInInput" id="signInEmail" type="text" placeholder="Email Address" name="email">
+                    <input class="signInInput" id="signInPassword" type="password" placeholder="Password" name="password">
                     <button class="signInButton " type="submit">Next</button>
                 </form>
 
@@ -89,19 +89,19 @@
                 <form class="signUpForm" method="POST">
                     <div class="formGroup">
                         <label class="label" for="fullName">Name:</label>
-                        <input class="formControl" id="name" type="text" placeholder="Name" name="fullName">
+                        <input class="formControl" id="registerName" type="text" placeholder="Name" name="fullName">
                     </div>
                     <div class="formGroup">
                         <label for="email">Email:</label>
-                        <input class="formControl" id="email" type="text" placeholder="Email Address" name="email">
+                        <input class="formControl" id="registerEmail" type="text" placeholder="Email Address" name="email">
                     </div>
                     <div class="formGroup">
                         <label for="password">Password:</label>
-                        <input class="formControl" id="password" type="password" placeholder="Password" name="password">
+                        <input class="formControl" id="registerPassword" type="password" placeholder="Password" name="password">
                     </div>
                     <div class="formGroup">
                         <label for="confirmPassword">Confirm Password:</label>
-                        <input class="formControl" id="confirmPassword" type="password" placeholder="Confirm Password" name="confirmPassword">
+                        <input class="formControl" id="registerConfirmPassword" type="password" placeholder="Confirm Password" name="confirmPassword">
                     </div>
                     <button class="registerButton " type="submit">Sign Up</button>
                 </form>
