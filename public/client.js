@@ -1,7 +1,98 @@
 //define objects variables functions
+let loginUserEmail = "";
+let loginUserId = "";
 
+function displayRecipes(userId) {
+    $.ajax({
+            type: "GET",
+            url: '/recipes/' + userId,
+            dataType: 'json',
+        })
+        .done(function (dataOutput) {
+            console.log(dataOutput);
+            //displays the external api json object in the console
+            displayRecipeResult(dataOutput.recipes);
+            displayRecipeDetailsResult(dataOutput.recipes);
+        })
+        .fail(function (jqXHR, error, errorThrown) {
+            console.log(jqXHR);
+            console.log(error);
+            console.log(errorThrown);
+        });
+}
 
+function displayRecipeResult(dataFromApi) {
+    var buildTheHtmlOutput = "";
+    $.each(dataFromApi, function (dataKey, dataValue) {
+        buildTheHtmlOutput += '<a class="recipeLink" href="#">';
+        buildTheHtmlOutput += '<div class="recipeImgContainer">';
+        buildTheHtmlOutput += '<img class="recipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">';
+        buildTheHtmlOutput += '</div>';
+        buildTheHtmlOutput += '<h2 class="recipeTitle">' + dataValue.title + '</h2>';
+        buildTheHtmlOutput += '</a>';
+    })
+    $(".recipeSnippetContainer").html(buildTheHtmlOutput);
+};
 
+function displayRecipeDetailsResult(dataFromApi) {
+    var buildTheHtmlOutput = "";
+    $.each(dataFromApi, function (dataKey, dataValue) {
+        buildTheHtmlOutput += '<ul class="recipeInsideContainer" id="">';
+        buildTheHtmlOutput += '<li>';
+        buildTheHtmlOutput += '<img class="searchRecipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">';
+        buildTheHtmlOutput += '</li><br>';
+        buildTheHtmlOutput += '<li>';
+        buildTheHtmlOutput += '<h2 class="chosenTitle">' + dataValue.title + '</h2><br>';
+        buildTheHtmlOutput += '</li ><br>';
+        buildTheHtmlOutput += '<li>';
+        buildTheHtmlOutput += '<h3 class="ingredTitle">Ingredients:</h3>';
+        buildTheHtmlOutput += '<ul class = "chosenList">';
+        buildTheHtmlOutput += '<li class="chosenIngr">' + dataValue.ingredients[0] + '</li><br>';
+        buildTheHtmlOutput += '<li class="chosenIngr">' + dataValue.ingredients + '</li><br>';
+        buildTheHtmlOutput += '<li class="chosenIngr">' + dataValue.ingredients + '</li><br>';
+        buildTheHtmlOutput += '<li class="chosenIngr">' + dataValue.ingredients + '</li><br>';
+        buildTheHtmlOutput += '<li class="chosenIngr">' + dataValue.ingredients + '</li><br>';
+        buildTheHtmlOutput += '</ul>';
+        buildTheHtmlOutput += '</li><br>';
+        buildTheHtmlOutput += '<li>';
+        buildTheHtmlOutput += '<div class="recipeButtonContainer">';
+        buildTheHtmlOutput += '<button id="modifyAnchor" type="button">Modify</button>';
+        buildTheHtmlOutput += '<button id="directionsAnchor" type="button">Directions</button>';
+        buildTheHtmlOutput += '</div>';
+        buildTheHtmlOutput += '</li><br>';
+        buildTheHtmlOutput += '<li>';
+        buildTheHtmlOutput += '<div class="ingredientsContainer">';
+        buildTheHtmlOutput += '<label class="ingredientsLabel" for="ingredients">Add:</label>';
+        buildTheHtmlOutput += '<input type="text" name="ingredients" class="ingredients" placeholder="Ingredient">';
+        buildTheHtmlOutput += '<div class="addRemove">';
+        buildTheHtmlOutput += '<span>';
+        buildTheHtmlOutput += '<span>';
+        buildTheHtmlOutput += '<a class="jsAddButton" href="#"><i class="fa fa-plus-circle fa-lg ingredients-adder" aria-hidden="true"></i></a>';
+        buildTheHtmlOutput += '</span>';
+        buildTheHtmlOutput += '<span>';
+        buildTheHtmlOutput += '<a class="jsDeleteButton" href="#"><i class="fa fa-minus-circle fa-lg js-input-delete" aria-hidden="true"></i></a>';
+        buildTheHtmlOutput += '</span>';
+        buildTheHtmlOutput += '</span>';
+        buildTheHtmlOutput += '</div>';
+        buildTheHtmlOutput += '</div>';
+        buildTheHtmlOutput += '</li><br>';
+        buildTheHtmlOutput += '<li>';
+        buildTheHtmlOutput += '<ul class="modsList">';
+        buildTheHtmlOutput += '<li class="chosenIng">Mods</li>';
+        buildTheHtmlOutput += '<li class="chosenIng">Mods</li>';
+        buildTheHtmlOutput += '<li class="chosenIng">Mods</li>';
+        buildTheHtmlOutput += '</ul>';
+        buildTheHtmlOutput += '</li><br>';
+        buildTheHtmlOutput += '<li>';
+        buildTheHtmlOutput += '<div class="recipeButtonContainer">';
+        buildTheHtmlOutput += '<button type="button" class="recipeButton green" id="saveAnchor">Save</button>';
+        buildTheHtmlOutput += '<button type="button" class="recipeButton red" id="deleteAnchor">Delete</button>';
+        buildTheHtmlOutput += '</div>';
+        buildTheHtmlOutput += '</li><br>';
+        buildTheHtmlOutput += '</ul>';
+    })
+    $(".recipeOutsideContainer").html(buildTheHtmlOutput);
+};
 
 
 
@@ -79,32 +170,36 @@ $(document).on("click", ".signInButton", function (event) {
         };
         // create ajax call to register the user//
         $.ajax({
-            type: 'POST',
-            url: '/users/signin',
-            dataType: 'json',
-            data: JSON.stringify(signInUserObject),
-            contentType: 'application/json'
-        })
-        //if registation is successful
+                type: 'POST',
+                url: '/users/signin',
+                dataType: 'json',
+                data: JSON.stringify(signInUserObject),
+                contentType: 'application/json'
+            })
+            //if registation is successful
             .done(function (result) {
-            console.log(result);
-            alert('Thanks for signing up! You may now sign in with your username and password.');
-            $(".introScreen").hide();
-            $(".signInScreen").hide();
-            $(".createUsernameScreen").hide();
-            $(".dummyAccountScreen").hide();
-            $(".homeScreen").show();
-            $(".searchScreen").hide();
-            $(".chosenFail").hide();
-            $(".recipeInfoScreen").hide();
-            $(".createRecipeScreen").hide();
-        })
-        //if registration fails
+                console.log(result._id);
+                console.log(result.email);
+                loginUserEmail = result.email;
+                loginUserId = result._id;
+                displayRecipes(loginUserId);
+                $(".loggedInUser").val(loginUserId);
+                $(".introScreen").hide();
+                $(".signInScreen").hide();
+                $(".createUsernameScreen").hide();
+                $(".dummyAccountScreen").hide();
+                $(".homeScreen").show();
+                $(".searchScreen").hide();
+                $(".chosenFail").hide();
+                $(".recipeInfoScreen").hide();
+                $(".createRecipeScreen").hide();
+            })
+            //if registration fails
             .fail(function (jqXHR, error, errorThrown) {
-            console.log(jqXHR);
-            console.log(error);
-            console.log(errorThrown);
-        });
+                console.log(jqXHR);
+                console.log(error);
+                console.log(errorThrown);
+            });
     };
 
 });
@@ -347,15 +442,62 @@ $(document).on("click", "#deleteAnchor", function (event) {
 //save created recipe button---> recipe info screen about newly created recipe//
 $(document).on("click", "#jsCreateSaveButton", function (event) {
     event.preventDefault();
-    $(".introScreen").hide();
-    $(".signInScreen").hide();
-    $(".createUsernameScreen").hide();
-    $(".dummyAccountScreen").hide();
-    $(".homeScreen").hide();
-    $(".searchScreen").hide();
-    $(".chosenFail").hide();
-    $(".recipeInfoScreen").show();
-    $(".createRecipeScreen").hide();
+    //get input from the user//
+    let title = $('#titleCreate').val();
+    let ingredients = $('#ingredientsCreate').val();
+    let directions = $('#createDirections').val();
+    let notes = $('#notesCreate').val();
+    let userIdHidden = $('.loggedInUser').val();
+    console.log(title, ingredients, directions, notes, userIdHidden);
+    //validate the input//
+    if (title.length == 0) {
+        alert('Please add title!');
+    } else if (ingredients.length == 0) {
+        alert('Please add ingredients!');
+    } else if (directions.length == 0) {
+        alert('Please add directions!');
+    } else if (notes.length == 0) {
+        alert('Please add notes!');
+    } else {
+        //if input is valid; register the user//
+        const newRecipeObject = {
+            title: title,
+            ingredients: ingredients,
+            directions: directions,
+            notes: notes,
+            userId: userIdHidden
+        };
+        // create ajax call to register the user//
+        $.ajax({
+                type: 'POST',
+                url: '/recipes/create',
+                dataType: 'json',
+                data: JSON.stringify(newRecipeObject),
+                contentType: 'application/json'
+            })
+            //if registation is successful
+            .done(function (result) {
+                console.log(result);
+                displayRecipes(userIdHidden);
+                $(".introScreen").hide();
+                $(".signInScreen").hide();
+                $(".createUsernameScreen").hide();
+                $(".dummyAccountScreen").hide();
+                $(".homeScreen").hide();
+                $(".searchScreen").hide();
+                $(".chosenFail").hide();
+                $(".recipeInfoScreen").show();
+                $(".createRecipeScreen").hide();
+            })
+            //if registration fails
+            .fail(function (jqXHR, error, errorThrown) {
+                console.log(jqXHR);
+                console.log(error);
+                console.log(errorThrown);
+            });
+    };
+
+
 });
 
 //cancel created recipe button//

@@ -505,7 +505,7 @@ button {
     vertical-align: text-bottom;
 }
 
-#ingredients {
+.ingredients {
     font-size: 20px;
     line-height: 25px;
     width: 47%;
@@ -958,7 +958,7 @@ button {
         width: 28%;
     }
 
-    #ingredients {
+    .ingredients {
         width: 54%;
     }
 
@@ -1066,7 +1066,7 @@ button {
         width: 40%;
     }
 
-    #ingredients {
+    .ingredients {
         width: 70%;
     }
 

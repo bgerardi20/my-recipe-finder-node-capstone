@@ -65,10 +65,10 @@
             <div class="signInInnerContainer">
                 <img class="signInLogo" src="./website-images/my-recipies-logo.png">
                 <h2 class="signInMessage">Sign In</h2>
-
+                <!------delete value on inpuut ---------------------------------->
                 <form class="signInform" method="POST" autocomplete="off">
-                    <input class="signInInput" id="signInEmail" type="text" placeholder="Email Address" name="email">
-                    <input class="signInInput" id="signInPassword" type="password" placeholder="Password" name="password">
+                    <input class="signInInput" id="signInEmail" type="text" placeholder="Email Address" name="email" value="brendan.gerardi@gmail.com">
+                    <input class="signInInput" id="signInPassword" type="password" placeholder="Password" name="password" value="123">
                     <button class="signInButton " type="submit">Next</button>
                 </form>
 
@@ -401,7 +401,7 @@
                 <li>
                     <div class="ingredientsContainer">
                         <label class="ingredientsLabel" for="ingredients">Add:</label>
-                        <input type="text" name="ingredients" id="ingredients" placeholder="Ingredient">
+                        <input type="text" name="ingredients" class="ingredients" placeholder="Ingredient">
                         <div class="addRemove">
                             <span>
                                 <span>
@@ -451,6 +451,7 @@
             </div>
 
             <form class="createForm" action="" method="POST">
+                <input class="loggedInUser" type="hidden" value=""><br>
                 <!--
 <div class="createSections">
     <label class="createLabel" for="image">Recipe Image:</label><br>
@@ -459,7 +460,7 @@
 -->
                 <div class="createSections">
                     <label class="createLabel" for="title">Recipe Title:</label><br>
-                    <input class="createInput" type="text" name="title" id="title" placeholder="Spaghetti" required><br>
+                    <input class="createInput" type="text" name="title" id="titleCreate" placeholder="Spaghetti" required><br>
                 </div>
                 <div class="createSections">
                     <label class="createLabel" for="ingredients">Ingredients:</label><br>
@@ -471,7 +472,7 @@
                 </div>
                 <div class="createSections">
                     <label class="createLabel" for="notes">Notes:</label><br>
-                    <textarea class="createInput" type="text" name="notes" id="notes" placeholder="My mothers secret recipe"></textarea>
+                    <textarea class="createInput" type="text" name="notes" id="notesCreate" placeholder="My mothers secret recipe"></textarea>
                 </div>
 
 

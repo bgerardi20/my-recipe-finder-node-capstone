@@ -1,5 +1,5 @@
 const User = require('./models/user');
-//const Achievement = require('./models/achievement');
+const Recipe = require('./models/recipe');
 const bodyParser = require('body-parser');
 const config = require('./config');
 const mongoose = require('mongoose');
@@ -135,20 +135,19 @@ app.post('/users/signin', function (req, res) {
 // -------------ACHIEVEMENT ENDPOINTS------------------------------------------------
 // POST -----------------------------------------
 // creating a new achievement
-app.post('/new/create', (req, res) => {
-    let achieveWhat = req.body.achieveWhat;
-    achieveWhat = achieveWhat.trim();
-    let achieveHow = req.body.achieveHow;
-    let achieveWhy = req.body.achieveWhy;
-    let achieveWhen = req.body.achieveWhen;
-    let user = req.body.user;
+app.post('/recipes/create', (req, res) => {
+    let title = req.body.title;
+    let ingredients = req.body.ingredients;
+    let directions = req.body.directions;
+    let notes = req.body.notes;
+    let userId = req.body.userId;
 
-    Achievement.create({
-        user,
-        achieveWhat,
-        achieveHow,
-        achieveWhen,
-        achieveWhy
+    Recipe.create({
+        title,
+        ingredients,
+        directions,
+        notes,
+        userId
     }, (err, item) => {
         if (err) {
             return res.status(500).json({
@@ -156,7 +155,6 @@ app.post('/new/create', (req, res) => {
             });
         }
         if (item) {
-            console.log(`Achievement \`${achieveWhat}\` added.`);
             return res.json(item);
         }
     });
@@ -185,19 +183,15 @@ app.put('/achievement/:id', function (req, res) {
 
 // GET ------------------------------------
 // accessing all of a user's achievements
-app.get('/achievements/:user', function (req, res) {
-    Achievement
-        .find()
-        .sort('achieveWhen')
-        .then(function (achievements) {
-            let achievementOutput = [];
-            achievements.map(function (achievement) {
-                if (achievement.user == req.params.user) {
-                    achievementOutput.push(achievement);
-                }
-            });
+app.get('/recipes/:userId', function (req, res) {
+    console.log(req.params.userId);
+    Recipe
+        .find({
+            userId: req.params.userId
+        })
+        .then(function (recipes) {
             res.json({
-                achievementOutput
+                recipes
             });
         })
         .catch(function (err) {
@@ -208,19 +202,6 @@ app.get('/achievements/:user', function (req, res) {
         });
 });
 
-// accessing a single achievement by id
-app.get('/achievement/:id', function (req, res) {
-    Achievement
-        .findById(req.params.id).exec().then(function (achievement) {
-            return res.json(achievement);
-        })
-        .catch(function (achievements) {
-            console.error(err);
-            res.status(500).json({
-                message: 'Internal Server Error'
-            });
-        });
-});
 
 // DELETE ----------------------------------------
 // deleting an achievement by id
