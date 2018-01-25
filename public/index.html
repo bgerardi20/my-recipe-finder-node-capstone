@@ -159,7 +159,7 @@
         <h1 class="pageTitle"><img src="" alt="" class="titleLogo">My Library</h1>
 
         <div class="searchBarContainer">
-            <input class="search" type="text" name="search" placeholder="Search Recipes...">
+            <input class="search" id="recipeSearchInput" type="text" name="search" placeholder="Search Recipes...">
             <button class="searchSubmit" type="submit">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </button>
@@ -288,7 +288,7 @@
     <!-------------------->
 
     <!---once recipe is choosen----->
-    <!--
+
     <main class="chosenSucess">
 
         <section class="recipeOutsideContainer">
@@ -320,7 +320,7 @@
 
         </section>
     </main>
--->
+
 
     <!------------------------------>
 
@@ -382,13 +382,9 @@
                 </li><br>
                 <li>
                     <h3 class="ingredTitle">Ingredients:</h3>
-                    <ul class="chosenList">
-                        <li class="chosenIngr">ingredient1</li><br>
-                        <li class="chosenIngr">ingredient2</li><br>
-                        <li class="chosenIngr">ingredient3</li><br>
-                        <li class="chosenIngr">ingredient4</li><br>
-                        <li class="chosenIngr">ingredient5</li><br>
-                    </ul>
+                    <div class="chosenList">
+                        <p class="chosenIngr">ingredient1</p><br>
+                    </div>
                 </li><br>
                 <li>
                     <div class="recipeButtonContainer">

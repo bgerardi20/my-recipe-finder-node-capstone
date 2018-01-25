@@ -5,6 +5,8 @@ const config = require('./config');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
+const unirest = require('unirest');
+const events = require('events');
 const BasicStrategy = require('passport-http').BasicStrategy;
 const express = require('express');
 const app = express();
@@ -48,6 +50,42 @@ function closeServer() {
         });
     }));
 }
+
+// external API call
+var getFromEdamam = function (searchTerm) {
+    var emitter = new events.EventEmitter();
+    //console.log("inside getFromActive function");
+    //    unirest.get("http://api.amp.active.com/v2/search?topicName=Running&registerable_only=true&category=races&attributeValue=5k&sort=date_asc&per_page=24&near="+searchTerm+",US&radius=50&api_key=2e4ra5w6b9augfrn54vjb4bx")
+    unirest.get("https://api.edamam.com/search?q=" + searchTerm + "&app_id=5097ae44&app_key=a080dbf283c1fc79a3f91ba9fc627c1c&from=0&to=30")
+        .header("Accept", "application/json")
+        .end(function (result) {
+            //console.log(result.status, result.headers, result.body);
+            //success scenario
+            if (result.ok) {
+                emitter.emit('end', result.body);
+            }
+            //failure scenario
+            else {
+                emitter.emit('error', result.code);
+            }
+        });
+    return emitter;
+};
+
+// local API endpoints
+app.get('/get-recipes-from-edamam/:name', function (req, res) {
+    //    external api function call and response
+    var searchReq = getFromEdamam(req.params.name);
+    //get the data from the first api call
+    searchReq.on('end', function (item) {
+        res.json(item);
+    });
+    //error handling
+    searchReq.on('error', function (code) {
+        res.sendStatus(code);
+    });
+});
+
 
 // ---------------USER ENDPOINTS-------------------------------------
 // POST -----------------------------------
@@ -134,7 +172,7 @@ app.post('/users/signin', function (req, res) {
 
 // -------------ACHIEVEMENT ENDPOINTS------------------------------------------------
 // POST -----------------------------------------
-// creating a new achievement
+// creating a new recipe
 app.post('/recipes/create', (req, res) => {
     let title = req.body.title;
     let ingredients = req.body.ingredients;

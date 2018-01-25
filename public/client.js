@@ -24,6 +24,45 @@ function displayRecipes(userId) {
 function displayRecipeResult(dataFromApi) {
     var buildTheHtmlOutput = "";
     $.each(dataFromApi, function (dataKey, dataValue) {
+        buildTheHtmlOutput += '<li class="searchRecipeResultOption">';
+        buildTheHtmlOutput += '<div class="object">';
+        buildTheHtmlOutput += '<a class="searchRecipeResultsLink" href="#">';
+        buildTheHtmlOutput += '<span class="searchRecipeImgContainer">';
+        buildTheHtmlOutput += '<img class="searchRecipeImg" src="' + dataValue.image + '" alt="pasta">';
+        buildTheHtmlOutput += '</span>';
+        buildTheHtmlOutput += '</a>';
+        buildTheHtmlOutput += '</div>';
+
+        buildTheHtmlOutput += '<h3 class="resultsTitle">' + dataValue.hits.recipe.label + '</h3><br>';
+
+        buildTheHtmlOutput += '<div class="data">';
+        buildTheHtmlOutput += '<a class="cal" href="#">';
+        buildTheHtmlOutput += '<span class="num">375</span>';
+        buildTheHtmlOutput += '<span class="info">calories</span>';
+        buildTheHtmlOutput += '</a>';
+        buildTheHtmlOutput += '<a class="ing" href="#">';
+        buildTheHtmlOutput += '<span class="num">4</span>';
+        buildTheHtmlOutput += '<span class="info">ingredients</span>';
+        buildTheHtmlOutput += '</a>';
+        buildTheHtmlOutput += '</div>';
+
+        buildTheHtmlOutput += '<div class="addButton">';
+        buildTheHtmlOutput += '<button type="submit" class="addSuccessButton green jsSuccessButton" id="add">Add</button>';
+        buildTheHtmlOutput += '</div>';
+        buildTheHtmlOutput += '</li>';
+        //        buildTheHtmlOutput += '<a class="recipeLink" href="#">';
+        //        buildTheHtmlOutput += '<div class="recipeImgContainer">';
+        //        buildTheHtmlOutput += '<img class="recipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">';
+        //        buildTheHtmlOutput += '</div>';
+        //        buildTheHtmlOutput += '<h2 class="recipeTitle">' + dataValue.title + '</h2>';
+        //        buildTheHtmlOutput += '</a>';
+    })
+    $(".recipeSnippetContainer").html(buildTheHtmlOutput);
+};
+
+function displayRecipeFromEdamam(dataOutput) {
+    var buildTheHtmlOutput = "";
+    $.each(dataOutput, function (dataKey, dataValue) {
         buildTheHtmlOutput += '<a class="recipeLink" href="#">';
         buildTheHtmlOutput += '<div class="recipeImgContainer">';
         buildTheHtmlOutput += '<img class="recipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">';
@@ -31,7 +70,7 @@ function displayRecipeResult(dataFromApi) {
         buildTheHtmlOutput += '<h2 class="recipeTitle">' + dataValue.title + '</h2>';
         buildTheHtmlOutput += '</a>';
     })
-    $(".recipeSnippetContainer").html(buildTheHtmlOutput);
+    $(".resultsList").html(buildTheHtmlOutput);
 };
 
 function displayRecipeDetailsResult(dataFromApi) {
@@ -46,13 +85,9 @@ function displayRecipeDetailsResult(dataFromApi) {
         buildTheHtmlOutput += '</li ><br>';
         buildTheHtmlOutput += '<li>';
         buildTheHtmlOutput += '<h3 class="ingredTitle">Ingredients:</h3>';
-        buildTheHtmlOutput += '<ul class = "chosenList">';
-        buildTheHtmlOutput += '<li class="chosenIngr">' + dataValue.ingredients[0] + '</li><br>';
-        buildTheHtmlOutput += '<li class="chosenIngr">' + dataValue.ingredients + '</li><br>';
-        buildTheHtmlOutput += '<li class="chosenIngr">' + dataValue.ingredients + '</li><br>';
-        buildTheHtmlOutput += '<li class="chosenIngr">' + dataValue.ingredients + '</li><br>';
-        buildTheHtmlOutput += '<li class="chosenIngr">' + dataValue.ingredients + '</li><br>';
-        buildTheHtmlOutput += '</ul>';
+        buildTheHtmlOutput += '<div class="chosenList">';
+        buildTheHtmlOutput += '<p class="chosenIngr">' + dataValue.ingredients + '</p><br>';
+        buildTheHtmlOutput += '</div>';
         buildTheHtmlOutput += '</li><br>';
         buildTheHtmlOutput += '<li>';
         buildTheHtmlOutput += '<div class="recipeButtonContainer">';
@@ -321,30 +356,63 @@ $(document).on("click", ".recipeLink", function (event) {
 //search bar button --> success scenario//
 $(document).on("click", ".searchSubmit", function (event) {
     event.preventDefault();
-    $(".introScreen").hide();
-    $(".signInScreen").hide();
-    $(".createUsernameScreen").hide();
-    $(".dummyAccountScreen").hide();
-    $(".homeScreen").hide();
-    $(".searchScreen").show();
-    $(".chosenFail").hide();
-    $(".recipeInfoScreen").hide();
-    $(".createRecipeScreen").hide();
+    let searchBarInput = $('#recipeSearchInput').val();
+    console.log(searchBarInput);
+    //validate the input//
+    if (searchBarInput.length == 0) {
+        alert('Please search for a recipe!');
+    } else {
+        $.ajax({
+                type: "GET",
+                url: '/get-recipes-from-edamam/' + searchBarInput,
+                dataType: 'json',
+            })
+            .done(function (dataOutput) {
+                console.log(dataOutput);
+                displayRecipeFromEdamam(dataOutput);
+                $(".introScreen").hide();
+                $(".signInScreen").hide();
+                $(".createUsernameScreen").hide();
+                $(".dummyAccountScreen").hide();
+                $(".homeScreen").hide();
+                $(".searchScreen").show();
+                $(".chosenFail").hide();
+                $(".recipeInfoScreen").hide();
+                $(".createRecipeScreen").hide();
+                //displays the external api json object in the console
+                displayRecipeResult(dataOutput.recipes);
+                displayRecipeDetailsResult(dataOutput.recipes);
+            })
+            .fail(function (jqXHR, error, errorThrown) {
+                console.log(jqXHR);
+                console.log(error);
+                console.log(errorThrown);
+                $(".introScreen").hide();
+                $(".signInScreen").hide();
+                $(".createUsernameScreen").hide();
+                $(".dummyAccountScreen").hide();
+                $(".homeScreen").hide();
+                $(".searchScreen").hide();
+                $(".chosenFail").show();
+                $(".recipeInfoScreen").hide();
+                $(".createRecipeScreen").hide();
+            });
+    }
 });
 
 //search bar button --> fail scenario//
-$(document).on("click", ".searchSubmit", function (event) {
-    event.preventDefault();
-    $(".introScreen").hide();
-    $(".signInScreen").hide();
-    $(".createUsernameScreen").hide();
-    $(".dummyAccountScreen").hide();
-    $(".homeScreen").hide();
-    $(".searchScreen").hide();
-    $(".chosenFail").show();
-    $(".recipeInfoScreen").hide();
-    $(".createRecipeScreen").hide();
-});
+//$(document).on("click", ".searchSubmit", function (event) {
+//    event.preventDefault();
+//    $(".introScreen").hide();
+//    $(".signInScreen").hide();
+//    $(".createUsernameScreen").hide();
+//    $(".dummyAccountScreen").hide();
+//    $(".homeScreen").hide();
+//    $(".searchScreen").hide();
+//    $(".chosenFail").show();
+//    $(".recipeInfoScreen").hide();
+//    $(".createRecipeScreen").hide();
+//});
 
 //recipe info screen(modify button)//
 $(document).on("click", "#modifyAnchor", function (event) {
