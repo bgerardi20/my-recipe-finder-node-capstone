@@ -9,7 +9,7 @@ function displayRecipes(userId) {
             dataType: 'json',
         })
         .done(function (dataOutput) {
-            console.log(dataOutput);
+            //            console.log(dataOutput);
             //displays the external api json object in the console
             displayRecipeResult(dataOutput.recipes);
             displayRecipeDetailsResult(dataOutput.recipes);
@@ -21,19 +21,20 @@ function displayRecipes(userId) {
         });
 }
 
-function displayRecipeResult(dataFromApi) {
+function displayRecipeFromEdamam(dataFromApi) {
+    console.log(dataFromApi);
     var buildTheHtmlOutput = "";
-    $.each(dataFromApi, function (dataKey, dataValue) {
+    $.each(dataFromApi.hits, function (dataKey, dataValue) {
         buildTheHtmlOutput += '<li class="searchRecipeResultOption">';
         buildTheHtmlOutput += '<div class="object">';
         buildTheHtmlOutput += '<a class="searchRecipeResultsLink" href="#">';
         buildTheHtmlOutput += '<span class="searchRecipeImgContainer">';
-        buildTheHtmlOutput += '<img class="searchRecipeImg" src="' + dataValue.image + '" alt="pasta">';
+        buildTheHtmlOutput += '<img class="searchRecipeImg" src="' + dataValue.recipe.image + '" alt="pasta">';
         buildTheHtmlOutput += '</span>';
         buildTheHtmlOutput += '</a>';
         buildTheHtmlOutput += '</div>';
 
-        buildTheHtmlOutput += '<h3 class="resultsTitle">' + dataValue.hits.recipe.label + '</h3><br>';
+        buildTheHtmlOutput += '<h3 class="resultsTitle">' + dataValue.recipe.label + '</h3><br>';
 
         buildTheHtmlOutput += '<div class="data">';
         buildTheHtmlOutput += '<a class="cal" href="#">';
@@ -57,10 +58,10 @@ function displayRecipeResult(dataFromApi) {
         //        buildTheHtmlOutput += '<h2 class="recipeTitle">' + dataValue.title + '</h2>';
         //        buildTheHtmlOutput += '</a>';
     })
-    $(".recipeSnippetContainer").html(buildTheHtmlOutput);
+    $(".resultsList").html(buildTheHtmlOutput);
 };
 
-function displayRecipeFromEdamam(dataOutput) {
+function displayRecipeResult(dataOutput) {
     var buildTheHtmlOutput = "";
     $.each(dataOutput, function (dataKey, dataValue) {
         buildTheHtmlOutput += '<a class="recipeLink" href="#">';
@@ -70,10 +71,11 @@ function displayRecipeFromEdamam(dataOutput) {
         buildTheHtmlOutput += '<h2 class="recipeTitle">' + dataValue.title + '</h2>';
         buildTheHtmlOutput += '</a>';
     })
-    $(".resultsList").html(buildTheHtmlOutput);
+    $(".recipeSnippetContainer").html(buildTheHtmlOutput);
 };
 
 function displayRecipeDetailsResult(dataFromApi) {
+    //    console.log(dataFromApi);
     var buildTheHtmlOutput = "";
     $.each(dataFromApi, function (dataKey, dataValue) {
         buildTheHtmlOutput += '<ul class="recipeInsideContainer" id="">';
@@ -139,9 +141,10 @@ $(document).ready(function () {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".chosenFail").hide();
+    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
+    $(".navList").hide();
 });
 
 
@@ -154,7 +157,7 @@ $(document).on("click", ".jsSignInButton", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".chosenFail").hide();
+    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
 });
@@ -168,7 +171,7 @@ $(document).on("click", ".jsRegisterButton", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".chosenFail").hide();
+    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
 });
@@ -181,7 +184,7 @@ $(document).on("click", ".jsDummyButton", function (event) {
     $(".dummyAccountScreen").show();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".chosenFail").hide();
+    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
 });
@@ -225,9 +228,10 @@ $(document).on("click", ".signInButton", function (event) {
                 $(".dummyAccountScreen").hide();
                 $(".homeScreen").show();
                 $(".searchScreen").hide();
-                $(".chosenFail").hide();
+                //$(".chosenFail").hide();
                 $(".recipeInfoScreen").hide();
                 $(".createRecipeScreen").hide();
+                $(".navList").show();
             })
             //if registration fails
             .fail(function (jqXHR, error, errorThrown) {
@@ -281,7 +285,7 @@ $(document).on("click", ".registerButton", function (event) {
                 $(".dummyAccountScreen").hide();
                 $(".homeScreen").hide();
                 $(".searchScreen").hide();
-                $(".chosenFail").hide();
+                //$(".chosenFail").hide();
                 $(".recipeInfoScreen").hide();
                 $(".createRecipeScreen").hide();
             })
@@ -304,7 +308,7 @@ $(document).on("click", ".jsMyLibrary", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").show();
     $(".searchScreen").hide();
-    $(".chosenFail").hide();
+    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".ingredientsContainer").hide();
@@ -319,7 +323,7 @@ $(document).on("click", ".jsCreateRecipe", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".chosenFail").hide();
+    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").show();
 });
@@ -333,7 +337,7 @@ $(document).on("click", ".jsLogout", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".chosenFail").hide();
+    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
 });
@@ -348,7 +352,7 @@ $(document).on("click", ".recipeLink", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".chosenFail").hide();
+    //$(".chosenFail").hide();
     $(".recipeInfoScreen").show();
     $(".createRecipeScreen").hide();
 });
@@ -368,7 +372,7 @@ $(document).on("click", ".searchSubmit", function (event) {
                 dataType: 'json',
             })
             .done(function (dataOutput) {
-                console.log(dataOutput);
+                //                console.log(dataOutput);
                 displayRecipeFromEdamam(dataOutput);
                 $(".introScreen").hide();
                 $(".signInScreen").hide();
@@ -376,12 +380,12 @@ $(document).on("click", ".searchSubmit", function (event) {
                 $(".dummyAccountScreen").hide();
                 $(".homeScreen").hide();
                 $(".searchScreen").show();
-                $(".chosenFail").hide();
+                //$(".chosenFail").hide();
                 $(".recipeInfoScreen").hide();
                 $(".createRecipeScreen").hide();
                 //displays the external api json object in the console
-                displayRecipeResult(dataOutput.recipes);
-                displayRecipeDetailsResult(dataOutput.recipes);
+                //                displayRecipeResult(dataOutput.recipes);
+                //                displayRecipeDetailsResult(dataOutput.recipes);
             })
             .fail(function (jqXHR, error, errorThrown) {
                 console.log(jqXHR);
@@ -423,7 +427,7 @@ $(document).on("click", "#modifyAnchor", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".chosenFail").hide();
+    //$(".chosenFail").hide();
     $(".recipeInfoScreen").show();
     $(".createRecipeScreen").hide();
     $(".ingredientsContainer").show();
@@ -440,7 +444,7 @@ $(document).on("click", "#directionsAnchor", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".chosenFail").hide();
+    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
 });
@@ -454,7 +458,7 @@ $(document).on("click", ".jsAddButton", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".chosenFail").hide();
+    //$(".chosenFail").hide();
     $(".recipeInfoScreen").show();
     $(".createRecipeScreen").hide();
     $(".ingredientsContainer").hide();
@@ -470,7 +474,7 @@ $(document).on("click", ".jsDeleteButton", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".chosenFail").hide();
+    //$(".chosenFail").hide();
     $(".recipeInfoScreen").show();
     $(".createRecipeScreen").hide();
     $(".ingredientsContainer").hide();
@@ -486,7 +490,7 @@ $(document).on("click", "#saveAnchor", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".chosenFail").hide();
+    //$(".chosenFail").hide();
     $(".recipeInfoScreen").show();
     $(".createRecipeScreen").hide();
     $(".ingredientsContainer").hide();
@@ -502,7 +506,7 @@ $(document).on("click", "#deleteAnchor", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").show();
     $(".searchScreen").hide();
-    $(".chosenFail").hide();
+    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
 });
@@ -553,7 +557,7 @@ $(document).on("click", "#jsCreateSaveButton", function (event) {
                 $(".dummyAccountScreen").hide();
                 $(".homeScreen").hide();
                 $(".searchScreen").hide();
-                $(".chosenFail").hide();
+                //$(".chosenFail").hide();
                 $(".recipeInfoScreen").show();
                 $(".createRecipeScreen").hide();
             })
@@ -577,7 +581,7 @@ $(document).on("click", "#jsCancelSaveButton", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").show();
     $(".searchScreen").hide();
-    $(".chosenFail").hide();
+    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
 });
@@ -591,7 +595,7 @@ $(document).on("click", ".dummySearchSubmit", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".chosenFail").hide();
+    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     alert('Please create an account to search and save thousands of recipes!');
@@ -606,7 +610,7 @@ $(document).on("click", ".logoHolder", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".chosenFail").hide();
+    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
 });
@@ -620,7 +624,7 @@ $(document).on("click", "#failButton", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").show();
     $(".searchScreen").hide();
-    $(".chosenFail").hide();
+    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
 });
@@ -634,7 +638,7 @@ $(document).on("click", ".searchRecipeResultOption", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").show();
     $(".searchScreen").hide();
-    $(".chosenFail").hide();
+    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
 });

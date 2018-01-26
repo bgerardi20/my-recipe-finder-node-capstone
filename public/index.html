@@ -118,8 +118,8 @@
         <h1 class="pageTitle"><img src="" alt="" class="titleLogo">My Library</h1>
 
         <div class="searchBarContainer">
-            <input class="search" type="text" name="search" placeholder="Chicken Casserole...">
-            <button class="dummySearchSubmit" type="submit" form="get-form">
+            <input class="search" id="recipeSearchInput" type="text" name="search" placeholder="Search Recipes...">
+            <button class="searchSubmit" type="submit">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </button>
         </div><br>
@@ -192,15 +192,16 @@
 
         <!--success scneario-->
         <div class="searchBarContainer">
-            <input class="search" type="text" name="search" placeholder="What user searched for...">
+            <input class="search" id="recipeSearchInput" type="text" name="search" placeholder="Search Recipes...">
             <button class="searchSubmit" type="submit">
-                    <i class="fa fa-search" aria-hidden="true"></i>
+                <i class="fa fa-search" aria-hidden="true"></i>
             </button>
         </div><br>
 
         <section class="successScenario">
             <!--------where do i add the anchor tag to take it to the next screen?--------->
             <ul class="resultsList">
+                <!--
                 <li class="searchRecipeResultOption">
                     <div class="object">
                         <a class="searchRecipeResultsLink" href="#">
@@ -227,6 +228,8 @@
                         <button type="submit" class="addSuccessButton green jsSuccessButton" id="add">Add</button>
                     </div>
                 </li>
+-->
+                <!--
                 <li class="searchRecipeResultOption">
                     <div class="object">
                         <a class="searchRecipeResultsLink" href="#">
@@ -280,6 +283,7 @@
                         <button type="submit" class="addSuccessButton green" id="add">Add</button>
                     </div>
                 </li>
+-->
             </ul>
 
         </section>
@@ -289,42 +293,44 @@
 
     <!---once recipe is choosen----->
 
-    <main class="chosenSucess">
+    <!--
+<main class="chosenSuccess">
 
-        <section class="recipeOutsideContainer">
+    <section class="recipeOutsideContainer">
 
-            <ul class="recipeInsideContainer">
-                <li>
-                    recipe image
-                    <img class="searchRecipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
-                </li><br>
-                <li>
-                    <h2 class="chosenTitle">Recipe Title</h2><br>
-                </li><br>
-                <li>
-                    <h3 class="ingredTitle">Ingredients:</h3>
-                    <ul class="chosenList">
-                        <li class="chosenIngr">ingredient1</li><br>
-                        <li class="chosenIngr">ingredient2</li><br>
-                        <li class="chosenIngr">ingredient3</li><br>
-                        <li class="chosenIngr">ingredient4</li><br>
-                        <li class="chosenIngr">ingredient5</li><br>
-                    </ul>
-                </li><br>
-            </ul>
+        <ul class="recipeInsideContainer">
+            <li>
+                <img class="searchRecipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
+            </li><br>
+            <li>
+                <h2 class="chosenTitle">Recipe Title</h2><br>
+            </li><br>
+            <li>
+                <h3 class="ingredTitle">Ingredients:</h3>
+                <ul class="chosenList">
+                    <li class="chosenIngr">ingredient1</li><br>
+                    <li class="chosenIngr">ingredient2</li><br>
+                    <li class="chosenIngr">ingredient3</li><br>
+                    <li class="chosenIngr">ingredient4</li><br>
+                    <li class="chosenIngr">ingredient5</li><br>
+                </ul>
+            </li><br>
+        </ul>
 
-            <div class="successButtonContainer">
-                <button type="submit" class="successButton green"><a id="add" href="">Add</a></button>
-                <button type="submit" class="successButton red"><a id="back" href="">Back</a></button>
-            </div>
+        <div class="successButtonContainer">
+            <button type="submit" class="successButton green"><a id="add" href="">Add</a></button>
+            <button type="submit" class="successButton red"><a id="back" href="">Back</a></button>
+        </div>
 
-        </section>
-    </main>
+    </section>
+</main>
+-->
 
 
     <!------------------------------>
 
     <!----fail scneario---->
+    <!--
     <main class="chosenFail">
 
         <h1 class="pageTitle"><img src="" alt="" class="titleLogo">My Library</h1>
@@ -362,8 +368,9 @@
 
         </section>
 
-        <!--------------------->
+        -----------------
     </main>
+-->
 
     <main class="recipeInfoScreen">
 
