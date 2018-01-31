@@ -20,8 +20,9 @@ function displayRecipes(userId) {
             console.log(errorThrown);
         });
 }
-
+// is this recipeLink suppose to be here?-----------------------------------------------------//
 function displayRecipeFromEdamam(dataFromApi) {
+    recipeLink
     console.log(dataFromApi);
     var buildTheHtmlOutput = "";
     $.each(dataFromApi.hits, function (dataKey, dataValue) {
@@ -29,7 +30,7 @@ function displayRecipeFromEdamam(dataFromApi) {
         buildTheHtmlOutput += '<div class="object">';
         buildTheHtmlOutput += '<a class="searchRecipeResultsLink" href="#">';
         buildTheHtmlOutput += '<span class="searchRecipeImgContainer">';
-        buildTheHtmlOutput += '<img class="searchRecipeImg" src="' + dataValue.recipe.image + '" alt="pasta">';
+        buildTheHtmlOutput += '<img class="searchRecipeImg" src="' + dataValue.recipe.image + '" alt="pastarecipeLink">';
         buildTheHtmlOutput += '</span>';
         buildTheHtmlOutput += '</a>';
         buildTheHtmlOutput += '</div>';
@@ -346,21 +347,40 @@ $(document).on("click", ".jsLogout", function (event) {
 //recipe img --> recipe info//
 $(document).on("click", ".recipeLink", function (event) {
     event.preventDefault();
-    $(".introScreen").hide();
-    $(".signInScreen").hide();
-    $(".createUsernameScreen").hide();
-    $(".dummyAccountScreen").hide();
-    $(".homeScreen").hide();
-    $(".searchScreen").hide();
-    //$(".chosenFail").hide();
-    $(".recipeInfoScreen").show();
-    $(".createRecipeScreen").hide();
+    let div = document.getElementsByClassName("recipeSnippetContainer");
+    let aList = div.getElementsByTagName("a");
+
+    for (var i = 0; i < aList.length; i++) {
+        if (aList[i] != div.children[0]) {
+            aList[i].style.display = "none";
+        }
+
+        $(".introScreen").hide();
+        $(".signInScreen").hide();
+        $(".createUsernameScreen").hide();
+        $(".dummyAccountScreen").hide();
+        $(".homeScreen").hide();
+        $(".searchScreen").hide();
+        //$(".chosenFail").hide();
+        $(".recipeInfoScreen").show();
+        $(".createRecipeScreen").hide();
+    };
+
+    //    $(".introScreen").hide();
+    //    $(".signInScreen").hide();
+    //    $(".createUsernameScreen").hide();
+    //    $(".dummyAccountScreen").hide();
+    //    $(".homeScreen").hide();
+    //    $(".searchScreen").hide();
+    //    //$(".chosenFail").hide();
+    //    $(".recipeInfoScreen").show();
+    //    $(".createRecipeScreen").hide();
 });
 
 //search bar button --> success scenario//
 $(document).on("click", ".searchSubmit", function (event) {
     event.preventDefault();
-    let searchBarInput = $('#recipeSearchInput').val();
+    let searchBarInput = $('.recipeSearchInput').val();
     console.log(searchBarInput);
     //validate the input//
     if (searchBarInput.length == 0) {
