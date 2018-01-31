@@ -146,6 +146,7 @@ $(document).ready(function () {
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".navList").hide();
+    $(".addEdamamScreen").hide();
 });
 
 
@@ -161,6 +162,7 @@ $(document).on("click", ".jsSignInButton", function (event) {
     //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
+    $(".addEdamamScreen").hide();
 });
 
 $(document).on("click", ".jsRegisterButton", function (event) {
@@ -175,6 +177,7 @@ $(document).on("click", ".jsRegisterButton", function (event) {
     //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
+    $(".addEdamamScreen").hide();
 });
 
 $(document).on("click", ".jsDummyButton", function (event) {
@@ -188,6 +191,7 @@ $(document).on("click", ".jsDummyButton", function (event) {
     //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
+    $(".addEdamamScreen").hide();
 });
 
 $(document).on("click", ".signInButton", function (event) {
@@ -233,6 +237,7 @@ $(document).on("click", ".signInButton", function (event) {
                 $(".recipeInfoScreen").hide();
                 $(".createRecipeScreen").hide();
                 $(".navList").show();
+                $(".addEdamamScreen").hide();
             })
             //if registration fails
             .fail(function (jqXHR, error, errorThrown) {
@@ -289,6 +294,7 @@ $(document).on("click", ".registerButton", function (event) {
                 //$(".chosenFail").hide();
                 $(".recipeInfoScreen").hide();
                 $(".createRecipeScreen").hide();
+                $(".addEdamamScreen").hide();
             })
             //if registration fails
             .fail(function (jqXHR, error, errorThrown) {
@@ -314,6 +320,7 @@ $(document).on("click", ".jsMyLibrary", function (event) {
     $(".createRecipeScreen").hide();
     $(".ingredientsContainer").hide();
     $(".modsList").hide();
+    $(".addEdamamScreen").hide();
 });
 
 $(document).on("click", ".jsCreateRecipe", function (event) {
@@ -327,6 +334,22 @@ $(document).on("click", ".jsCreateRecipe", function (event) {
     //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").show();
+    $(".addEdamamScreen").hide();
+});
+
+$(document).on("click", ".jsAddRecipe", function (event) {
+    event.preventDefault();
+    $(".introScreen").hide();
+    $(".signInScreen").hide();
+    $(".createUsernameScreen").hide();
+    $(".dummyAccountScreen").hide();
+    $(".homeScreen").hide();
+    $(".searchScreen").hide();
+    //$(".chosenFail").hide();
+    $(".recipeInfoScreen").hide();
+    $(".createRecipeScreen").hide();
+    $(".addEdamamScreen").show();
+    $(".successScenario").hide();
 });
 
 //---------------------------------------------return to login page or intro screen? ----------------------------------------
@@ -341,40 +364,43 @@ $(document).on("click", ".jsLogout", function (event) {
     //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
+    $(".addEdamamScreen").hide();
 });
 //end of nav bar options
 
 //recipe img --> recipe info//
 $(document).on("click", ".recipeLink", function (event) {
     event.preventDefault();
-    let div = document.getElementsByClassName("recipeSnippetContainer");
-    let aList = div.getElementsByTagName("a");
+    //    let div = document.getElementsByClassName("recipeSnippetContainer");
+    //    let aList = div.getElementsByTagName("a");
+    //
+    //    for (var i = 0; i < aList.length; i++) {
+    //        if (aList[i] != div.children[0]) {
+    //            aList[i].style.display = "none";
+    //        }
+    //
+    //        $(".introScreen").hide();
+    //        $(".signInScreen").hide();
+    //        $(".createUsernameScreen").hide();
+    //        $(".dummyAccountScreen").hide();
+    //        $(".homeScreen").hide();
+    //        $(".searchScreen").hide();
+    //        //$(".chosenFail").hide();
+    //        $(".recipeInfoScreen").show();
+    //        $(".createRecipeScreen").hide();
+    //    $(".addEdamamScreen").hide();
+    //    };
 
-    for (var i = 0; i < aList.length; i++) {
-        if (aList[i] != div.children[0]) {
-            aList[i].style.display = "none";
-        }
-
-        $(".introScreen").hide();
-        $(".signInScreen").hide();
-        $(".createUsernameScreen").hide();
-        $(".dummyAccountScreen").hide();
-        $(".homeScreen").hide();
-        $(".searchScreen").hide();
-        //$(".chosenFail").hide();
-        $(".recipeInfoScreen").show();
-        $(".createRecipeScreen").hide();
-    };
-
-    //    $(".introScreen").hide();
-    //    $(".signInScreen").hide();
-    //    $(".createUsernameScreen").hide();
-    //    $(".dummyAccountScreen").hide();
-    //    $(".homeScreen").hide();
-    //    $(".searchScreen").hide();
-    //    //$(".chosenFail").hide();
-    //    $(".recipeInfoScreen").show();
-    //    $(".createRecipeScreen").hide();
+    $(".introScreen").hide();
+    $(".signInScreen").hide();
+    $(".createUsernameScreen").hide();
+    $(".dummyAccountScreen").hide();
+    $(".homeScreen").hide();
+    $(".searchScreen").hide();
+    //$(".chosenFail").hide();
+    $(".recipeInfoScreen").show();
+    $(".createRecipeScreen").hide();
+    $(".addEdamamScreen").hide();
 });
 
 //search bar button --> success scenario//
@@ -399,10 +425,12 @@ $(document).on("click", ".searchSubmit", function (event) {
                 $(".createUsernameScreen").hide();
                 $(".dummyAccountScreen").hide();
                 $(".homeScreen").hide();
-                $(".searchScreen").show();
+                $(".searchScreen").hide();
                 //$(".chosenFail").hide();
                 $(".recipeInfoScreen").hide();
                 $(".createRecipeScreen").hide();
+                $(".addEdamamScreen").show();
+                $(".successScenario").show();
                 //displays the external api json object in the console
                 //                displayRecipeResult(dataOutput.recipes);
                 //                displayRecipeDetailsResult(dataOutput.recipes);
@@ -420,6 +448,7 @@ $(document).on("click", ".searchSubmit", function (event) {
                 $(".chosenFail").show();
                 $(".recipeInfoScreen").hide();
                 $(".createRecipeScreen").hide();
+                $(".addEdamamScreen").show();
             });
     }
 });
@@ -452,6 +481,7 @@ $(document).on("click", "#modifyAnchor", function (event) {
     $(".createRecipeScreen").hide();
     $(".ingredientsContainer").show();
     $(".modsList").show();
+    $(".addEdamamScreen").hide();
 
 });
 
@@ -467,6 +497,7 @@ $(document).on("click", "#directionsAnchor", function (event) {
     //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
+    $(".addEdamamScreen").hide();
 });
 
 //add ingredient button//
@@ -483,6 +514,7 @@ $(document).on("click", ".jsAddButton", function (event) {
     $(".createRecipeScreen").hide();
     $(".ingredientsContainer").hide();
     $(".modsList").show();
+    $(".addEdamamScreen").hide();
 });
 
 //delete ingredient button//
@@ -499,6 +531,7 @@ $(document).on("click", ".jsDeleteButton", function (event) {
     $(".createRecipeScreen").hide();
     $(".ingredientsContainer").hide();
     $(".modsList").show();
+    $(".addEdamamScreen").hide();
 });
 
 //save recipe button//  ----------------------------------------------should i send this one to the library home page or the recipe info screen? ------------------------------
@@ -515,6 +548,7 @@ $(document).on("click", "#saveAnchor", function (event) {
     $(".createRecipeScreen").hide();
     $(".ingredientsContainer").hide();
     $(".modsList").hide();
+    $(".addEdamamScreen").hide();
 });
 
 //delete recipe button//
@@ -529,6 +563,7 @@ $(document).on("click", "#deleteAnchor", function (event) {
     //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
+    $(".addEdamamScreen").hide();
 });
 
 //save created recipe button---> recipe info screen about newly created recipe//
@@ -575,11 +610,12 @@ $(document).on("click", "#jsCreateSaveButton", function (event) {
                 $(".signInScreen").hide();
                 $(".createUsernameScreen").hide();
                 $(".dummyAccountScreen").hide();
-                $(".homeScreen").hide();
+                $(".homeScreen").show();
                 $(".searchScreen").hide();
                 //$(".chosenFail").hide();
-                $(".recipeInfoScreen").show();
+                $(".recipeInfoScreen").hide();
                 $(".createRecipeScreen").hide();
+                $(".addEdamamScreen").hide();
             })
             //if registration fails
             .fail(function (jqXHR, error, errorThrown) {
@@ -604,6 +640,7 @@ $(document).on("click", "#jsCancelSaveButton", function (event) {
     //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
+    $(".addEdamamScreen").hide();
 });
 
 //dummy acount search bar button//
@@ -618,6 +655,7 @@ $(document).on("click", ".dummySearchSubmit", function (event) {
     //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
+    $(".addEdamamScreen").hide();
     alert('Please create an account to search and save thousands of recipes!');
 });
 
@@ -633,6 +671,7 @@ $(document).on("click", ".logoHolder", function (event) {
     //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
+    $(".addEdamamScreen").hide();
 });
 
 //fail scenario-add to recipe button//
@@ -647,6 +686,7 @@ $(document).on("click", "#failButton", function (event) {
     //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
+    $(".addEdamamScreen").hide();
 });
 
 //success scenario-add to recipe button//
@@ -661,4 +701,5 @@ $(document).on("click", ".searchRecipeResultOption", function (event) {
     //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
+    $(".addEdamamScreen").hide();
 });

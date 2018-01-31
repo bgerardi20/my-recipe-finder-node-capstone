@@ -230,13 +230,13 @@ button {
 .chosenFail,
 .recipeInfoScreen,
 .createRecipeScreen,
-.recipeOutsideContainer,
 .chosenSuccess,
 .introScreen,
 .signInScreen,
 .createUsernameScreen,
 .outerSignUpBox,
-.signInOutterContainer {
+.signInOutterContainer,
+.addEdamamScreen {
     background-color: #DFCCAE;
     width: 65%;
     opacity: 0.95;
@@ -255,7 +255,8 @@ button {
 .homeContainer,
 .createContainer,
 .failScenario,
-.introContainer {
+.introContainer,
+.recipeOutsideContainer {
     width: 90%;
     opacity: 0.95;
     margin-left: auto;
@@ -586,6 +587,7 @@ button {
     margin: 1rem;
     padding: 1rem;
     font-size: 20px;
+    position: relative;
 }
 
 .addButton {

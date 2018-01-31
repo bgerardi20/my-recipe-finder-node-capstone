@@ -22,8 +22,9 @@
 
             <div class="navList">
                 <ul>
-                    <li class="navListItems"><a href="#" class="navContent jsMyLibrary">My Library</a></li>
-                    <li class="navListItems"><a href="#" class="navContent jsCreateRecipe">Create Recipe</a></li>
+                    <li class="navListItems"><a href="#" class="navContent jsMyLibrary">My Recipes</a></li>
+                    <li class="navListItems"><a href="#" class="navContent jsCreateRecipe">Create Your Own Recipe</a></li>
+                    <li class="navListItems"><a href="#" class="navContent jsAddRecipe">Add Recipe From Edamam</a></li>
                     <li class="navListItems"><a href="#" class="navContent jsLogout">Logout</a></li>
                 </ul>
             </div>
@@ -34,7 +35,7 @@
 
     <main class="introScreen">
 
-        <h1 class="pageTitle"><img src="" alt="" class="titleLogo">My Library</h1>
+        <h1 class="pageTitle"><img src="" alt="" class="titleLogo">My Recipes</h1>
 
         <section class="introContainer">
             <h2 id="welcome">Welcome to your recipe library</h2>
@@ -114,7 +115,7 @@
 
     <main class="dummyAccountScreen">
 
-        <h1 class="pageTitle"><img src="" alt="" class="titleLogo">My Library</h1>
+        <h1 class="pageTitle"><img src="" alt="" class="titleLogo">My Recipes</h1>
 
         <div class="searchBarContainer">
             <input class="search recipeSearchInput" type="text" name="search" placeholder="Search Recipes...">
@@ -153,32 +154,86 @@
 
     </main>
 
+
+    <!--Show my Library page-->
     <main class="homeScreen">
 
-        <h1 class="pageTitle"><img src="" alt="" class="titleLogo">My Library</h1>
+        <h1 class="pageTitle"><img src="" alt="" class="titleLogo">My Recipes</h1>
 
+        <!--
         <div class="searchBarContainer">
             <input class="search recipeSearchInput" type="text" name="search" placeholder="Search Recipes...">
             <button class="searchSubmit" type="submit">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </button>
         </div><br>
+-->
 
+        <!--
         <section class="homeContainer">
-            <!-- empty for new users -->
+             empty for new users
             <div class="recipeSnippetContainer">
-                <a class="recipeLink" href="#">
-                    <div class="recipeImgContainer">
-                        <img class="recipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
-                    </div>
-                    <h2 class="recipeTitle">Recipe Title</h2>
-                </a>
-                <a class="recipeLink" href="#">
-                    <div class="recipeImgContainer">
-                        <img class="recipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
-                    </div>
-                    <h2 class="recipeTitle">Recipe Title</h2>
-                </a>
+
+            </div>
+        </section>
+-->
+
+        <section class="homeContainer recipeOutsideContainer" id="">
+            <div class="recipeSnippetContainer">
+                <ul class="recipeInsideContainer" id="">
+                    <li>
+                        <!--recipe image -->
+                        <img class="searchRecipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
+                        <!-- -->
+                    </li><br>
+                    <li>
+                        <h2 class="chosenTitle">Recipe Title</h2><br>
+                    </li><br>
+                    <li>
+                        <h3 class="ingredTitle">Ingredients:</h3>
+                        <div class="chosenList">
+                            <p class="chosenIngr">ingredient1</p><br>
+                        </div>
+                    </li><br>
+                    <li>
+                        <div class="recipeButtonContainer">
+                            <button id="modifyAnchor" type="button">Modify</button>
+                            <!--link to original recipe URL --->
+                            <button id="directionsAnchor" type="button">Directions</button>
+                        </div>
+                    </li><br>
+                    <!-- hidden until modify button is clicked -->
+                    <li>
+                        <div class="ingredientsContainer">
+                            <label class="ingredientsLabel" for="ingredients">Add:</label>
+                            <input type="text" name="ingredients" class="ingredients" placeholder="Ingredient">
+                            <div class="addRemove">
+                                <span>
+                                    <span>
+                                        <a class="jsAddButton" href="#"><i class="fa fa-plus-circle fa-lg ingredients-adder" aria-hidden="true"></i></a>
+                                    </span>
+                                <span>
+                                        <a class="jsDeleteButton" href="#"><i class="fa fa-minus-circle fa-lg js-input-delete" aria-hidden="true"></i></a>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </li><br>
+                    <!-- do i need a table or textbox here? -->
+                    <li>
+                        <ul class="modsList">
+                            <li class="chosenIng">Mods</li>
+                            <li class="chosenIng">Mods</li>
+                            <li class="chosenIng">Mods</li>
+                        </ul>
+                    </li><br>
+                    <li>
+                        <div class="recipeButtonContainer">
+                            <button type="button" class="recipeButton green" id="saveAnchor">Save</button>
+                            <button type="button" class="recipeButton red" id="deleteAnchor">Delete</button>
+                        </div>
+                    </li><br>
+                </ul>
             </div>
         </section>
 
@@ -198,7 +253,6 @@
         </div><br>
 
         <section class="successScenario">
-            <!--------where do i add the anchor tag to take it to the next screen?--------->
             <ul class="resultsList">
                 <!--
                 <li class="searchRecipeResultOption">
@@ -373,7 +427,7 @@
 
     <main class="recipeInfoScreen">
 
-        <h1 class="pageTitle"><img src="" alt="" class="titleLogo">My Library</h1>
+        <h1 class="pageTitle"><img src="" alt="" class="titleLogo">My Recipe</h1>
 
         <section class="recipeOutsideContainer" id="">
 
@@ -438,7 +492,7 @@
 
     <main class="createRecipeScreen">
 
-        <h1 class="pageTitle"><img src="" alt="" class="titleLogo">My Library</h1>
+        <h1 class="pageTitle"><img src="" alt="" class="titleLogo">My Personal Recipe</h1>
 
         <section class="createContainer">
 
@@ -454,12 +508,7 @@
 
             <form class="createForm" action="" method="POST">
                 <input class="loggedInUser" type="hidden" value=""><br>
-                <!--
-<div class="createSections">
-    <label class="createLabel" for="image">Recipe Image:</label><br>
-    <input class="createInput" type="image" name="image" id="image"><br>
-</div>
--->
+
                 <div class="createSections">
                     <label class="createLabel" for="title">Recipe Title:</label><br>
                     <input class="createInput" type="text" name="title" id="titleCreate" placeholder="Spaghetti" required><br>
@@ -486,6 +535,106 @@
             </form>
         </section>
 
+    </main>
+
+    <main class="addEdamamScreen">
+        <h1 class="pageTitle"><img src="" alt="" class="titleLogo">My Search</h1>
+
+        <div class="searchBarContainer">
+            <input class="search recipeSearchInput" type="text" name="search" placeholder="Search Recipes...">
+            <button class="searchSubmit" type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+        </div><br>
+
+        <section class="successScenario">
+            <ul class="resultsList">
+
+                <!--
+                <li class="searchRecipeResultOption">
+                    <div class="object">
+                        <a class="searchRecipeResultsLink" href="#">
+                            <span class="searchRecipeImgContainer">
+                                <img class="searchRecipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
+                            </span>
+                        </a>
+                    </div>
+
+                    <h3 class="resultsTitle">Teriyaki Chicken</h3><br>
+
+                    <div class="data">
+                        <a class="cal" href="#">
+                            <span class="num">375</span>
+                            <span class="info">calories</span>
+                        </a>
+                        <a class="ing" href="#">
+                            <span class="num">4</span>
+                            <span class="info">ingredients</span>
+                        </a>
+                    </div>
+
+                    <div class="addButton">
+                        <button type="submit" class="addSuccessButton green jsSuccessButton" id="add">Add</button>
+                    </div>
+                </li>
+                <li class="searchRecipeResultOption">
+                    <div class="object">
+                        <a class="searchRecipeResultsLink" href="#">
+                            <span class="searchRecipeImgContainer">
+                                <img class="searchRecipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
+                            </span>
+                        </a>
+                    </div>
+
+                    <h3 class="resultsTitle">Teriyaki Chicken</h3><br>
+
+                    <div class="data">
+
+                        <a class="cal" href="#">
+                            <span class="num">375</span>
+                            <span class="info">calories</span>
+                        </a>
+                        <a class="ing" href="#">
+                            <span class="num">4</span>
+                            <span class="info">ingredients</span>
+                        </a>
+                    </div>
+
+                    <div class="addButton">
+                        <button type="submit" class="addSuccessButton green" id="add">Add</button>
+                    </div>
+                </li>
+                <li class="searchRecipeResultOption">
+                    <div class="object">
+                        <a class="searchRecipeResultsLink" href="#">
+                            <span class="searchRecipeImgContainer">
+                                <img class="searchRecipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
+                            </span>
+                        </a>
+                    </div>
+
+                    <h3 class="resultsTitle">Teriyaki Chicken</h3><br>
+
+                    <div class="data">
+                        <a class="cal" href="#">
+                            <span class="num">375</span>
+                            <span class="info">calories</span>
+                        </a>
+                        <a class="ing" href="#">
+                            <span class="num">4</span>
+                            <span class="info">ingredients</span>
+                        </a>
+                    </div>
+
+                    <div class="addButton">
+                        <button type="submit" class="addSuccessButton green" id="add">Add</button>
+                    </div>
+                </li>
+-->
+
+            </ul>
+
+        </section>
     </main>
 
     <footer>
