@@ -9,7 +9,6 @@ function displayRecipes(userId) {
             dataType: 'json',
         })
         .done(function (dataOutput) {
-            //            console.log(dataOutput);
             //displays the external api json object in the console
             displayRecipeResult(dataOutput.recipes);
             displayRecipeDetailsResult(dataOutput.recipes);
@@ -20,9 +19,8 @@ function displayRecipes(userId) {
             console.log(errorThrown);
         });
 }
-// is this recipeLink suppose to be here?-----------------------------------------------------//
+
 function displayRecipeFromEdamam(dataFromApi) {
-    console.log(dataFromApi);
     var buildTheHtmlOutput = "";
     $.each(dataFromApi.hits, function (dataKey, dataValue) {
         buildTheHtmlOutput += '<li class="searchRecipeResultOption">';
@@ -39,11 +37,11 @@ function displayRecipeFromEdamam(dataFromApi) {
         buildTheHtmlOutput += '<div class="data">';
         buildTheHtmlOutput += '<a class="cal" href="#">';
         buildTheHtmlOutput += '<span class="num">' + dataValue.recipe.calories.toFixed(2) + '</span>';
-        buildTheHtmlOutput += '<span class="info">calories</span>';
+        buildTheHtmlOutput += '<span class="info"> calories</span>';
         buildTheHtmlOutput += '</a>';
         buildTheHtmlOutput += '<a class="ing" href="#">';
         buildTheHtmlOutput += '<span class="num">' + dataValue.recipe.ingredients.length + '</span>';
-        buildTheHtmlOutput += '<span class="info">ingredients</span>';
+        buildTheHtmlOutput += '<span class="info"> ingredients</span>';
         buildTheHtmlOutput += '</a>';
         buildTheHtmlOutput += '</div>';
 
@@ -74,7 +72,6 @@ function displayRecipeResult(dataOutput) {
 };
 
 function displayRecipeDetailsResult(dataFromApi) {
-    //    console.log(dataFromApi);
     var buildTheHtmlOutput = "";
     $.each(dataFromApi, function (dataKey, dataValue) {
         buildTheHtmlOutput += '<ul class="recipeInsideContainer" id="">';
@@ -116,9 +113,6 @@ function displayRecipeDetailsResult(dataFromApi) {
     $(".recipeOutsideContainer").html(buildTheHtmlOutput);
 };
 
-
-
-//use objects variables and functions(triggers)//
 $(document).ready(function () {
     $(".introScreen").show();
     $(".signInScreen").hide();
@@ -126,15 +120,12 @@ $(document).ready(function () {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".navList").hide();
     $(".addEdamamScreen").hide();
 });
 
-
-//create triggers that work with the buttons
 $(document).on("click", ".jsSignInButton", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
@@ -143,7 +134,6 @@ $(document).on("click", ".jsSignInButton", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".addEdamamScreen").hide();
@@ -158,7 +148,6 @@ $(document).on("click", ".jsRegisterButton", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".addEdamamScreen").hide();
@@ -172,7 +161,6 @@ $(document).on("click", ".jsDummyButton", function (event) {
     $(".dummyAccountScreen").show();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".addEdamamScreen").hide();
@@ -183,19 +171,18 @@ $(document).on("click", ".signInButton", function (event) {
     //get input from the user//
     let email = $('#signInEmail').val();
     let password = $('#signInPassword').val();
-    console.log(email, password);
     //validate the input//
     if (email.length == 0) {
         alert('Please add email!');
     } else if (password.length == 0) {
         alert('Please add password!');
     } else {
-        //if input is valid; register the user//
+        //if input is valid; sign in the user//
         const signInUserObject = {
             email: email,
             password: password
         };
-        // create ajax call to register the user//
+        // create ajax call to sign in the user//
         $.ajax({
                 type: 'POST',
                 url: '/users/signin',
@@ -203,10 +190,8 @@ $(document).on("click", ".signInButton", function (event) {
                 data: JSON.stringify(signInUserObject),
                 contentType: 'application/json'
             })
-            //if registation is successful
+            //if sign in is successful
             .done(function (result) {
-                console.log(result._id);
-                console.log(result.email);
                 loginUserEmail = result.email;
                 loginUserId = result._id;
                 displayRecipes(loginUserId);
@@ -217,13 +202,12 @@ $(document).on("click", ".signInButton", function (event) {
                 $(".dummyAccountScreen").hide();
                 $(".homeScreen").show();
                 $(".searchScreen").hide();
-                //$(".chosenFail").hide();
                 $(".recipeInfoScreen").hide();
                 $(".createRecipeScreen").hide();
                 $(".navList").show();
                 $(".addEdamamScreen").hide();
             })
-            //if registration fails
+            //if sign in fails
             .fail(function (jqXHR, error, errorThrown) {
                 console.log(jqXHR);
                 console.log(error);
@@ -240,7 +224,6 @@ $(document).on("click", ".registerButton", function (event) {
     let email = $('#registerEmail').val();
     let password = $('#registerPassword').val();
     let confirmPassword = $('#registerConfirmPassword').val();
-    console.log(name, email, password, confirmPassword);
     //validate the input//
     if (name.length == 0) {
         alert('Please add name!');
@@ -267,7 +250,6 @@ $(document).on("click", ".registerButton", function (event) {
             })
             //if registation is successful
             .done(function (result) {
-                console.log(result);
                 alert('Thanks for signing up! You may now sign in with your username and password.');
                 $(".introScreen").hide();
                 $(".signInScreen").show();
@@ -275,7 +257,6 @@ $(document).on("click", ".registerButton", function (event) {
                 $(".dummyAccountScreen").hide();
                 $(".homeScreen").hide();
                 $(".searchScreen").hide();
-                //$(".chosenFail").hide();
                 $(".recipeInfoScreen").hide();
                 $(".createRecipeScreen").hide();
                 $(".addEdamamScreen").hide();
@@ -289,8 +270,6 @@ $(document).on("click", ".registerButton", function (event) {
     };
 });
 
-
-//nav bar options//
 $(document).on("click", ".jsMyLibrary", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
@@ -299,7 +278,6 @@ $(document).on("click", ".jsMyLibrary", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").show();
     $(".searchScreen").hide();
-    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".ingredientsContainer").hide();
@@ -315,7 +293,6 @@ $(document).on("click", ".jsCreateRecipe", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").show();
     $(".addEdamamScreen").hide();
@@ -329,14 +306,12 @@ $(document).on("click", ".jsAddRecipe", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".addEdamamScreen").show();
     $(".successScenario").hide();
 });
 
-//---------------------------------------------return to login page or intro screen? ----------------------------------------
 $(document).on("click", ".jsLogout", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
@@ -345,53 +320,27 @@ $(document).on("click", ".jsLogout", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".addEdamamScreen").hide();
 });
-//end of nav bar options
 
-//recipe img --> recipe info//
 $(document).on("click", ".recipeLink", function (event) {
     event.preventDefault();
-    //    let div = document.getElementsByClassName("recipeSnippetContainer");
-    //    let aList = div.getElementsByTagName("a");
-    //
-    //    for (var i = 0; i < aList.length; i++) {
-    //        if (aList[i] != div.children[0]) {
-    //            aList[i].style.display = "none";
-    //        }
-    //
-    //        $(".introScreen").hide();
-    //        $(".signInScreen").hide();
-    //        $(".createUsernameScreen").hide();
-    //        $(".dummyAccountScreen").hide();
-    //        $(".homeScreen").hide();
-    //        $(".searchScreen").hide();
-    //        //$(".chosenFail").hide();
-    //        $(".recipeInfoScreen").show();
-    //        $(".createRecipeScreen").hide();
-    //    $(".addEdamamScreen").hide();
-    //    };
-
     $(".introScreen").hide();
     $(".signInScreen").hide();
     $(".createUsernameScreen").hide();
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    //$(".chosenFail").hide();
     $(".recipeInfoScreen").show();
     $(".createRecipeScreen").hide();
     $(".addEdamamScreen").hide();
 });
 
-//search bar button --> success scenario//
 $(document).on("click", ".searchSubmit", function (event) {
     event.preventDefault();
     let searchBarInput = $(this).parent().find('.recipeSearchInput').val();
-    console.log(searchBarInput);
     //validate the input//
     if (searchBarInput.length == 0) {
         alert('Please search for a recipe!');
@@ -402,7 +351,6 @@ $(document).on("click", ".searchSubmit", function (event) {
                 dataType: 'json',
             })
             .done(function (dataOutput) {
-                //                console.log(dataOutput);
                 displayRecipeFromEdamam(dataOutput);
                 $(".introScreen").hide();
                 $(".signInScreen").hide();
@@ -410,14 +358,10 @@ $(document).on("click", ".searchSubmit", function (event) {
                 $(".dummyAccountScreen").hide();
                 $(".homeScreen").hide();
                 $(".searchScreen").hide();
-                //$(".chosenFail").hide();
                 $(".recipeInfoScreen").hide();
                 $(".createRecipeScreen").hide();
                 $(".addEdamamScreen").show();
                 $(".successScenario").show();
-                //displays the external api json object in the console
-                //                displayRecipeResult(dataOutput.recipes);
-                //                displayRecipeDetailsResult(dataOutput.recipes);
             })
             .fail(function (jqXHR, error, errorThrown) {
                 console.log(jqXHR);
@@ -437,9 +381,6 @@ $(document).on("click", ".searchSubmit", function (event) {
     }
 });
 
-
-
-//recipe info screen(modify button)//
 $(document).on("click", "#modifyAnchor", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
@@ -448,7 +389,6 @@ $(document).on("click", "#modifyAnchor", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    //$(".chosenFail").hide();
     $(".recipeInfoScreen").show();
     $(".createRecipeScreen").hide();
     $(".ingredientsContainer").show();
@@ -457,7 +397,6 @@ $(document).on("click", "#modifyAnchor", function (event) {
 
 });
 
-//recipe info screen(directions button-going to a different url)// ////////////////////////////////////need help///////////////////////////////////
 $(document).on("click", "#directionsAnchor", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
@@ -466,16 +405,11 @@ $(document).on("click", "#directionsAnchor", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".addEdamamScreen").hide();
 });
 
-
-
-
-//save recipe button//  ----------------------------------------------should i send this one to the library home page or the recipe info screen? ------------------------------
 $(document).on("click", ".saveAnchor", function (event) {
     event.preventDefault();
     let modifyRecipeID = $(this).parent().parent().parent().find('.modifyRecipeID').val();
@@ -489,8 +423,7 @@ $(document).on("click", ".saveAnchor", function (event) {
         directions: modifyRecipeDirections,
         notes: modifyRecipeNotes
     };
-    console.log(modifyRecipeObject);
-    // create ajax call to register the user//
+    // create ajax call to save the recipe//
     $.ajax({
             type: 'PUT',
             url: '/recipes/' + modifyRecipeID,
@@ -498,9 +431,8 @@ $(document).on("click", ".saveAnchor", function (event) {
             data: JSON.stringify(modifyRecipeObject),
             contentType: 'application/json'
         })
-        //if registation is successful
+        //if save is successful
         .done(function (result) {
-            console.log(result);
             displayRecipes(loginUserId);
             $(".introScreen").hide();
             $(".signInScreen").hide();
@@ -508,14 +440,13 @@ $(document).on("click", ".saveAnchor", function (event) {
             $(".dummyAccountScreen").hide();
             $(".homeScreen").hide();
             $(".searchScreen").hide();
-            //$(".chosenFail").hide();
             $(".recipeInfoScreen").show();
             $(".createRecipeScreen").hide();
             $(".ingredientsContainer").hide();
             $(".modsList").hide();
             $(".addEdamamScreen").hide();
         })
-        //if registration fails
+        //if save fails
         .fail(function (jqXHR, error, errorThrown) {
             console.log(jqXHR);
             console.log(error);
@@ -523,11 +454,9 @@ $(document).on("click", ".saveAnchor", function (event) {
         });
 });
 
-//delete recipe button//
 $(document).on("click", ".deleteAnchor", function (event) {
     event.preventDefault();
     let modifyRecipeID = $(this).parent().parent().parent().find('.modifyRecipeID').val();
-
 
     $.ajax({
             type: 'DELETE',
@@ -537,7 +466,6 @@ $(document).on("click", ".deleteAnchor", function (event) {
         })
 
         .done(function (result) {
-            console.log(result);
             displayRecipes(loginUserId);
             $(".introScreen").hide();
             $(".signInScreen").hide();
@@ -545,7 +473,6 @@ $(document).on("click", ".deleteAnchor", function (event) {
             $(".dummyAccountScreen").hide();
             $(".homeScreen").hide();
             $(".searchScreen").hide();
-            //$(".chosenFail").hide();
             $(".recipeInfoScreen").show();
             $(".createRecipeScreen").hide();
             $(".ingredientsContainer").hide();
@@ -560,9 +487,6 @@ $(document).on("click", ".deleteAnchor", function (event) {
         });
 });
 
-
-
-//save created recipe button---> recipe info screen about newly created recipe//
 $(document).on("click", "#jsCreateSaveButton", function (event) {
     event.preventDefault();
     //get input from the user//
@@ -571,7 +495,6 @@ $(document).on("click", "#jsCreateSaveButton", function (event) {
     let directions = $('#createDirections').val();
     let notes = $('#notesCreate').val();
     let userIdHidden = $('.loggedInUser').val();
-    console.log(title, ingredients, directions, notes, userIdHidden);
     //validate the input//
     if (title.length == 0) {
         alert('Please add title!');
@@ -582,7 +505,7 @@ $(document).on("click", "#jsCreateSaveButton", function (event) {
     } else if (notes.length == 0) {
         alert('Please add notes!');
     } else {
-        //if input is valid; register the user//
+        //if input is valid; create the new recipe//
         const newRecipeObject = {
             title: title,
             ingredients: ingredients,
@@ -591,7 +514,7 @@ $(document).on("click", "#jsCreateSaveButton", function (event) {
             notes: notes,
             userId: userIdHidden
         };
-        // create ajax call to register the user//
+        // create ajax call to create the new recipe//
         $.ajax({
                 type: 'POST',
                 url: '/recipes/create',
@@ -599,9 +522,8 @@ $(document).on("click", "#jsCreateSaveButton", function (event) {
                 data: JSON.stringify(newRecipeObject),
                 contentType: 'application/json'
             })
-            //if registation is successful
+            //if recipe creation is successful
             .done(function (result) {
-                console.log(result);
                 displayRecipes(userIdHidden);
                 $(".introScreen").hide();
                 $(".signInScreen").hide();
@@ -609,12 +531,11 @@ $(document).on("click", "#jsCreateSaveButton", function (event) {
                 $(".dummyAccountScreen").hide();
                 $(".homeScreen").show();
                 $(".searchScreen").hide();
-                //$(".chosenFail").hide();
                 $(".recipeInfoScreen").hide();
                 $(".createRecipeScreen").hide();
                 $(".addEdamamScreen").hide();
             })
-            //if registration fails
+            //if recipe creation fails
             .fail(function (jqXHR, error, errorThrown) {
                 console.log(jqXHR);
                 console.log(error);
@@ -626,7 +547,6 @@ $(document).on("click", "#jsCreateSaveButton", function (event) {
 
 $(document).on("click", ".jsSuccessButton", function (event) {
     event.preventDefault();
-    console.log("here");
     //get input from the user//
     let title = $(this).parent().find('.addBRecipeFromAPIName').val();
     let ingredients = $(this).parent().find('.addBRecipeFromAPIIngredients').val();
@@ -634,9 +554,8 @@ $(document).on("click", ".jsSuccessButton", function (event) {
     let directions = "";
     let notes = "";
     let userIdHidden = loginUserId;
-    console.log(title, image, ingredients, directions, notes, userIdHidden);
 
-    //if input is valid; register the user//
+    //if input is valid; add recipe to library//
     const newRecipeObject = {
         title: title,
         ingredients: ingredients,
@@ -645,7 +564,7 @@ $(document).on("click", ".jsSuccessButton", function (event) {
         notes: notes,
         userId: userIdHidden
     };
-    // create ajax call to register the user//
+    // create ajax call to add recipe to library//
     $.ajax({
             type: 'POST',
             url: '/recipes/create',
@@ -653,22 +572,11 @@ $(document).on("click", ".jsSuccessButton", function (event) {
             data: JSON.stringify(newRecipeObject),
             contentType: 'application/json'
         })
-        //if registation is successful
+        //if add is successful
         .done(function (result) {
-            console.log(result);
             displayRecipes(userIdHidden);
-            //            $(".introScreen").hide();
-            //            $(".signInScreen").hide();
-            //            $(".createUsernameScreen").hide();
-            //            $(".dummyAccountScreen").hide();
-            //            $(".homeScreen").show();
-            //            $(".searchScreen").hide();
-            //            //$(".chosenFail").hide();
-            //            $(".recipeInfoScreen").hide();
-            //            $(".createRecipeScreen").hide();
-            //            $(".addEdamamScreen").hide();
         })
-        //if registration fails
+        //if add fails
         .fail(function (jqXHR, error, errorThrown) {
             console.log(jqXHR);
             console.log(error);
@@ -677,7 +585,6 @@ $(document).on("click", ".jsSuccessButton", function (event) {
 
 });
 
-//cancel created recipe button//
 $(document).on("click", "#jsCancelSaveButton", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
@@ -686,13 +593,11 @@ $(document).on("click", "#jsCancelSaveButton", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").show();
     $(".searchScreen").hide();
-    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".addEdamamScreen").hide();
 });
 
-//dummy acount search bar button//
 $(document).on("click", ".dummySearchSubmit", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
@@ -701,14 +606,12 @@ $(document).on("click", ".dummySearchSubmit", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".addEdamamScreen").hide();
     alert('Please create an account to search and save thousands of recipes!');
 });
 
-//logo---->intro screen//
 $(document).on("click", ".logoHolder", function (event) {
     event.preventDefault();
     $(".introScreen").show();
@@ -717,13 +620,11 @@ $(document).on("click", ".logoHolder", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".addEdamamScreen").hide();
 });
 
-//fail scenario-add to recipe button//
 $(document).on("click", "#failButton", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
@@ -732,13 +633,11 @@ $(document).on("click", "#failButton", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").show();
     $(".searchScreen").hide();
-    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".addEdamamScreen").hide();
 });
 
-//success scenario-add to recipe button//
 $(document).on("click", ".searchRecipeResultOption", function (event) {
     event.preventDefault();
     $(".introScreen").hide();
@@ -747,7 +646,6 @@ $(document).on("click", ".searchRecipeResultOption", function (event) {
     $(".dummyAccountScreen").hide();
     $(".homeScreen").show();
     $(".searchScreen").hide();
-    //$(".chosenFail").hide();
     $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".addEdamamScreen").hide();

@@ -177,7 +177,7 @@ button {
 .signInInput,
 .formControl {
     display: block;
-    width: 75%;
+    width: 85%;
     border-radius: 3px;
     text-decoration: none;
     background-color: #d9d9d9;
@@ -301,11 +301,11 @@ button {
 }
 
 .recipeImg {
-    width: 100%;
+    width: 70%;
     padding: 7px;
     margin: 10px;
     object-fit: cover;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .resultsList {
@@ -317,6 +317,7 @@ button {
     width: 30%;
     margin: 10px;
     padding: 10px;
+    vertical-align: top;
 }
 
 .resultsTitle {
@@ -331,22 +332,28 @@ button {
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 17px;
+    display: inline-flex;
+    width: 100%;
 }
 
 .cal {
     border-right: 1px solid black;
     padding-right: 10px;
+    width: 49%;
 
 }
 
 .ing {
     border-left: 1px solid black;
     padding-left: 10px;
+    width: 49%;
 }
 
 .num,
 .info {
     color: black;
+    display: block;
+    padding: 2px;
 }
 
 .searchRecipeImg {
@@ -443,6 +450,7 @@ button {
     margin-right: 5px;
     margin-bottom: 15px;
     border: 0;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .green {
@@ -571,7 +579,7 @@ button {
     border: 1px solid gray;
     width: 70%;
     text-align: center;
-    line-height: 35px;
+    line-height: 50px;
 }
 
 #ingredientsCreate,
@@ -703,6 +711,10 @@ button {
         width: 25%;
         font-size: 13px;
     }
+
+    .addEdamamScreen {
+        width: 85%;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -731,7 +743,7 @@ button {
     }
 
     .searchBarContainer {
-        width: 80%;
+        width: 90%;
     }
 
     .recipeLink,
@@ -786,20 +798,37 @@ button {
     }
 
     .logoHolder {
-        width: 49%;
+        width: 100%;
         text-align: inherit;
     }
 
     .navList {
-        width: 49%;
+        width: 100%;
     }
 
     .navContent {
-        font-size: 17px;
+        font-size: 19px;
     }
 
     .navListItems {
-        margin: 20px;
+        margin: 15px;
+    }
+
+    .navContainer {
+        width: 100%;
+        display: block;
+    }
+
+    .navLogo {
+        width: 16%;
+    }
+
+    .recipeImg {
+        width: 85%;
+    }
+
+    .createInput {
+        width: 85%;
     }
 
 

@@ -54,12 +54,9 @@ function closeServer() {
 // external API call
 var getFromEdamam = function (searchTerm) {
     var emitter = new events.EventEmitter();
-    //console.log("inside getFromActive function");
-    //    unirest.get("http://api.amp.active.com/v2/search?topicName=Running&registerable_only=true&category=races&attributeValue=5k&sort=date_asc&per_page=24&near="+searchTerm+",US&radius=50&api_key=2e4ra5w6b9augfrn54vjb4bx")
     unirest.get("https://api.edamam.com/search?q=" + searchTerm + "&app_id=5097ae44&app_key=a080dbf283c1fc79a3f91ba9fc627c1c&from=0&to=30")
         .header("Accept", "application/json")
         .end(function (result) {
-            //console.log(result.status, result.headers, result.body);
             //success scenario
             if (result.ok) {
                 emitter.emit('end', result.body);
@@ -88,7 +85,9 @@ app.get('/get-recipes-from-edamam/:name', function (req, res) {
 
 
 // ---------------USER ENDPOINTS-------------------------------------
+
 // POST -----------------------------------
+
 // creating a new user
 app.post('/users/create', (req, res) => {
     //get name,email,password from the body object
@@ -105,7 +104,7 @@ app.post('/users/create', (req, res) => {
                 message: 'Internal server error'
             });
         }
-        //using encryption key from above, genberate an encrypted password
+        //using encryption key from above, generate an encrypted password
         bcrypt.hash(password, salt, (err, hash) => {
             if (err) {
                 return res.status(500).json({
@@ -169,8 +168,6 @@ app.post('/users/signin', function (req, res) {
         });
 });
 
-
-// POST -----------------------------------------
 // creating a new recipe
 app.post('/recipes/create', (req, res) => {
     let title = req.body.title;
@@ -200,6 +197,8 @@ app.post('/recipes/create', (req, res) => {
 });
 
 // PUT --------------------------------------
+
+// update recipe
 app.put('/recipes/:id', function (req, res) {
     let toUpdate = {};
     let updateableFields = ['ingredients', 'directions', 'notes'];
@@ -221,6 +220,8 @@ app.put('/recipes/:id', function (req, res) {
 });
 
 // GET ------------------------------------
+
+// get recipes saved to username
 app.get('/recipes/:userId', function (req, res) {
     console.log(req.params.userId);
     Recipe
@@ -242,6 +243,8 @@ app.get('/recipes/:userId', function (req, res) {
 
 
 // DELETE ----------------------------------------
+
+//delete recipe from library
 app.delete('/recipes/:id', function (req, res) {
     Recipe.findByIdAndRemove(req.params.id).exec().then(function (achievement) {
         return res.status(204).end();
@@ -253,6 +256,7 @@ app.delete('/recipes/:id', function (req, res) {
 });
 
 // MISC ------------------------------------------
+
 // catch-all endpoint if client makes request to non-existent endpoint
 app.use('*', (req, res) => {
     res.status(404).json({
