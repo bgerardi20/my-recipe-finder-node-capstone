@@ -51,6 +51,7 @@ h1 {
 label {
     font-family: 'Oswald', sans-serif;
     font-size: 20px;
+    display: block;
 }
 
 input,
@@ -243,6 +244,7 @@ button {
     margin-left: auto;
     margin-right: auto;
     margin-top: 10rem;
+    max-width: 1000px;
 }
 
 .recipeOutsideContainer {
@@ -452,6 +454,7 @@ button {
 }
 
 #add,
+.addSuccessButton,
 #back,
 #view,
 #saveAnchor,

@@ -12,6 +12,10 @@ const recipeSchema = new mongoose.Schema({
         type: String,
         required: false
     },
+    image: {
+        type: String,
+        required: false
+    },
     directions: {
         type: String,
         required: false

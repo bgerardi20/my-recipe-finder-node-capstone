@@ -170,12 +170,12 @@ app.post('/users/signin', function (req, res) {
 });
 
 
-// -------------ACHIEVEMENT ENDPOINTS------------------------------------------------
 // POST -----------------------------------------
 // creating a new recipe
 app.post('/recipes/create', (req, res) => {
     let title = req.body.title;
     let ingredients = req.body.ingredients;
+    let image = req.body.image;
     let directions = req.body.directions;
     let notes = req.body.notes;
     let userId = req.body.userId;
@@ -183,6 +183,7 @@ app.post('/recipes/create', (req, res) => {
     Recipe.create({
         title,
         ingredients,
+        image,
         directions,
         notes,
         userId
@@ -199,15 +200,15 @@ app.post('/recipes/create', (req, res) => {
 });
 
 // PUT --------------------------------------
-app.put('/achievement/:id', function (req, res) {
+app.put('/recipes/:id', function (req, res) {
     let toUpdate = {};
-    let updateableFields = ['achieveWhat', 'achieveHow', 'achieveWhen', 'achieveWhy'];
+    let updateableFields = ['ingredients', 'directions', 'notes'];
     updateableFields.forEach(function (field) {
         if (field in req.body) {
             toUpdate[field] = req.body[field];
         }
     });
-    Achievement
+    Recipe
         .findByIdAndUpdate(req.params.id, {
             $set: toUpdate
         }).exec().then(function (achievement) {
@@ -220,7 +221,6 @@ app.put('/achievement/:id', function (req, res) {
 });
 
 // GET ------------------------------------
-// accessing all of a user's achievements
 app.get('/recipes/:userId', function (req, res) {
     console.log(req.params.userId);
     Recipe
@@ -242,9 +242,8 @@ app.get('/recipes/:userId', function (req, res) {
 
 
 // DELETE ----------------------------------------
-// deleting an achievement by id
-app.delete('/achievement/:id', function (req, res) {
-    Achievement.findByIdAndRemove(req.params.id).exec().then(function (achievement) {
+app.delete('/recipes/:id', function (req, res) {
+    Recipe.findByIdAndRemove(req.params.id).exec().then(function (achievement) {
         return res.status(204).end();
     }).catch(function (err) {
         return res.status(500).json({
