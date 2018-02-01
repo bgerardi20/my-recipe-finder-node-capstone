@@ -535,7 +535,7 @@ $(document).on("click", ".deleteAnchor", function (event) {
             dataType: 'json',
             contentType: 'application/json'
         })
-        //if registation is successful
+
         .done(function (result) {
             console.log(result);
             displayRecipes(loginUserId);
@@ -552,7 +552,7 @@ $(document).on("click", ".deleteAnchor", function (event) {
             $(".modsList").hide();
             $(".addEdamamScreen").hide();
         })
-        //if registration fails
+
         .fail(function (jqXHR, error, errorThrown) {
             console.log(jqXHR);
             console.log(error);
