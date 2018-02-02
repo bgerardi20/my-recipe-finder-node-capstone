@@ -582,6 +582,8 @@ button {
     width: 70%;
     text-align: center;
     line-height: 50px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 #ingredientsCreate,
@@ -613,6 +615,12 @@ button {
     border: 0;
     width: 30%;
 }
+
+.recipeInsideContainer {
+    border-bottom: 2px solid black;
+    padding: 15px 0 15px 0;
+}
+
 
 /*psuedo*/
 
@@ -787,12 +795,12 @@ button {
     #directions,
     .recipeButton,
     .createButton {
-        font-size: 16px;
-        width: 21%;
+        font-size: 18px;
+        width: 30%;
     }
 
     .createInstructions {
-        width: 95%;
+        width: 100%;
     }
 
     .footer {
@@ -822,7 +830,7 @@ button {
     }
 
     .navLogo {
-        width: 16%;
+        width: 19%;
     }
 
     .recipeImg {
@@ -831,6 +839,15 @@ button {
 
     .createInput {
         width: 85%;
+    }
+
+    .search {
+        width: 85%;
+    }
+
+    .addSuccessButton {
+        width: 27%;
+        font-size: 14px;
     }
 
 
@@ -843,7 +860,7 @@ button {
     }
 
     p {
-        font-size: 18px;
+        font-size: 21px;
     }
 
     button {
@@ -922,6 +939,7 @@ button {
     .search {
         line-height: 35px;
         font-size: 17px;
+        width: 85%;
     }
 
     .fa-search {
@@ -953,6 +971,7 @@ button {
 
     .searchRecipeResultOption {
         width: 43%;
+        vertical-align: text-bottom;
     }
 
     .searchRecipeImg {
@@ -964,6 +983,8 @@ button {
         border-top: 1px solid black;
         border-left: none;
         padding-top: 5px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .cal {
@@ -971,6 +992,8 @@ button {
         border-bottom: 1px solid black;
         border-right: none;
         padding-bottom: 5px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .data {
@@ -980,8 +1003,8 @@ button {
     }
 
     .addSuccessButton {
-        width: 40%;
-        font-size: 14px;
+        width: 45%;
+        font-size: 17px;
     }
 
     .addButton {
@@ -993,8 +1016,8 @@ button {
     #directions,
     .recipeButton,
     .createButton {
-        font-size: 16px;
-        width: 28%;
+        font-size: 18px;
+        width: 32%;
     }
 
     .ingredients {
@@ -1012,7 +1035,7 @@ button {
     }
 
     .createInput {
-        width: 75%;
+        width: 85%;
     }
 
     #image,
@@ -1029,11 +1052,21 @@ button {
         font-size: 20px;
     }
 
+    .num,
+    .info {
+        color: black;
+        padding: 2px;
+        display: inline-block;
+    }
+
+    .resultsTitle {
+        margin-bottom: 10px;
+    }
 }
 
 @media only screen and (max-width: 320px) {
     .navLogo {
-        width: 60%;
+        width: 75%;
     }
 
     .logoHolder {
@@ -1077,10 +1110,12 @@ button {
     .search {
         width: 78%;
         margin-left: -43px;
+        margin-top: 40px;
     }
 
     .searchRecipeResultOption {
         width: 80%;
+        border-bottom: 2px solid black;
     }
 
     .frownyFace {
@@ -1102,7 +1137,8 @@ button {
     #directions,
     .recipeButton,
     .createButton {
-        width: 40%;
+        width: 43%;
+        font-size: 17px;
     }
 
     .ingredients {
@@ -1110,7 +1146,7 @@ button {
     }
 
     p {
-        font-size: 17px;
+        font-size: 19px;
     }
 
     .createInput {
@@ -1126,6 +1162,10 @@ button {
     .footer {
         font-size: 14px;
         margin: 0;
+    }
+
+    .searchSubmit {
+        margin-top: 40px;
     }
 
 
