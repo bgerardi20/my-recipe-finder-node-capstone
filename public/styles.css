@@ -214,7 +214,7 @@ button {
 .registerButton {
     border-radius: 4px;
     line-height: 40px;
-    width: 75%;
+    width: 85%;
     background-color: #787878;
     color: rgba(255, 255, 255, 0.9);
 }
@@ -321,9 +321,11 @@ button {
 }
 
 .resultsTitle {
-    /*    margin-bottom: 15px;*/
+    /* margin-bottom: 15px; */
     font-size: 20px;
     color: black;
+    height: 70px;
+    overflow-y: hidden;
 }
 
 .data {
@@ -617,8 +619,7 @@ button {
 }
 
 .recipeInsideContainer {
-    border-bottom: 2px solid black;
-    padding: 15px 0 15px 0;
+    border-bottom: 2px solid #ddd;
 }
 
 
@@ -730,6 +731,10 @@ button {
 @media only screen and (max-width: 768px) {
     .introInnerContainer {
         width: 75%;
+    }
+
+    .searchRecipeResultOption {
+        width: 45%;
     }
 
     .signInform,

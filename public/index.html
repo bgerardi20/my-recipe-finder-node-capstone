@@ -64,10 +64,10 @@
             <div class="signInInnerContainer">
                 <img class="signInLogo" src="./website-images/my-recipies-logo.png">
                 <h2 class="signInMessage">Sign In</h2>
-                <!------delete value on inpuut ---------------------------------->
+
                 <form class="signInform" method="POST" autocomplete="off">
-                    <input class="signInInput" id="signInEmail" type="text" placeholder="Email Address" name="email" value="brendan.gerardi@gmail.com">
-                    <input class="signInInput" id="signInPassword" type="password" placeholder="Password" name="password" value="123">
+                    <input class="signInInput" id="signInEmail" type="text" placeholder="Email Address" name="email" value="">
+                    <input class="signInInput" id="signInPassword" type="password" placeholder="Password" name="password" value="">
                     <button class="signInButton " type="submit">Next</button>
                 </form>
 
@@ -117,56 +117,7 @@
         <section class="homeContainer recipeOutsideContainer" id="">
             <div class="recipeSnippetContainer">
                 <ul class="recipeInsideContainer" id="">
-                    <li>
-                        <img class="searchRecipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
-                        <!-- -->
-                    </li><br>
-                    <li>
-                        <h2 class="chosenTitle">Recipe Title</h2><br>
-                    </li><br>
-                    <li>
-                        <h3 class="ingredTitle">Ingredients:</h3>
-                        <div class="chosenList">
-                            <p class="chosenIngr">ingredient1</p><br>
-                        </div>
-                    </li><br>
-                    <li>
-                        <div class="recipeButtonContainer">
-                            <button id="modifyAnchor" type="button">Modify</button>
-                            <!--link to original recipe URL --->
-                            <button id="directionsAnchor" type="button">Directions</button>
-                        </div>
-                    </li><br>
-                    <li>
-                        <div class="ingredientsContainer">
-                            <label class="ingredientsLabel" for="ingredients">Add:</label>
-                            <input type="text" name="ingredients" class="ingredients" placeholder="Ingredient">
-                            <div class="addRemove">
-                                <span>
-                                    <span>
-                                        <a class="jsAddButton" href="#"><i class="fa fa-plus-circle fa-lg ingredients-adder" aria-hidden="true"></i></a>
-                                    </span>
-                                <span>
-                                        <a class="jsDeleteButton" href="#"><i class="fa fa-minus-circle fa-lg js-input-delete" aria-hidden="true"></i></a>
-                                    </span>
-                                </span>
-                            </div>
-                        </div>
-                    </li><br>
-                    <!-- do i need a table or textbox here? -->
-                    <li>
-                        <ul class="modsList">
-                            <li class="chosenIng">Mods</li>
-                            <li class="chosenIng">Mods</li>
-                            <li class="chosenIng">Mods</li>
-                        </ul>
-                    </li><br>
-                    <li>
-                        <div class="recipeButtonContainer">
-                            <button type="button" class="recipeButton green" id="saveAnchor">Save</button>
-                            <button type="button" class="recipeButton red" id="deleteAnchor">Delete</button>
-                        </div>
-                    </li><br>
+
                 </ul>
             </div>
         </section>
@@ -191,68 +142,6 @@
             </ul>
 
         </section>
-    </main>
-
-
-    <main class="recipeInfoScreen">
-
-        <h1 class="pageTitle"><img src="" alt="" class="titleLogo">My Recipe</h1>
-
-        <section class="recipeOutsideContainer" id="">
-
-            <ul class="recipeInsideContainer" id="">
-                <li>
-                    <img class="searchRecipeImg" src="https://www.budgetbytes.com/wp-content/uploads/2017/06/Grilled-Vegetable-Pasta-Salad-H-380x380.jpg" alt="pasta">
-                </li><br>
-                <li>
-                    <h2 class="chosenTitle">Recipe Title</h2><br>
-                </li><br>
-                <li>
-                    <h3 class="ingredTitle">Ingredients:</h3>
-                    <div class="chosenList">
-                        <p class="chosenIngr">ingredient1</p><br>
-                    </div>
-                </li><br>
-                <li>
-                    <div class="recipeButtonContainer">
-                        <button id="modifyAnchor" type="button">Modify</button>
-                        <button id="directionsAnchor" type="button">Directions</button>
-                    </div>
-                </li><br>
-                <li>
-                    <div class="ingredientsContainer">
-                        <label class="ingredientsLabel" for="ingredients">Add:</label>
-                        <input type="text" name="ingredients" class="ingredients" placeholder="Ingredient">
-                        <div class="addRemove">
-                            <span>
-                                <span>
-                                    <a class="jsAddButton" href="#"><i class="fa fa-plus-circle fa-lg ingredients-adder" aria-hidden="true"></i></a>
-                                </span>
-                            <span>
-                                    <a class="jsDeleteButton" href="#"><i class="fa fa-minus-circle fa-lg js-input-delete" aria-hidden="true"></i></a>
-                                </span>
-                            </span>
-                        </div>
-                    </div>
-                </li><br>
-                <!-- do i need a table or textbox here? -->
-                <li>
-                    <ul class="modsList">
-                        <li class="chosenIng">Mods</li>
-                        <li class="chosenIng">Mods</li>
-                        <li class="chosenIng">Mods</li>
-                    </ul>
-                </li><br>
-                <li>
-                    <div class="recipeButtonContainer">
-                        <button type="button" class="recipeButton green" id="saveAnchor">Save</button>
-                        <button type="button" class="recipeButton red" id="deleteAnchor">Delete</button>
-                    </div>
-                </li><br>
-            </ul>
-
-        </section>
-
     </main>
 
     <main class="createRecipeScreen">
