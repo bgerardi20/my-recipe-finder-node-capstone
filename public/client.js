@@ -22,39 +22,44 @@ function displayRecipes(userId) {
 
 function displayRecipeFromEdamam(dataFromApi) {
     var buildTheHtmlOutput = "";
-    $.each(dataFromApi.hits, function (dataKey, dataValue) {
-        buildTheHtmlOutput += '<li class="searchRecipeResultOption">';
-        buildTheHtmlOutput += '<div class="object">';
-        buildTheHtmlOutput += '<a class="searchRecipeResultsLink" href="#">';
-        buildTheHtmlOutput += '<span class="searchRecipeImgContainer">';
-        buildTheHtmlOutput += '<img class="searchRecipeImg" src="' + dataValue.recipe.image + '" alt="pastarecipeLink">';
-        buildTheHtmlOutput += '</span>';
-        buildTheHtmlOutput += '</a>';
-        buildTheHtmlOutput += '</div>';
+    console.log(dataFromApi);
+    if (dataFromApi.hits.length == 0) {
+        buildTheHtmlOutput += 'no results found';
+    } else {
+        $.each(dataFromApi.hits, function (dataKey, dataValue) {
+            buildTheHtmlOutput += '<li class="searchRecipeResultOption">';
+            buildTheHtmlOutput += '<div class="object">';
+            buildTheHtmlOutput += '<a class="searchRecipeResultsLink" href="#">';
+            buildTheHtmlOutput += '<span class="searchRecipeImgContainer">';
+            buildTheHtmlOutput += '<img class="searchRecipeImg" src="' + dataValue.recipe.image + '" alt="pastarecipeLink">';
+            buildTheHtmlOutput += '</span>';
+            buildTheHtmlOutput += '</a>';
+            buildTheHtmlOutput += '</div>';
 
-        buildTheHtmlOutput += '<h3 class="resultsTitle">' + dataValue.recipe.label + '</h3>';
+            buildTheHtmlOutput += '<h3 class="resultsTitle">' + dataValue.recipe.label + '</h3>';
 
-        buildTheHtmlOutput += '<div class="data">';
-        buildTheHtmlOutput += '<a class="cal" href="#">';
-        buildTheHtmlOutput += '<span class="num">' + dataValue.recipe.calories.toFixed(2) + '</span>';
-        buildTheHtmlOutput += '<span class="info"> calories</span>';
-        buildTheHtmlOutput += '</a>';
-        buildTheHtmlOutput += '<a class="ing" href="#">';
-        buildTheHtmlOutput += '<span class="num">' + dataValue.recipe.ingredients.length + '</span>';
-        buildTheHtmlOutput += '<span class="info"> ingredients</span>';
-        buildTheHtmlOutput += '</a>';
-        buildTheHtmlOutput += '</div>';
+            buildTheHtmlOutput += '<div class="data">';
+            buildTheHtmlOutput += '<a class="cal" href="#">';
+            buildTheHtmlOutput += '<span class="num">' + dataValue.recipe.calories.toFixed(2) + '</span><br />';
+            buildTheHtmlOutput += '<span class="info"> calories</span>';
+            buildTheHtmlOutput += '</a>';
+            buildTheHtmlOutput += '<a class="ing" href="#">';
+            buildTheHtmlOutput += '<span class="num">' + dataValue.recipe.ingredients.length + '</span><br />';
+            buildTheHtmlOutput += '<span class="info"> ingredients</span>';
+            buildTheHtmlOutput += '</a>';
+            buildTheHtmlOutput += '</div>';
 
-        buildTheHtmlOutput += '<form class="addBRecipeFromAPI">';
-        buildTheHtmlOutput += '<div class="addButton">';
-        buildTheHtmlOutput += '<input type="hidden" class="addBRecipeFromAPIName" value="' + dataValue.recipe.label + '">';
-        buildTheHtmlOutput += '<input type="hidden" class="addBRecipeFromAPIIngredients" value="' + dataValue.recipe.ingredientLines.toString() + '">';
-        buildTheHtmlOutput += '<input type="hidden" class="addBRecipeFromAPIImage" value="' + dataValue.recipe.image + '">';
-        buildTheHtmlOutput += '<button type="submit" class="addSuccessButton green jsSuccessButton">Add</button>';
-        buildTheHtmlOutput += '</div>';
-        buildTheHtmlOutput += '</form>';
-        buildTheHtmlOutput += '</li>';
-    })
+            buildTheHtmlOutput += '<form class="addBRecipeFromAPI">';
+            buildTheHtmlOutput += '<div class="addButton">';
+            buildTheHtmlOutput += '<input type="hidden" class="addBRecipeFromAPIName" value="' + dataValue.recipe.label + '">';
+            buildTheHtmlOutput += '<input type="hidden" class="addBRecipeFromAPIIngredients" value="' + dataValue.recipe.ingredientLines.toString() + '">';
+            buildTheHtmlOutput += '<input type="hidden" class="addBRecipeFromAPIImage" value="' + dataValue.recipe.image + '">';
+            buildTheHtmlOutput += '<button type="submit" class="addSuccessButton green jsSuccessButton">Add</button>';
+            buildTheHtmlOutput += '</div>';
+            buildTheHtmlOutput += '</form>';
+            buildTheHtmlOutput += '</li>';
+        })
+    }
     $(".resultsList").html(buildTheHtmlOutput);
 };
 
@@ -338,7 +343,7 @@ $(document).on("click", ".recipeLink", function (event) {
     $(".addEdamamScreen").hide();
 });
 
-$(document).on("click", ".searchSubmit", function (event) {
+$(document).on("submit", ".searchBarContainer", function (event) {
     event.preventDefault();
     let searchBarInput = $(this).parent().find('.recipeSearchInput').val();
     //validate the input//

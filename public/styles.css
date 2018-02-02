@@ -332,7 +332,7 @@ button {
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 17px;
-    display: inline-flex;
+    /*    display: inline-flex;*/
     width: 100%;
 }
 
@@ -340,6 +340,7 @@ button {
     border-right: 1px solid black;
     padding-right: 10px;
     width: 49%;
+    display: inline-block;
 
 }
 
@@ -347,6 +348,7 @@ button {
     border-left: 1px solid black;
     padding-left: 10px;
     width: 49%;
+    display: inline-block;
 }
 
 .num,
@@ -798,12 +800,13 @@ button {
     }
 
     .logoHolder {
-        width: 100%;
-        text-align: inherit;
+        width: 49%;
+        display: inline-block;
     }
 
     .navList {
-        width: 100%;
+        width: 49%;
+        display: inline-block;
     }
 
     .navContent {
@@ -816,7 +819,6 @@ button {
 
     .navContainer {
         width: 100%;
-        display: block;
     }
 
     .navLogo {
