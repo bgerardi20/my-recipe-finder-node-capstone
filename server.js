@@ -223,7 +223,6 @@ app.put('/recipes/:id', function (req, res) {
 
 // get recipes saved to username
 app.get('/recipes/:userId', function (req, res) {
-    console.log(req.params.userId);
     Recipe
         .find({
             userId: req.params.userId
