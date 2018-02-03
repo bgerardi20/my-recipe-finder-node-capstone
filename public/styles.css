@@ -7,8 +7,8 @@
 }
 
 body {
-    background: url("website-images/cooking-class-background-image.JPG") no-repeat fixed center;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url("website-images/cooking-class-background-image.JPG");
+    /*    background: url("website-images/cooking-class-background-image.jpg") no-repeat fixed center;*/
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url("website-images/cooking-class-background-image.jpg") no-repeat fixed center;
     background-size: cover;
     text-align: center;
     font-family: 'Josefin Slab', serif;
