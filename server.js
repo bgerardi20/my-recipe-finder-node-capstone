@@ -169,7 +169,7 @@ app.post('/users/signin', function (req, res) {
 });
 
 // creating a new recipe
-app.post('', (req, res) => {
+app.post('/recipes/create', (req, res) => {
     let title = req.body.title;
     let ingredients = req.body.ingredients;
     let image = req.body.image;
