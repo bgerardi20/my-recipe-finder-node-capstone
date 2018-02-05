@@ -122,10 +122,8 @@ $(document).ready(function () {
     $(".introScreen").show();
     $(".signInScreen").hide();
     $(".createUsernameScreen").hide();
-    $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".navList").hide();
     $(".addEdamamScreen").hide();
@@ -136,10 +134,8 @@ $(document).on("click", ".jsSignInButton", function (event) {
     $(".introScreen").hide();
     $(".signInScreen").show();
     $(".createUsernameScreen").hide();
-    $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".addEdamamScreen").hide();
 });
@@ -150,23 +146,8 @@ $(document).on("click", ".jsRegisterButton", function (event) {
     $(".introScreen").hide();
     $(".signInScreen").hide();
     $(".createUsernameScreen").show();
-    $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".recipeInfoScreen").hide();
-    $(".createRecipeScreen").hide();
-    $(".addEdamamScreen").hide();
-});
-
-$(document).on("click", ".jsDummyButton", function (event) {
-    event.preventDefault();
-    $(".introScreen").hide();
-    $(".signInScreen").hide();
-    $(".createUsernameScreen").hide();
-    $(".dummyAccountScreen").show();
-    $(".homeScreen").hide();
-    $(".searchScreen").hide();
-    $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".addEdamamScreen").hide();
 });
@@ -204,10 +185,8 @@ $(document).on("click", ".signInButton", function (event) {
                 $(".introScreen").hide();
                 $(".signInScreen").hide();
                 $(".createUsernameScreen").hide();
-                $(".dummyAccountScreen").hide();
                 $(".homeScreen").show();
                 $(".searchScreen").hide();
-                $(".recipeInfoScreen").hide();
                 $(".createRecipeScreen").hide();
                 $(".navList").show();
                 $(".addEdamamScreen").hide();
@@ -259,10 +238,8 @@ $(document).on("click", ".registerButton", function (event) {
                 $(".introScreen").hide();
                 $(".signInScreen").show();
                 $(".createUsernameScreen").hide();
-                $(".dummyAccountScreen").hide();
                 $(".homeScreen").hide();
                 $(".searchScreen").hide();
-                $(".recipeInfoScreen").hide();
                 $(".createRecipeScreen").hide();
                 $(".addEdamamScreen").hide();
             })
@@ -280,10 +257,8 @@ $(document).on("click", ".jsMyLibrary", function (event) {
     $(".introScreen").hide();
     $(".signInScreen").hide();
     $(".createUsernameScreen").hide();
-    $(".dummyAccountScreen").hide();
     $(".homeScreen").show();
     $(".searchScreen").hide();
-    $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".ingredientsContainer").hide();
     $(".modsList").hide();
@@ -295,10 +270,8 @@ $(document).on("click", ".jsCreateRecipe", function (event) {
     $(".introScreen").hide();
     $(".signInScreen").hide();
     $(".createUsernameScreen").hide();
-    $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").show();
     $(".addEdamamScreen").hide();
 });
@@ -308,10 +281,8 @@ $(document).on("click", ".jsAddRecipe", function (event) {
     $(".introScreen").hide();
     $(".signInScreen").hide();
     $(".createUsernameScreen").hide();
-    $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".addEdamamScreen").show();
     $(".successScenario").hide();
@@ -322,10 +293,8 @@ $(document).on("click", ".jsLogout", function (event) {
     $(".introScreen").hide();
     $(".signInScreen").show();
     $(".createUsernameScreen").hide();
-    $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".addEdamamScreen").hide();
 });
@@ -335,10 +304,8 @@ $(document).on("click", ".recipeLink", function (event) {
     $(".introScreen").hide();
     $(".signInScreen").hide();
     $(".createUsernameScreen").hide();
-    $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".recipeInfoScreen").show();
     $(".createRecipeScreen").hide();
     $(".addEdamamScreen").hide();
 });
@@ -360,10 +327,8 @@ $(document).on("submit", ".searchBarContainer", function (event) {
                 $(".introScreen").hide();
                 $(".signInScreen").hide();
                 $(".createUsernameScreen").hide();
-                $(".dummyAccountScreen").hide();
                 $(".homeScreen").hide();
                 $(".searchScreen").hide();
-                $(".recipeInfoScreen").hide();
                 $(".createRecipeScreen").hide();
                 $(".addEdamamScreen").show();
                 $(".successScenario").show();
@@ -375,11 +340,9 @@ $(document).on("submit", ".searchBarContainer", function (event) {
                 $(".introScreen").hide();
                 $(".signInScreen").hide();
                 $(".createUsernameScreen").hide();
-                $(".dummyAccountScreen").hide();
                 $(".homeScreen").hide();
                 $(".searchScreen").hide();
                 $(".chosenFail").show();
-                $(".recipeInfoScreen").hide();
                 $(".createRecipeScreen").hide();
                 $(".addEdamamScreen").show();
             });
@@ -391,10 +354,8 @@ $(document).on("click", "#modifyAnchor", function (event) {
     $(".introScreen").hide();
     $(".signInScreen").hide();
     $(".createUsernameScreen").hide();
-    $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".recipeInfoScreen").show();
     $(".createRecipeScreen").hide();
     $(".ingredientsContainer").show();
     $(".modsList").show();
@@ -407,10 +368,8 @@ $(document).on("click", "#directionsAnchor", function (event) {
     $(".introScreen").hide();
     $(".signInScreen").hide();
     $(".createUsernameScreen").hide();
-    $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".addEdamamScreen").hide();
 });
@@ -439,13 +398,12 @@ $(document).on("click", ".saveAnchor", function (event) {
         //if save is successful
         .done(function (result) {
             displayRecipes(loginUserId);
+            alert('recipe has been saved');
             $(".introScreen").hide();
             $(".signInScreen").hide();
             $(".createUsernameScreen").hide();
-            $(".dummyAccountScreen").hide();
-            $(".homeScreen").hide();
+            $(".homeScreen").show();
             $(".searchScreen").hide();
-            $(".recipeInfoScreen").show();
             $(".createRecipeScreen").hide();
             $(".ingredientsContainer").hide();
             $(".modsList").hide();
@@ -472,13 +430,12 @@ $(document).on("click", ".deleteAnchor", function (event) {
 
         .done(function (result) {
             displayRecipes(loginUserId);
+            alert('recipe has been deleted');
             $(".introScreen").hide();
             $(".signInScreen").hide();
             $(".createUsernameScreen").hide();
-            $(".dummyAccountScreen").hide();
-            $(".homeScreen").hide();
+            $(".homeScreen").show();
             $(".searchScreen").hide();
-            $(".recipeInfoScreen").show();
             $(".createRecipeScreen").hide();
             $(".ingredientsContainer").hide();
             $(".modsList").hide();
@@ -507,8 +464,6 @@ $(document).on("click", "#jsCreateSaveButton", function (event) {
         alert('Please add ingredients!');
     } else if (directions.length == 0) {
         alert('Please add directions!');
-    } else if (notes.length == 0) {
-        alert('Please add notes!');
     } else {
         //if input is valid; create the new recipe//
         const newRecipeObject = {
@@ -533,10 +488,8 @@ $(document).on("click", "#jsCreateSaveButton", function (event) {
                 $(".introScreen").hide();
                 $(".signInScreen").hide();
                 $(".createUsernameScreen").hide();
-                $(".dummyAccountScreen").hide();
                 $(".homeScreen").show();
                 $(".searchScreen").hide();
-                $(".recipeInfoScreen").hide();
                 $(".createRecipeScreen").hide();
                 $(".addEdamamScreen").hide();
             })
@@ -595,26 +548,10 @@ $(document).on("click", "#jsCancelSaveButton", function (event) {
     $(".introScreen").hide();
     $(".signInScreen").hide();
     $(".createUsernameScreen").hide();
-    $(".dummyAccountScreen").hide();
     $(".homeScreen").show();
     $(".searchScreen").hide();
-    $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".addEdamamScreen").hide();
-});
-
-$(document).on("click", ".dummySearchSubmit", function (event) {
-    event.preventDefault();
-    $(".introScreen").hide();
-    $(".signInScreen").hide();
-    $(".createUsernameScreen").show();
-    $(".dummyAccountScreen").hide();
-    $(".homeScreen").hide();
-    $(".searchScreen").hide();
-    $(".recipeInfoScreen").hide();
-    $(".createRecipeScreen").hide();
-    $(".addEdamamScreen").hide();
-    alert('Please create an account to search and save thousands of recipes!');
 });
 
 $(document).on("click", ".logoHolder", function (event) {
@@ -622,10 +559,8 @@ $(document).on("click", ".logoHolder", function (event) {
     $(".introScreen").show();
     $(".signInScreen").hide();
     $(".createUsernameScreen").hide();
-    $(".dummyAccountScreen").hide();
     $(".homeScreen").hide();
     $(".searchScreen").hide();
-    $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".addEdamamScreen").hide();
 });
@@ -635,10 +570,8 @@ $(document).on("click", "#failButton", function (event) {
     $(".introScreen").hide();
     $(".signInScreen").hide();
     $(".createUsernameScreen").hide();
-    $(".dummyAccountScreen").hide();
     $(".homeScreen").show();
     $(".searchScreen").hide();
-    $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".addEdamamScreen").hide();
 });
@@ -648,10 +581,8 @@ $(document).on("click", ".searchRecipeResultOption", function (event) {
     $(".introScreen").hide();
     $(".signInScreen").hide();
     $(".createUsernameScreen").hide();
-    $(".dummyAccountScreen").hide();
     $(".homeScreen").show();
     $(".searchScreen").hide();
-    $(".recipeInfoScreen").hide();
     $(".createRecipeScreen").hide();
     $(".addEdamamScreen").hide();
 });
